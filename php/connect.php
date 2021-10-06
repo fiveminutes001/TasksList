@@ -1,7 +1,22 @@
 <?php
-
+// include "get_connection_details.php";
 //GET FUNCTION TO GET DB DETAILS FROM FAR FILE//OUTPUT 00
-include "get_connection_details.php";
+function getfile($path)
+{
+    //VARS
+    $dir = 'taskslist';
+    $main_path = '../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
+    //OPENING FILE
+    $myfile = fopen($main_path . $dir . "/$path.txt", "r") or die("Unable to open file!");
+    //GETTING FILE CONTENT//OUTPUT 01
+    $r = file_get_contents($main_path . $dir . "/$path.txt");
+    //CLOSING FILE
+    fclose($myfile);
+    //SPLITTING BY SPACES
+    $p = explode("\n", $r);
+    //RETURN DB DETAILS ARRAY
+    return $p;
+}
 
 //GET DB DETAILS
 $path = 'data';
