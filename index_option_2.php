@@ -116,7 +116,7 @@
             <div class="col mx-auto">
                 <!-- Todo Item 1 -->
                 <div class="row px-3 align-items-center todo-item rounded">
-                    <div class="col-auto col-sm-12 col-md-3 col-lg-3 col-xl-3 px-1 m-1 d-flex align-items-center">
+                    <div class="col-auto col-sm-12 col-md-9 col-lg-9 col-xl-9 px-1 m-1 d-flex align-items-center">
                         <i class="fa fa-square-o text-primary btn m-0 p-0 d-none" data-toggle="tooltip" data-placement="bottom" title="Mark as complete"></i>
                         <i class="fa fa-check-square-o text-primary btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as todo"></i>
                         <input type="text" class="form-control form-control-lg border-0 bg-transparent rounded px-3" value="Buy groceries for next week" title="Buy groceries for next week" />
