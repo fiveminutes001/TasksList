@@ -44,8 +44,6 @@
 
 </head>
 
-</html>
-
 <body>
     <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
         <!-- App title section -->
