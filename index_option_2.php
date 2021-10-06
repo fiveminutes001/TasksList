@@ -112,7 +112,7 @@
         </div>
 
         <!-- Todo list section -->
-        <div class="row mx-1 px-5 pb-3 w-80">
+        <div class="row mx-1 pb-3 w-80">
             <div class="col mx-auto">
                 <!-- Todo Item 1 -->
                 <div class="row px-3 align-items-center todo-item rounded">
@@ -126,23 +126,12 @@
                         <input type="text" class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3" readonly value="Buy groceries for next week" title="Buy groceries for next week" />
                         <input type="text" class="form-control form-control-lg border-0 edit-todo-input rounded px-3 d-none" value="Buy groceries for next week" />
                     </div>
-                    <div class="col-auto m-1 p-0 px-3 d-none">
-                    </div>
+
                     <div class="col-auto m-1 p-0 todo-actions">
-                        <div class="row d-flex align-items-center justify-content-end">
-                            <h5 class="m-0 p-0 px-2">
-                                <i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                            </h5>
-                            <h5 class="m-0 p-0 px-2">
-                                <i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
-                            </h5>
-                        </div>
-                        <div class="row todo-created-info">
-                            <div class="col-auto d-flex align-items-center pr-2">
-                                <i class="fa fa-info-circle my-2 px-2 text-black-50 btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                <label class="date-label my-2 text-black-50">28th Jun 2020</label>
-                            </div>
-                        </div>
+                        <i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                        <i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                        <i class="fa fa-info-circle my-2 px-2 text-black-50 btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                        <label class="date-label my-2 text-black-50">28th Jun 2020</label>
                     </div>
                 </div>
                 <!-- Todo Item 2 -->
