@@ -159,11 +159,11 @@
                 <!-- Todo Item 4 -->
                 <div>
                     <p>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
                             Button with data-target
                         </button>
                     </p>
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse" id="collapseExample3">
                         <div class="card card-body">
                             <div class="row px-3 align-items-center todo-item rounded">
                                 <div class="col-12 p-0 d-flex align-items-center">
