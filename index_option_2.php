@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
     <style>
         body {
             font-family: "Open Sans", sans-serif;
@@ -53,15 +55,19 @@
 
 <body>
     <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+
         <!-- App title section -->
         <div class="row m-1 p-4">
-            <div class="col">
+            <div class="col-2"></div>
+            <div class="col-8">
                 <div class="p-1 h1 text-primary text-center mx-auto display-inline-block">
                     <i class="fa fa-check bg-primary text-white rounded p-2"></i>
-                    <u>My Todo-s</u>
+                    My Todo-s
                 </div>
             </div>
+            <div class="col-2"></div>
         </div>
+
         <!-- Create todo section -->
         <div class="row m-1 p-3">
             <div class="col col-11 mx-auto">
@@ -81,6 +87,7 @@
             </div>
         </div>
         <div class="p-2 mx-4 border-black-25 border-bottom"></div>
+
         <!-- View options section -->
         <div class="row m-1 p-3 px-5 justify-content-end">
             <div class="col-auto d-flex align-items-center">
@@ -102,6 +109,7 @@
                 <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
             </div>
         </div>
+
         <!-- Todo list section -->
         <div class="row mx-1 px-5 pb-3 w-80">
             <div class="col mx-auto">
