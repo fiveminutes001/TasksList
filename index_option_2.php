@@ -123,6 +123,7 @@
                     </div>
 
                     <div class="col-12 m-1 p-0 todo-actions">
+                        <p>details details details details details details details details details details details details details </p>
                         <i class="fa fa-info-circle my-2 px-2 text-black-50 btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
                         <label class="date-label my-2 text-black-50">28th Jun 2020</label>
                         <i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
