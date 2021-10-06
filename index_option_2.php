@@ -89,8 +89,8 @@
 
 
         <!-- View options section -->
-        <div class="row m-1 p-3 px-5 justify-content-end">
-            <div class="col-auto d-flex align-items-center">
+        <div class="row m-1 justify-content-end">
+            <div class="col-6 d-flex align-items-center">
                 <label class="text-secondary my-2 pr-2 view-opt-label">Filter</label>
                 <select class="custom-select custom-select-sm btn my-2">
                     <option value="all" selected>All</option>
@@ -100,7 +100,7 @@
                 </select>
             </div>
 
-            <div class="col-auto d-flex align-items-center px-1 pr-3">
+            <div class="col-6 d-flex align-items-center px-1 pr-3">
                 <label class="text-secondary my-2 pr-2 view-opt-label">Sort</label>
                 <select class="custom-select custom-select-sm btn my-2">
                     <option value="added-date-asc" selected>Added date</option>
