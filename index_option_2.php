@@ -123,7 +123,7 @@
                         </h2>
                     </div>
                     <div class="col px-1 m-1 d-flex align-items-center">
-                        <input type="text" class="form-control form-control-lg border-0 rounded px-3 d-none" value="Buy groceries for next week" />
+                        <input type="text" class="form-control form-control-lg border-0 bg-transparent rounded px-3" value="Buy groceries for next week" title="Buy groceries for next week" />
                     </div>
 
                     <div class="col-auto m-1 p-0 todo-actions">
