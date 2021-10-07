@@ -68,18 +68,18 @@
             <div class="col-2 col-sm-2 col-md-3 col-lg-3 col-xl-3"></div>
         </div>
 
-        <!-- Create todo section -->
+        <!-- Create task section -->
         <form>
             <div class="row m-1 p-3">
                 <div class="col mx-auto">
-
+                    <!-- Set task name-->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
 
                         <div class="col p-0 m-0">
                             <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
                         </div>
                     </div>
-
+                    <!-- Set details -->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -88,9 +88,10 @@
                             <textarea class="form-control" aria-label="With textarea"></textarea>
                         </div>
                     </div>
-
+                    <!-- Set due date-->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-end">
                         <div class="m-0 px-2 d-flex align-items-center">
+                            <p>Due date: <input type="text" id="datepicker"></p>
                             <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label">Due date not set</label>
                             <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
                             <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
