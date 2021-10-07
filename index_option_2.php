@@ -135,7 +135,7 @@
 
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
-            <div class="d-flex flex-column">
+            <div class="col mx-auto">
                 <!-- Todo Item 1 -->
                 <div>
                     <p>
