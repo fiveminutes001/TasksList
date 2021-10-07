@@ -160,11 +160,11 @@
                 <!-- Todo Item 2 -->
                 <div>
                     <p>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                             Button with data-target
                         </button>
                     </p>
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse" id="collapseExample2">
                         <div class="card card-body mb-3">
                             <div class="row">
                                 <div class="col-12 m-0">
@@ -181,11 +181,11 @@
                 <!-- Todo Item 3 -->
                 <div>
                     <p>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
                             Button with data-target
                         </button>
                     </p>
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse" id="collapseExample3">
                         <div class="card card-body mb-3">
                             <div class="row">
                                 <div class="col-12 m-0">
