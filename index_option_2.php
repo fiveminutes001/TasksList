@@ -54,6 +54,11 @@
             min-width: 35px !important;
             display: inline-block !important
         }
+
+        .icon {
+            min-width: 50px !important;
+            display: inline-block !important
+        }
     </style>
 
 </head>
@@ -110,7 +115,9 @@
                     <option value="active">Active</option>
                     <option value="has-due-date">Has due date</option>
                 </select>
-                <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
+                <div class="icon">
+                    <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
+                </div>
             </div>
 
             <div class="col-12 col-sm-6 d-flex align-items-center">
@@ -119,8 +126,10 @@
                     <option value="added-date-asc" selected>Added date</option>
                     <option value="due-date-desc">Due date</option>
                 </select>
-                <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
-                <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
+                <div class="icon">
+                    <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
+                    <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
+                </div>
             </div>
         </div>
 
