@@ -232,8 +232,7 @@
                 autoclose: true,
                 todayHighlight: true,
                 startDate: currentDate,
-                orientation: "bottom right",
-                mindate: 0
+                orientation: "bottom right"
             });
 
             $("#setDate").on("click", function(event) {
