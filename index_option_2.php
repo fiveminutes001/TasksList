@@ -79,7 +79,7 @@
                             <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
                         </div>
                         <div class="col-12 col-sm-3 p-0 m-0">
-                            <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Due date" required>
+                            <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Due date" required>
                         </div>
                     </div>
                     <!-- Set details -->
@@ -241,13 +241,12 @@
                 orientation: "bottom right"
             });
 
-            $(".due-date-button").on("click", function(event) {
-                $(".due-date-button")
+            $("#setDate").on("click", function(event) {
+                $("#setDate")
                     .datepicker("show")
                     .on("changeDate", function(dateChangeEvent) {
                         $(".due-date-button").datepicker("hide");
-                        $(".due-date-label").text(formatDate(dateChangeEvent.date));
-                        $(".due-date-date-input").value(formatDate(dateChangeEvent.date));
+                        $("#setDate").text(formatDate(dateChangeEvent.date));
                     });
             });
         };
