@@ -91,8 +91,7 @@
                     <!-- Set due date-->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-end">
                         <div class="m-0 px-2 d-flex align-items-center">
-                            <p>Due date: <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" readonly placeholder="Due date not set" required></p>
-                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label">Due date not set</label>
+                            <input class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label" required>Due date not set</input>
                             <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
                             <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                         </div>
