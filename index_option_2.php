@@ -98,39 +98,24 @@
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
             <div class="col-12 col-sm-6 d-flex align-items-center">
-                <div class="row">
-                    <div class="col-2">
-                        <label class="text-secondary my-2 pr-2 view-opt-label">Filter</label>
-                    </div>
-                    <div class="col-9"><select class="custom-select custom-select-sm my-2">
-                            <option value="all" selected>All</option>
-                            <option value="completed">Completed</option>
-                            <option value="active">Active</option>
-                            <option value="has-due-date">Has due date</option>
-                        </select>
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
-                    </div>
-                </div>
+                <label class="text-secondary my-2 pr-2 view-opt-label">Filter</label>
+                <select class="custom-select custom-select-sm my-2">
+                    <option value="all" selected>All</option>
+                    <option value="completed">Completed</option>
+                    <option value="active">Active</option>
+                    <option value="has-due-date">Has due date</option>
+                </select>
+                <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
             </div>
 
             <div class="col-12 col-sm-6 d-flex align-items-center px-1 pr-3">
-                <div class="row">
-                    <div class="col-2">
-                        <label class="text-secondary my-2 pr-2 view-opt-label">Sort</label>
-                    </div>
-                    <div class="col-9">
-                        <select class="custom-select custom-select-sm my-2">
-                            <option value="added-date-asc" selected>Added date</option>
-                            <option value="due-date-desc">Due date</option>
-                        </select>
-                    </div>
-                    <div class="col-1">
-                        <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
-                        <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
-                    </div>
-                </div>
+                <label class="text-secondary my-2 pr-2 view-opt-label">Sort</label>
+                <select class="custom-select custom-select-sm my-2">
+                    <option value="added-date-asc" selected>Added date</option>
+                    <option value="due-date-desc">Due date</option>
+                </select>
+                <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
+                <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
             </div>
         </div>
 
