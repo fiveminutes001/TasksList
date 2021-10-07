@@ -227,12 +227,13 @@
 
             var currentDate = formatDate(new Date());
 
-            $(".due-date-button").datepicker({
+            $("#setDate").datepicker({
                 format: "dd/mm/yyyy",
                 autoclose: true,
                 todayHighlight: true,
                 startDate: currentDate,
-                orientation: "bottom right"
+                orientation: "bottom right",
+                minDate: currentDate
             });
 
             $("#setDate").on("click", function(event) {
