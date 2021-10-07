@@ -73,7 +73,7 @@
         </div>
 
         <!-- Create todo section -->
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" id="validationForm01" novalidate>
             <div class="form-row m-1 p-3">
                 <div class="col mx-auto">
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
@@ -218,11 +218,14 @@
             window.addEventListener('load', function() {
                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
+                var inputs = document.getElementById('validationCustom01');
+                inputs.addEventListener('keyup', function(event) {
+                    let formToValidate = document.getElementById('validationForm01');
+                    formToValidate.checkValidity();
+                });
                 // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('keyup', function(event) {
-                        form.checkValidity();
-                    });
+
                     form.addEventListener('submit', function(event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
