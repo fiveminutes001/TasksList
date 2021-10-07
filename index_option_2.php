@@ -18,10 +18,6 @@
             line-height: 1.6;
         }
 
-        .add-todo-input,
-        .edit-todo-input {
-            outline: none;
-        }
 
         .view-opt-label,
         .date-label {
