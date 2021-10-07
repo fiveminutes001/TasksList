@@ -121,7 +121,7 @@
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
             <div class="col mx-auto">
-                <!-- Todo Item 2 -->
+                <!-- Todo Item 1 -->
                 <div>
                     <p>
                         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -129,7 +129,7 @@
                         </button>
                     </p>
                     <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
+                        <div class="card card-body mb-3">
                             <div class="row">
                                 <div class="col-12 m-0">
                                     <p>details details details details details details details details details details details details details </p>
