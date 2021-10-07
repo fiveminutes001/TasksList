@@ -69,32 +69,39 @@
         </div>
 
         <!-- Create todo section -->
-        <div class="row m-1 p-3">
-            <div class="col mx-auto">
-                <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-                    <div class="col p-0 m-0">
-                        <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name">
-                    </div>
-                    <div class="m-0 px-2 d-flex align-items-center">
-                        <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
-                        <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
-                        <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
-                    </div>
-                    <div class="px-0 mx-0 mr-2">
-                        <button type="button" class="btn btn-primary">Add</button>
-                    </div>
-                </div>
-                <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">details</span>
+        <form>
+            <div class="row m-1 p-3">
+                <div class="col mx-auto">
+
+                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+
+                        <div class="col p-0 m-0">
+                            <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
                         </div>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+
+                        <div class="m-0 px-2 d-flex align-items-center">
+                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
+                            <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
+                            <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
+                        </div>
+
+                        <div class="px-0 mx-0 mr-2">
+                            <button type="button" class="btn btn-primary">Add</button>
+                        </div>
                     </div>
+
+                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">details</span>
+                            </div>
+                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-
+        </form>
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
