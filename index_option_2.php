@@ -242,9 +242,9 @@
             });
 
             $("#setDate").on("click", function(event) {
-                $("#setDate")
-                    .datepicker("show")
+                $("#setDate").datepicker("show")
                     .on("changeDate", function(dateChangeEvent) {
+                        console.log("!");
                         $("#setDate").datepicker("hide");
                         $("#setDate").text(formatDate(dateChangeEvent.date));
                     });
