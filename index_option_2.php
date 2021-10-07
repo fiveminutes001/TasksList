@@ -160,7 +160,7 @@
                     <div class="m-0">
                         <div class="collapse" id="collapseExample">
 
-                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-0 pb-0">
+                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
                                     <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
@@ -189,7 +189,7 @@
                     <div class="m-0">
                         <div class="collapse" id="collapseExample2">
 
-                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-0 pb-0">
+                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
                                     <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
@@ -218,7 +218,7 @@
                     <div class="m-0">
                         <div class="collapse" id="collapseExample3">
 
-                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-0 pb-0">
+                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
                                     <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
