@@ -95,7 +95,6 @@
             </div>
         </div>
 
-
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
             <div class="col-6 d-flex align-items-center">
@@ -122,22 +121,6 @@
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
             <div class="col mx-auto">
-                <!-- Todo Item 1 -->
-                <div class="row px-3 align-items-center todo-item rounded">
-                    <div class="col-12 p-0 d-flex align-items-center">
-                        <i class="fa fa-square-o text-primary btn m-0 p-0 d-none" data-toggle="tooltip" data-placement="bottom" title="Mark as complete"></i>
-                        <i class="fa fa-check-square-o text-primary btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Mark as todo"></i>
-                        <input type="text" class="form-control form-control-lg border-0 bg-transparent rounded px-3" value="Buy groceries for next week" title="Buy groceries for next week" />
-                    </div>
-
-                    <div class="col-12 m-0 p-0 todo-actions">
-                        <p>details details details details details details details details details details details details details </p>
-                        <i class="fa fa-info-circle my-2 px-2 text-black-50 btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                        <label class="date-label my-2 text-black-50">28th Jun 2020</label>
-                        <i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                        <i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
-                    </div>
-                </div>
                 <!-- Todo Item 2 -->
                 <div>
                     <p>
@@ -147,7 +130,11 @@
                     </p>
                     <div class="collapse" id="collapseExample">
                         <div class="card card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <p>details details details details details details details details details details details details details </p>
+                            <i class="fa fa-info-circle my-2 px-2 text-black-50 btn" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                            <label class="date-label my-2 text-black-50">28th Jun 2020</label>
+                            <i class="fa fa-pencil text-info btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                            <i class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
                         </div>
                     </div>
                 </div>
@@ -201,6 +188,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootlint/1.1.0/bootlint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
     <script>
         window.onload = function() {
             bootlint.showLintReportForCurrentDocument([], {
