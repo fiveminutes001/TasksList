@@ -103,7 +103,7 @@
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
             <div class="col-12 col-sm-6 d-flex align-items-center">
-                <label class="text-secondary my-2 pr-2 view-opt-label">Filter</label>
+                <label class="label text-secondary my-2 pr-2 view-opt-label">Filter</label>
                 <select class="custom-select custom-select-sm my-2">
                     <option value="all" selected>All</option>
                     <option value="completed">Completed</option>
@@ -114,7 +114,7 @@
             </div>
 
             <div class="col-12 col-sm-6 d-flex align-items-center">
-                <label class="text-secondary my-2 pr-2 view-opt-label">Sort</label>
+                <label class="label text-secondary my-2 pr-2 view-opt-label">Sort</label>
                 <select class="custom-select custom-select-sm my-2">
                     <option value="added-date-asc" selected>Added date</option>
                     <option value="due-date-desc">Due date</option>
