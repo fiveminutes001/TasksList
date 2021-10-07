@@ -79,32 +79,40 @@
         </div>
 
         <!-- Create todo section -->
-        <div class="row m-1 p-3">
-            <div class="col mx-auto">
-                <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-                    <div class="col p-0 m-0">
-                        <input class="form-control form-control-lg border-0 p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name">
-                    </div>
-                    <div class="m-0 px-2 d-flex align-items-center">
-                        <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
-                        <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
-                        <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
-                    </div>
-                    <div class="px-0 mx-0 mr-2">
-                        <button type="button" class="btn btn-primary">Add</button>
-                    </div>
-                </div>
-                <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">details</span>
+        <form class="needs-validation" novalidate>
+            <div class="form-row m-1 p-3">
+                <div class="col mx-auto">
+                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                        <div class="col p-0 m-0">
+                            <label for="validationCustom01">Enter name</label>
+                            <input id="validationCustom01" class="form-control form-control-lg border-0 p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter a task name.
+                            </div>
                         </div>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <div class="m-0 px-2 d-flex align-items-center">
+                            <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
+                            <i class="fa fa-calendar my-2 px-1 text-primary btn due-date-button" data-toggle="tooltip" data-placement="bottom" title="Set a Due date"></i>
+                            <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
+                        </div>
+                        <div class="px-0 mx-0 mr-2">
+                            <button type="button" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">details</span>
+                            </div>
+                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </form>
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
@@ -209,7 +217,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootlint/1.1.0/bootlint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
+    <script>
+        // Disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
     <script>
         window.onload = function() {
             bootlint.showLintReportForCurrentDocument([], {
