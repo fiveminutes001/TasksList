@@ -143,7 +143,7 @@
 
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
-
+            <search-result name-attribute="test"></search-result>
             <!-- Todo Item 1 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
