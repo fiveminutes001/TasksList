@@ -23,12 +23,6 @@
             outline: none;
         }
 
-        .add-todo-input:focus,
-        .edit-todo-input:focus {
-            border: none !important;
-            box-shadow: none !important;
-        }
-
         .view-opt-label,
         .date-label {
             font-size: 0.8rem;
