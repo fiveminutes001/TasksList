@@ -84,8 +84,8 @@
                 <div class="col mx-auto">
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                         <div class="col p-0 m-0">
-                            <label for="validationCustom01">Enter name</label>
-                            <input id="validationCustom01" class="form-control form-control-lg border-0 p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
+                            <label for="validationCustom01" class="mb-0">Enter name</label>
+                            <input id="validationCustom01" class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
