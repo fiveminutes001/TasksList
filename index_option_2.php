@@ -190,11 +190,9 @@
                 <div>
                     <div class="row">
                         <div class="col-12 col-sm-6 m-0">
-                            <p>
-                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                                    Button with data-target
-                                </button>
-                            </p>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                Button with data-target
+                            </button>
                         </div>
                     </div>
                     <div class="collapse" id="collapseExample3">
