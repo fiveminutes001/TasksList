@@ -147,7 +147,7 @@
             <!-- Todo Item 1 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
-                    <div class="col-12 m-0">
+                    <div class="col-12 m-0 p-2 pb-0">
                         <p>
                             <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
@@ -160,13 +160,13 @@
                     <div class="m-0">
                         <div class="collapse" id="collapseExample">
 
-                            <div class="card card-body mb-3">
+                            <div class="card card-body m-2 mb-3">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
-                                    <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                    <label class="date-label my-2 text-black-50">28th Jun 2020</label>
-                                    <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                                    <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                                    <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                                    <label class="date-label my-2 text-black-50 m-2">28th Jun 2020</label>
+                                    <i class="fa fa-pencil text-info m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                    <i class="fa fa-trash-o text-danger m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
                                 </div>
                             </div>
                         </div>
