@@ -73,17 +73,17 @@
             <div class="row m-1 p-3">
                 <div class="col mx-auto">
                     <!-- Set task name-->
-                    <div class="row bg-white rounded shadow-sm p-2 mt-2 add-todo-wrapper align-items-center justify-content-center">
+                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
 
-                        <div class="col-12 col-sm-9 p-0 m-0">
+                        <div class="col-12 col-sm-9 p-0 m-0 mt-2">
                             <input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required>
                         </div>
-                        <div class="col-12 col-sm-3 p-0 m-0">
+                        <div class="col-12 col-sm-3 p-0 m-0 mt-2">
                             <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required>
                         </div>
                     </div>
                     <!-- Set details -->
-                    <div class="row bg-white rounded shadow-sm p-2 mt-2 add-todo-wrapper align-items-center justify-content-center">
+                    <div class="row bg-white rounded shadow-sm p-2  add-todo-wrapper align-items-center justify-content-center">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">details</span>
