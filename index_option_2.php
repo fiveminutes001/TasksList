@@ -107,10 +107,11 @@
         </form>
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
-            <!--Results-->
+            <!--Actions-->
             <div class="col-12  m-0 mt-2 text-left">
-                <label class="date-label my-2 text-black-50">Total 4 tasks, 4 completed, 0 left</label>
+                <label class="date-label my-2 text-black-50"><u>Actions</u></label>
             </div>
+
             <!--Filter-->
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
                 <label class="label text-secondary my-2 pr-2 view-opt-label">Filter</label>
@@ -136,6 +137,11 @@
                     <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
                     <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
                 </div>
+            </div>
+
+            <!--Results-->
+            <div class="col-12  m-0 mt-2 text-left">
+                <label class="date-label my-2 text-black-50">Total 4 tasks, 4 completed, 0 left</label>
             </div>
         </div>
 
