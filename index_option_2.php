@@ -74,12 +74,6 @@
                 <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                     <div class="col">
                         <input class="form-control form-control-lg border-0 p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Add new ..">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">With textarea</span>
-                            </div>
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
-                        </div>
                     </div>
                     <div class="m-0 px-2 d-flex align-items-center">
                         <label class="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>
@@ -88,6 +82,14 @@
                     </div>
                     <div class="px-0 mx-0 mr-2">
                         <button type="button" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+                <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">details</span>
+                        </div>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
                     </div>
                 </div>
             </div>
