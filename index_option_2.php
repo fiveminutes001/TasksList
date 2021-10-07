@@ -70,8 +70,9 @@
 
         <!-- Create task section -->
         <form>
-            <label>Add new</label>
+
             <div class="row m-1 p-3">
+                <label>Add new</label>
                 <div class="col mx-auto">
                     <!-- Set task name-->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
