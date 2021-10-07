@@ -70,6 +70,7 @@
 
         <!-- Create task section -->
         <form>
+            <label>Add new</label>
             <div class="row m-1 p-3">
                 <div class="col mx-auto">
                     <!-- Set task name-->
@@ -103,6 +104,7 @@
         </form>
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
+            <!--Filter-->
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
                 <label class="label text-secondary my-2 pr-2 view-opt-label">Filter</label>
                 <select class="custom-select custom-select-sm my-2">
@@ -116,6 +118,7 @@
                 </div>
             </div>
 
+            <!--Sort-->
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
                 <label class="label text-secondary my-2 pr-2 view-opt-label">Sort</label>
                 <select class="custom-select custom-select-sm my-2">
