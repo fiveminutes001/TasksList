@@ -162,7 +162,7 @@
 
                             <div class="card card-body mb-3">
                                 <p>details details details details details details details details details details details details details </p>
-                                <div class="d-flex flex-row">
+                                <div class="d-flex flex-row align-items-baseline">
                                     <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
                                     <label class="date-label my-2 text-black-50">28th Jun 2020</label>
                                     <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
