@@ -76,7 +76,7 @@
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
 
                         <div class="col-12 col-sm-9 p-0 m-0">
-                            <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
+                            <input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required>
                         </div>
                         <div class="col-12 col-sm-3 p-0 m-0">
                             <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required>
