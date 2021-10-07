@@ -76,8 +76,8 @@
                 <div class="col mx-auto">
                     <!-- Set task name-->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
-                        <div class="col-12  m-0 mt-2 text-center">
-                            <label class="date-label my-2 text-black-50">Add new</label>
+                        <div class="col-12  m-0 mt-2 text-left">
+                            <label class="date-label my-2 text-black-50"><u>Add new</u></label>
                         </div>
                         <div class="col-12 col-sm-9 p-0 m-0 mt-2">
                             <input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required>
