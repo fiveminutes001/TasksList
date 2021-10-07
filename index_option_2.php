@@ -128,7 +128,7 @@
                 </select>
                 <div class="icon text-center">
                     <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
-                    <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
+                    <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
                 </div>
             </div>
         </div>
