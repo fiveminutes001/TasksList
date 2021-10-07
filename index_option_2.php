@@ -73,7 +73,7 @@
         </div>
 
         <!-- Create todo section -->
-        <form class="needs-validation" id="validationForm01" novalidate>
+        <form class="needs-validation" novalidate>
             <div class="form-row m-1 p-3">
                 <div class="col mx-auto">
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
@@ -211,32 +211,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootlint/1.1.0/bootlint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <script>
-        // Disabling form submissions if there are invalid fields
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                var inputs = document.getElementById('validationCustom01');
-                inputs.addEventListener('keyup', function(event) {
-                    let formToValidate = document.getElementById('validationForm01');
-                    formToValidate.checkValidity();
-                });
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
 
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
     <script>
         window.onload = function() {
             bootlint.showLintReportForCurrentDocument([], {
