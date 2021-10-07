@@ -79,7 +79,7 @@
                             <input class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Task name" required>
                         </div>
                         <div class="col-12 col-sm-3 p-0 m-0">
-                            <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent rounded" type="text" placeholder="Due date" required>
+                            <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required>
                         </div>
                     </div>
                     <!-- Set details -->
@@ -244,7 +244,6 @@
             $("#setDate").on("click", function(event) {
                 $("#setDate").datepicker("show")
                     .on("changeDate", function(dateChangeEvent) {
-                        console.log("!");
                         $("#setDate").datepicker("hide");
                         $("#setDate").text(formatDate(dateChangeEvent.date));
                     });
