@@ -107,6 +107,10 @@
         </form>
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
+            <!--Results-->
+            <div class="col-12  m-0 mt-2 text-left">
+                <label class="date-label my-2 text-black-50">Total 4 tasks, 4 completed, 0 left</label>
+            </div>
             <!--Filter-->
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
                 <label class="label text-secondary my-2 pr-2 view-opt-label">Filter</label>
