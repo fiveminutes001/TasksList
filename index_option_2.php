@@ -173,6 +173,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Todo Item 2 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
@@ -238,6 +239,55 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootlint/1.1.0/bootlint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        // class Task {
+
+        // }
+        const template = document.createElement('template');
+        template.innerHTML = `
+        <style>
+            div {
+            margin-top: 20px;
+            color: green;
+            }
+        </style>
+        <div>
+            <p>The Google search result of your name is <a target="_blank" rel="noopener">here</a></p>
+        </div>
+        `;
+
+        class SearchResult extends HTMLElement {
+            constructor() {
+                super();
+
+                this.attachShadow({
+                    mode: 'open'
+                });
+
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+                this.shadowRoot.querySelector('a').href = '';
+            }
+
+            static get observedAttributes() {
+                return ['name-attribute'];
+            }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (name == 'name-attribute') {
+                    this.shadowRoot.querySelector(
+                        'a'
+                    ).href = `https://www.google.com/search?q=${newValue}`;
+                }
+            }
+        }
+
+        window.customElements.define('search-result', SearchResult);
+        let expandingList = document.createElement('search-result');
+        console.log(expandingList);
+    </script>
+
 
     <script>
         window.onload = function() {
