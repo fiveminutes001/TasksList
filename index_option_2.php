@@ -176,7 +176,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-6 m-0">
                             <p>
-                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Button with data-target
                                 </button>
                             </p>
@@ -184,8 +184,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="collapse" id="collapseExample2">
-                            <div class="col-12 col-sm-6 m-0">
+                        <div class="col-12 col-sm-6 m-0">
+                            <div class="collapse" id="collapseExample">
+
                                 <div class="card card-body mb-3">
                                     <p>details details details details details details details details details details details details details </p>
                                     <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
@@ -202,7 +203,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-6 m-0">
                             <p>
-                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Button with data-target
                                 </button>
                             </p>
@@ -210,8 +211,9 @@
                     </div>
 
                     <div class="row">
-                        <div class="collapse" id="collapseExample3">
-                            <div class="col-12 col-sm-6 m-0">
+                        <div class="col-12 col-sm-6 m-0">
+                            <div class="collapse" id="collapseExample">
+
                                 <div class="card card-body mb-3">
                                     <p>details details details details details details details details details details details details details </p>
                                     <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
