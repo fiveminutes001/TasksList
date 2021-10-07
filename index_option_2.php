@@ -99,7 +99,7 @@
                             <i class="fa fa-calendar-times-o my-2 px-1 text-danger btn clear-due-date-button d-none" data-toggle="tooltip" data-placement="bottom" title="Clear Due date"></i>
                         </div>
                         <div class="px-0 mx-0 mr-2">
-                            <button type="button" class="btn btn-primary">Add</button>
+                            <button class="btn btn-primary" type="submit">Add</button>
                         </div>
                     </div>
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
