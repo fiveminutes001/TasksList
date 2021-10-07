@@ -108,7 +108,7 @@
                 <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
             </div>
 
-            <div class="col-12 col-sm-6 d-flex align-items-center px-1 pr-3">
+            <div class="col-12 col-sm-6 d-flex align-items-center">
                 <label class="text-secondary my-2 pr-2 view-opt-label">Sort</label>
                 <select class="custom-select custom-select-sm my-2">
                     <option value="added-date-asc" selected>Added date</option>
