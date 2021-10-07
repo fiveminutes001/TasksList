@@ -56,7 +56,7 @@
         }
 
         .icon {
-            min-width: 50px !important;
+            min-width: 35px !important;
             display: inline-block !important
         }
     </style>
