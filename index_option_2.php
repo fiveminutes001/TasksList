@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="px-0 mx-0 mr-2">
-                            <button type="button" class="btn btn-primary">Add</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
                         </div>
                     </div>
 
