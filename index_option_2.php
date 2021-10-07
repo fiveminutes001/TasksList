@@ -147,7 +147,7 @@
             <!-- Todo Item 1 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
-                    <div class="col-12 m-0 p-2 pb-0">
+                    <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
                             <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
