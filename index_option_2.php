@@ -143,91 +143,91 @@
 
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
-            <div class="col mx-auto">
-                <!-- Todo Item 1 -->
-                <div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6 m-0">
-                            <p>
-                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Button with data-target
-                                </button>
-                            </p>
-                        </div>
+            <!-- <div class="col mx-auto"> -->
+            <!-- Todo Item 1 -->
+            <div class="col-12 col-sm-6 m-0">
+                <div class="row">
+                    <div class="col-12 col-sm-6 m-0">
+                        <p>
+                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Button with data-target
+                            </button>
+                        </p>
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-12 col-sm-6 m-0">
-                            <div class="collapse" id="collapseExample">
+                <div class="row">
+                    <div class="col-12 col-sm-6 m-0">
+                        <div class="collapse" id="collapseExample">
 
-                                <div class="card card-body mb-3">
-                                    <p>details details details details details details details details details details details details details </p>
-                                    <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                    <label class="date-label my-2 text-black-50">28th Jun 2020</label>
-                                    <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                                    <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
-                                </div>
+                            <div class="card card-body mb-3">
+                                <p>details details details details details details details details details details details details details </p>
+                                <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                                <label class="date-label my-2 text-black-50">28th Jun 2020</label>
+                                <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Todo Item 2 -->
-                <div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6 m-0">
-                            <p>
-                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Button with data-target
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-6 m-0">
-                            <div class="collapse" id="collapseExample">
-
-                                <div class="card card-body mb-3">
-                                    <p>details details details details details details details details details details details details details </p>
-                                    <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                    <label class="date-label my-2 text-black-50">28th Jun 2020</label>
-                                    <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                                    <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Todo Item 3 -->
-                <div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6 m-0">
-                            <p>
-                                <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Button with data-target
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-6 m-0">
-                            <div class="collapse" id="collapseExample">
-
-                                <div class="card card-body mb-3">
-                                    <p>details details details details details details details details details details details details details </p>
-                                    <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                    <label class="date-label my-2 text-black-50">28th Jun 2020</label>
-                                    <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                                    <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
+            <!-- Todo Item 2 -->
+            <div class="col-12 col-sm-6 m-0">
+                <div class="row">
+                    <div class="col-12 col-sm-6 m-0">
+                        <p>
+                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Button with data-target
+                            </button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6 m-0">
+                        <div class="collapse" id="collapseExample">
+
+                            <div class="card card-body mb-3">
+                                <p>details details details details details details details details details details details details details </p>
+                                <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                                <label class="date-label my-2 text-black-50">28th Jun 2020</label>
+                                <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Todo Item 3 -->
+            <div class="col-12 col-sm-6 m-0">
+                <div class="row">
+                    <div class="col-12 col-sm-6 m-0">
+                        <p>
+                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Button with data-target
+                            </button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6 m-0">
+                        <div class="collapse" id="collapseExample">
+
+                            <div class="card card-body mb-3">
+                                <p>details details details details details details details details details details details details details </p>
+                                <i class="fa fa-info-circle my-2 text-black-50" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                                <label class="date-label my-2 text-black-50">28th Jun 2020</label>
+                                <i class="fa fa-pencil text-info m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                <i class="fa fa-trash-o text-danger m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- </div> -->
         </div>
     </div>
 
