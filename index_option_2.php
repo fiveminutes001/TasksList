@@ -51,7 +51,7 @@
         }
 
         .label {
-            min-width: 200px !important;
+            min-width: 35px !important;
             display: inline-block !important
         }
     </style>
