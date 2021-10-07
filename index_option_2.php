@@ -115,7 +115,7 @@
                     <option value="active">Active</option>
                     <option value="has-due-date">Has due date</option>
                 </select>
-                <div class="icon">
+                <div class="icon d-flex justify-content-center">
                     <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
                 </div>
             </div>
@@ -126,7 +126,7 @@
                     <option value="added-date-asc" selected>Added date</option>
                     <option value="due-date-desc">Due date</option>
                 </select>
-                <div class="icon">
+                <div class="icon d-flex justify-content-center">
                     <i class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
                     <i class="fa fa fa-sort-amount-desc text-info btn mx-0 px-0 pl-1 d-none" data-toggle="tooltip" data-placement="bottom" title="Descending"></i>
                 </div>
