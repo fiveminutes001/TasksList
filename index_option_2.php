@@ -105,6 +105,7 @@
                     <option value="active">Active</option>
                     <option value="has-due-date">Has due date</option>
                 </select>
+                <i class="fa fa fa-filter text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom"></i>
             </div>
 
             <div class="col-12 col-sm-6 d-flex align-items-center px-1 pr-3">
