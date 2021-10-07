@@ -107,10 +107,6 @@
         </form>
         <!-- View options section -->
         <div class="row m-1 justify-content-end">
-            <!--Actions-->
-            <div class="col-12 m-0 text-left">
-                <label class="date-label my-2 text-black-50"><u>Actions</u></label>
-            </div>
 
             <!--Filter-->
             <div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
