@@ -178,7 +178,7 @@
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
-                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
                             </button>
                         </p>
@@ -187,7 +187,7 @@
 
                 <div class="row">
                     <div class="m-0">
-                        <div class="collapse" id="collapseExample">
+                        <div class="collapse" id="collapseExample2">
 
                             <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-0">
                                 <p>details details details details details details details details details details details details details </p>
@@ -207,7 +207,7 @@
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
-                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
                             </button>
                         </p>
@@ -216,7 +216,7 @@
 
                 <div class="row">
                     <div class="m-0">
-                        <div class="collapse" id="collapseExample">
+                        <div class="collapse" id="collapseExample3">
 
                             <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-0">
                                 <p>details details details details details details details details details details details details details </p>
