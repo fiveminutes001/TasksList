@@ -245,7 +245,7 @@
                 $("#setDate")
                     .datepicker("show")
                     .on("changeDate", function(dateChangeEvent) {
-                        $(".due-date-button").datepicker("hide");
+                        $("#setDate").datepicker("hide");
                         $("#setDate").text(formatDate(dateChangeEvent.date));
                     });
             });
