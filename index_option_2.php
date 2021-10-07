@@ -49,6 +49,11 @@
         .todo-item.editing .todo-actions .edit-icon {
             display: none !important;
         }
+
+        .label {
+            min-width: 200px !important;
+            display: inline-block !important
+        }
     </style>
 
 </head>
