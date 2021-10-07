@@ -232,7 +232,7 @@
                 autoclose: true,
                 todayHighlight: true,
                 startDate: currentDate,
-                orientation: "bottom right",
+                orientation: "bottom center",
                 minDate: currentDate
             });
 
