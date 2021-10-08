@@ -285,7 +285,7 @@
         descP.innerHTML = 'details details details details';
 
         let flexDiv = document.createElement('div');
-        flexDiv.classList.add('d-flex', ' flex-row', 'align-items-baseline');
+        flexDiv.classList.add('d-flex', 'flex-row', 'align-items-baseline');
 
         let iElement = document.createElement('i');
         iElement.classList.add('fa', 'fa-info-circle', 'my-2', 'text-black-50', 'm-2');
