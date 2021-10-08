@@ -257,7 +257,7 @@
         buttonElement.classList.add('btn', 'btn-primary', 'w-100');
         buttonElement.setAttribute('type', 'button');
         buttonElement.setAttribute('data-toggle', 'collapse');
-        buttonElement.setAttribute('data-target', 'collapseExample4');
+        buttonElement.setAttribute('data-target', '#collapseExample4');
         buttonElement.setAttribute('aria-expanded', 'false');
         buttonElement.setAttribute('aria-controls', 'collapseExample4');
         buttonElement.innerHTML = 'Task name';
