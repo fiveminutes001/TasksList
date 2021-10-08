@@ -263,7 +263,7 @@
             // iElementEdit.setAttribute('data-toggle', 'tooltip');
             // iElementEdit.setAttribute('data-placement', 'bottom');
             // iElementEdit.setAttribute('title', 'Edit todo');
-            iElementEdit.setAttribute('onclick', 'updateTask(' + params.taskId + ')');
+            iElementEdit.setAttribute('onclick', 'updateTask(' + params.taskId + ');');
 
 
             let iElementDelete = document.createElement('i');
