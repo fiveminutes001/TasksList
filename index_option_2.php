@@ -290,6 +290,7 @@
 
         function searchFunc() {
             let a = document.querySelector('search-result');
+            a.setAttribute("name-attribute", "text");
             console.log(a);
         }
     </script>
