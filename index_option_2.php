@@ -178,6 +178,7 @@
 
         function getTaskData(taskId, paramsArr) {
             for (params in paramsArr) {
+                console.log(params.taskId);
                 if (params.taskId == taskId) {
                     return params;
                 }
