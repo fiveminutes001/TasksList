@@ -280,15 +280,9 @@
         // const items = Array.from(this.querySelectorAll('li'));
         // const descriptions = Array.from(this.querySelectorAll('p'));
 
-        class ToDo extends HTMLElement {
+        class ToDo {
             constructor() {
-                super();
-
-                this.attachShadow({
-                    mode: 'open'
-                });
-
-                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                this.innerHTML = template.innerHTML;
                 this.shadowRoot._items = [];
 
             }
@@ -307,31 +301,9 @@
                 this.shadowRoot.querySelector('.collapse').setAttribute('id', '#collapseNum' + this._items[0]);
             }
 
-            static get observedAttributes() {
-                return ['name-attribute'];
-            }
-
-            attributeChangedCallback(name, oldValue, newValue) {
-                if (name == 'name-attribute') {
-                    this.shadowRoot.querySelector('a').href = `https://www.google.com/search?q=${newValue}`;
-                }
-            }
         }
 
-        window.customElements.define('to-do', ToDo);
-        let thisTask = document.createElement('to-do');
-        thisTask.items = ['1', '2'];
-        thisTask.updateContent();
-        document.body.appendChild(thisTask);
-        console.log(thisTask);
-        // thisTask.setAttribute('to-do-id', 1);
-        // thisTask.setAttribute('text', 'some text');
-
-        // function searchFunc() {
-        //     let a = document.querySelector('search-result');
-        //     a.setAttribute("name-attribute", "text");
-        //     console.log(a);
-        // }
+        let thisTask = new ToDo(item, description);
     </script>
 
 
