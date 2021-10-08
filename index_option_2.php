@@ -244,13 +244,12 @@
     <script>
         const template = document.createElement('template');
         template.innerHTML = `
-        <style></style>
-        <!-- Task -->
+        <!-- Todo -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
-                            <button class="task-name btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="task-name btn btn-primary w-100" type="button" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
                             </button>
                         </p>
@@ -259,7 +258,7 @@
 
                 <div class="row">
                     <div class="m-0">
-                        <div class="collapse" id="collapseExample2">
+                        <div class="collapse" id="">
                             <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 task-details">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
@@ -304,6 +303,8 @@
 
             updateContent() {
                 this.shadowRoot.querySelector('div').setAttribute('to-do-id', this._items[0]);
+                this.shadowRoot.querySelector('button').setAttribute('data-target', '#collapseNum' + this._items[0]);
+                this.shadowRoot.querySelector('.collapse').setAttribute('id', '#collapseNum' + this._items[0]);
             }
 
             static get observedAttributes() {
