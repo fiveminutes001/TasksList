@@ -275,7 +275,7 @@
 
     <script>
         const container = document.querySelector('#tasks-div');
-        const template = document.getElementById('progress-template');
+        const template = document.getElementById('task-template');
         const fetchingNode = document.importNode(template.content, true);
         container.replaceWith(fetchingNode);
     </script>
