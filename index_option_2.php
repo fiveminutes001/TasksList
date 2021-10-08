@@ -246,7 +246,7 @@
         template.innerHTML = `
         <style></style>
         <!-- Task -->
-            <div class="col-12 col-sm-6 m-0 top-div">
+            <div class="col-12 col-sm-6 m-0">
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
@@ -284,19 +284,22 @@
         class ToDo extends HTMLElement {
             constructor() {
                 super();
+
                 const shadow = this.attachShadow({
                     mode: 'open'
                 });
+
                 shadow.appendChild(template.content.cloneNode(true));
+                shadow._items = [];
 
-                //Adding task id to top div
-                shadow.querySelector('div').setAttribute('to-do-id', this.getAttribute(`to-do-id`));
-                shadow.querySelector('button').innerHTML = this.getAttribute(`item`);
-                //shadow.querySelector('button').setAttribute('data-target','#collapseExample'+ this.shadowRoot.querySelector('div').getAttribute('to-do-id'));
-                console.log("this is:", this);
+            }
 
+            set items(value) {
+                this._items = value;
+            }
 
-
+            get items() {
+                return this._items;
             }
 
             static get observedAttributes() {
@@ -312,9 +315,10 @@
 
         window.customElements.define('to-do', ToDo);
         let thisTask = document.createElement('to-do');
-
-        thisTask.setAttribute('to-do-id', 1);
-        thisTask.setAttribute('text', 'some text');
+        thisTask.items = ['1', '2'];
+        console.log(thisTask);
+        // thisTask.setAttribute('to-do-id', 1);
+        // thisTask.setAttribute('text', 'some text');
 
         // function searchFunc() {
         //     let a = document.querySelector('search-result');
