@@ -267,8 +267,63 @@
         pElement.appendChild(buttonElement);
         colDiv.appendChild(pElement);
         rowDiv.appendChild(colDiv);
-        task.appendChild(rowDiv);
 
+        let secondRowDiv = document.createElement('div');
+        secondRowDiv.classList.add('row');
+
+        let mDiv = document.createElement('div');
+        mDiv.classList.add('m-0');
+
+        let collapseDiv = document.createElement('div');
+        colDiv.classList.add('collapse');
+        colDiv.setAttribute('id', 'collapseExample');
+
+        let cardDiv = document.createElement('div');
+        cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
+
+        let descP = document.createElement('p');
+        descP.innerHTML = 'details details details details';
+
+        let flexDiv = document.createElement('div');
+        flexDiv.classList.add('d-flex', ' flex-row', 'align-items-baseline');
+
+        let iElement = document.createElement('i');
+        iElement.classList.add('fa', 'fa-info-circle', 'my-2', 'text-black-50', 'm-2');
+        iElement.setAttribute('data-toggle', 'tooltip');
+        iElement.setAttribute('data-placement', 'bottom');
+        iElement.setAttribute('title', '28.12.21');
+        iElement.setAttribute('data-original-title', 'Created date');
+
+        let labelElement = document.createElement('label');
+        labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
+        labelElement.innerHTML('28.12.21');
+
+        let iElementEdit = document.createElement('i');
+        iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
+        iElementEdit.setAttribute('data-toggle', 'tooltip');
+        iElementEdit.setAttribute('data-placement', 'bottom');
+        iElementEdit.setAttribute('title', 'Edit todo');
+
+
+        let iElementDelete = document.createElement('i');
+        iElementDelete.classList.add('fa', 'fa-trash-o', 'text-danger', 'm-2', 'p-0');
+        iElementDelete.setAttribute('data-toggle', 'tooltip');
+        iElementDelete.setAttribute('data-placement', 'bottom');
+        iElementDelete.setAttribute('title', 'Delete todo');
+
+        documentFragment = document.createDocumentFragment();
+        flexDiv.appendChild(iElement);
+        flexDiv.appendChild(labelElement);
+        flexDiv.appendChild(iElementEdit);
+        flexDiv.appendChild(iElementDelete);
+        cardDiv.appendChild(descP);
+        cardDiv.appendChild(flexDiv);
+        collapseDiv.appendChild(cardDiv);
+        mDiv.appendChild(collapseDiv);
+        secondRowDiv.appendChild(mDiv);
+
+        task.appendChild(rowDiv);
+        task.appendChild(secondRowDiv);
 
         //document.querySelector('#task-container').innerHTML = '';
         document.querySelector('#task-container').appendChild(task);
