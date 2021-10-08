@@ -290,7 +290,7 @@
                 });
 
                 this.shadowRoot.appendChild(template.content.cloneNode(true));
-                shadow._items = [];
+                this.shadowRoot._items = [];
 
             }
 
