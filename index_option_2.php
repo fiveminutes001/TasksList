@@ -283,7 +283,9 @@
         class ToDo {
             constructor() {
                 this.innerHTML = template.innerHTML;
-                this.updateContent();
+                let todo = document.createElement('div').appendChild(template.content.cloneNode(true));
+                console.log(todo);
+                // this.updateContent();
             }
 
             set items(value) {
