@@ -260,9 +260,9 @@
 
             let iElementEdit = document.createElement('i');
             iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
-            iElementEdit.setAttribute('data-toggle', 'tooltip');
-            iElementEdit.setAttribute('data-placement', 'bottom');
-            iElementEdit.setAttribute('title', 'Edit todo');
+            // iElementEdit.setAttribute('data-toggle', 'tooltip');
+            // iElementEdit.setAttribute('data-placement', 'bottom');
+            // iElementEdit.setAttribute('title', 'Edit todo');
             iElementEdit.setAttribute('onclick', 'updateTask(' + params.taskId + ')');
 
 
