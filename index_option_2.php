@@ -294,9 +294,9 @@
         iElement.setAttribute('title', '28.12.21');
         iElement.setAttribute('data-original-title', 'Created date');
 
-        let labelElement = document.createElement('label');
-        labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
-        labelElement.innerHTML('28.12.21');
+        let labelsElement = document.createElement('label');
+        labelsElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
+        labelsElement.innerHTML('28.12.21');
 
         let iElementEdit = document.createElement('i');
         iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
