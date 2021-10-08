@@ -285,11 +285,11 @@
             constructor() {
                 super();
 
-                const shadow = this.attachShadow({
+                this.attachShadow({
                     mode: 'open'
                 });
 
-                shadow.appendChild(template.content.cloneNode(true));
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
                 shadow._items = [];
 
             }
@@ -303,7 +303,7 @@
             }
 
             updateContent() {
-                shadow.querySelector('div').setAttribute('to-do-id', this._items[0]);
+                this.shadowRoot.querySelector('div').setAttribute('to-do-id', this._items[0]);
             }
 
             static get observedAttributes() {
