@@ -153,7 +153,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
-        function createTask() {
+        function createTask(params) {
             let task = document.createElement('div');
             task.classList.add('col-12', 'col-sm-6', 'm-0');
 
@@ -170,9 +170,9 @@
             buttonElement.classList.add('btn', 'btn-primary', 'w-100');
             buttonElement.setAttribute('type', 'button');
             buttonElement.setAttribute('data-toggle', 'collapse');
-            buttonElement.setAttribute('data-target', '#collapseExample4');
+            buttonElement.setAttribute('data-target', '#collapseExample' + params.taskId);
             buttonElement.setAttribute('aria-expanded', 'false');
-            buttonElement.setAttribute('aria-controls', 'collapseExample4');
+            buttonElement.setAttribute('aria-controls', 'collapseExample' + params.taskId);
             buttonElement.innerHTML = 'Task name';
 
             pElement.appendChild(buttonElement);
@@ -187,7 +187,7 @@
 
             let collapseDiv = document.createElement('div');
             collapseDiv.classList.add('collapse');
-            collapseDiv.setAttribute('id', 'collapseExample4');
+            collapseDiv.setAttribute('id', 'collapseExample' + params.taskId);
 
             let cardDiv = document.createElement('div');
             cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
@@ -242,10 +242,14 @@
         }
 
         //document.querySelector('#task-container').innerHTML = '';
-        document.querySelector('#task-container').appendChild(createTask());
-        document.querySelector('#task-container').appendChild(createTask());
-        document.querySelector('#task-container').appendChild(createTask());
-        document.querySelector('#task-container').appendChild(createTask());
+
+        let params = {
+            'taskId': 1
+        };
+        document.querySelector('#task-container').appendChild(createTask(params));
+        document.querySelector('#task-container').appendChild(createTask(params));
+        document.querySelector('#task-container').appendChild(createTask(params));
+        document.querySelector('#task-container').appendChild(createTask(params));
     </script>
 
 
