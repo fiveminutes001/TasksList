@@ -176,7 +176,7 @@
             }
         ];
 
-        function getTaskData(taskId) {
+        function getTaskData(taskId, paramsArr) {
             for (params in paramsArr) {
                 if (params.taskId == taskId) {
                     return params;
