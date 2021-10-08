@@ -174,7 +174,7 @@
                 </div>
             </div>
 
-            <!-- Todo Item 1 -->
+            <!-- Todo Item 2 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
@@ -257,9 +257,9 @@
         buttonElement.classList.add('btn', 'btn-primary', 'w-100');
         buttonElement.setAttribute('type', 'button');
         buttonElement.setAttribute('data-toggle', 'collapse');
-        buttonElement.setAttribute('data-target', 'collapseExample');
+        buttonElement.setAttribute('data-target', 'collapseExample4');
         buttonElement.setAttribute('aria-expanded', 'false');
-        buttonElement.setAttribute('aria-controls', 'collapseExample');
+        buttonElement.setAttribute('aria-controls', 'collapseExample4');
         buttonElement.innerHTML = 'Task name';
 
         pElement.appendChild(buttonElement);
@@ -275,7 +275,7 @@
 
         let collapseDiv = document.createElement('div');
         colDiv.classList.add('collapse');
-        colDiv.setAttribute('id', 'collapseExample');
+        colDiv.setAttribute('id', 'collapseExample4');
 
         let cardDiv = document.createElement('div');
         cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
