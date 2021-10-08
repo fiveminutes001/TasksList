@@ -77,13 +77,13 @@
                     <!-- Set task name-->
                     <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                         <div class="col-12  m-0 mt-2 text-left">
-                            <label class="date-label my-2 text-black-50"><u>Add new</u></label>
+                            <label class="date-label my-2 text-black-50" id="section-header"><u>Add new</u></label>
                         </div>
                         <div class="col-12 col-sm-9 p-0 m-0 mt-2">
-                            <input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required>
+                            <input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required id="task-name">
                         </div>
                         <div class="col-12 col-sm-3 p-0 m-0 mt-2">
-                            <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required>
+                            <input id="setDate" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required id="task-due-date">
                         </div>
                     </div>
                     <!-- Set details -->
@@ -92,7 +92,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">details</span>
                             </div>
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" id="task-details"></textarea>
                         </div>
                     </div>
                     <!-- Set due date-->
@@ -153,6 +153,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
+        let paramsArr = [{
+                'taskId': 1,
+                'taskName': 'Task name',
+                'taskDetails': 'Task details',
+                'dueDate': '21/08/21',
+                'canBeDeleted': false
+            },
+            {
+                'taskId': 2,
+                'taskName': 'Task 2 name',
+                'taskDetails': 'Task 2 details',
+                'dueDate': '22/08/21',
+                'canBeDeleted': false
+            },
+            {
+                'taskId': 3,
+                'taskName': 'Task 3 name',
+                'taskDetails': 'Task 3 details',
+                'dueDate': '23/08/21',
+                'canBeDeleted': true
+            }
+        ];
+
+        function getTaskData(taskId) {
+            for (params in paramsArr) {
+                if (params.taskId == taskId) {
+                    return params;
+                }
+            }
+            return 0;
+        }
+
+        function updateTask(taskId) {
+            let sectionHeader = document.querySelector('#section-header');
+            let taskName = document.querySelector('#task-name');
+            let taskDueDate = document.querySelector('#task-due-date');
+            let taskDetails = document.querySelector('#task-details');
+
+            let params = getTaskData(taskId);
+
+            if (params) {
+                sectionHeader.innerHTML = "Editing task no." + taskId + "."
+                taskName.value = params.taskName;
+                taskDueDate.value = params.dueDate;
+                taskDetails.value = params.taskDetails;
+            }
+        }
+
         function createTask(params) {
             let task = document.createElement('div');
             task.classList.add('col-12', 'col-sm-6', 'm-0');
@@ -215,7 +263,7 @@
             iElementEdit.setAttribute('data-toggle', 'tooltip');
             iElementEdit.setAttribute('data-placement', 'bottom');
             iElementEdit.setAttribute('title', 'Edit todo');
-            iElementEdit.setAttribute('onclick', 'alert(' + params.taskId + ')');
+            iElementEdit.setAttribute('onclick', 'updateTask(' + params.taskId + ')');
 
 
             let iElementDelete = document.createElement('i');
@@ -244,29 +292,6 @@
         }
 
         //document.querySelector('#task-container').innerHTML = '';
-
-        let paramsArr = [{
-                'taskId': 1,
-                'taskName': 'Task name',
-                'taskDetails': 'Task details',
-                'dueDate': '21/08/21',
-                'canBeDeleted': false
-            },
-            {
-                'taskId': 2,
-                'taskName': 'Task 2 name',
-                'taskDetails': 'Task 2 details',
-                'dueDate': '22/08/21',
-                'canBeDeleted': false
-            },
-            {
-                'taskId': 3,
-                'taskName': 'Task 3 name',
-                'taskDetails': 'Task 3 details',
-                'dueDate': '23/08/21',
-                'canBeDeleted': true
-            }
-        ];
 
         for (params of paramsArr) {
             document.querySelector('#task-container').appendChild(createTask(params));
