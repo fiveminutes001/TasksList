@@ -283,8 +283,6 @@
         class ToDo {
             constructor() {
                 this.innerHTML = template.innerHTML;
-                this.shadowRoot._items = [];
-
             }
 
             set items(value) {
