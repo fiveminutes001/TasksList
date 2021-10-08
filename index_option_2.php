@@ -241,91 +241,95 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
-        let task = document.createElement('div');
-        task.classList.add('col-12', 'col-sm-6', 'm-0');
+        function createTask() {
+            let task = document.createElement('div');
+            task.classList.add('col-12', 'col-sm-6', 'm-0');
 
-        let rowDiv = document.createElement('div');
-        rowDiv.classList.add('row');
+            let rowDiv = document.createElement('div');
+            rowDiv.classList.add('row');
 
-        let colDiv = document.createElement('div');
-        colDiv.classList.add('col-12', 'm-0', 'p-1', 'pb-0');
+            let colDiv = document.createElement('div');
+            colDiv.classList.add('col-12', 'm-0', 'p-1', 'pb-0');
 
-        let pElement = document.createElement('p');
-        pElement.classList.add('m-1');
+            let pElement = document.createElement('p');
+            pElement.classList.add('m-1');
 
-        let buttonElement = document.createElement('button');
-        buttonElement.classList.add('btn', 'btn-primary', 'w-100');
-        buttonElement.setAttribute('type', 'button');
-        buttonElement.setAttribute('data-toggle', 'collapse');
-        buttonElement.setAttribute('data-target', '#collapseExample4');
-        buttonElement.setAttribute('aria-expanded', 'false');
-        buttonElement.setAttribute('aria-controls', 'collapseExample4');
-        buttonElement.innerHTML = 'Task name';
+            let buttonElement = document.createElement('button');
+            buttonElement.classList.add('btn', 'btn-primary', 'w-100');
+            buttonElement.setAttribute('type', 'button');
+            buttonElement.setAttribute('data-toggle', 'collapse');
+            buttonElement.setAttribute('data-target', '#collapseExample4');
+            buttonElement.setAttribute('aria-expanded', 'false');
+            buttonElement.setAttribute('aria-controls', 'collapseExample4');
+            buttonElement.innerHTML = 'Task name';
 
-        pElement.appendChild(buttonElement);
-        colDiv.appendChild(pElement);
-        rowDiv.appendChild(colDiv);
-        task.appendChild(rowDiv);
+            pElement.appendChild(buttonElement);
+            colDiv.appendChild(pElement);
+            rowDiv.appendChild(colDiv);
 
-        let secondRowDiv = document.createElement('div');
-        secondRowDiv.classList.add('row');
+            let secondRowDiv = document.createElement('div');
+            secondRowDiv.classList.add('row');
 
-        let mDiv = document.createElement('div');
-        mDiv.classList.add('m-0', 'w-100');
+            let mDiv = document.createElement('div');
+            mDiv.classList.add('m-0', 'w-100');
 
-        let collapseDiv = document.createElement('div');
-        collapseDiv.classList.add('collapse');
-        collapseDiv.setAttribute('id', 'collapseExample4');
+            let collapseDiv = document.createElement('div');
+            collapseDiv.classList.add('collapse');
+            collapseDiv.setAttribute('id', 'collapseExample4');
 
-        let cardDiv = document.createElement('div');
-        cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
+            let cardDiv = document.createElement('div');
+            cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
 
-        let descP = document.createElement('p');
-        descP.innerHTML = 'details details details details';
+            let descP = document.createElement('p');
+            descP.innerHTML = 'details details details details';
 
-        let flexDiv = document.createElement('div');
-        flexDiv.classList.add('d-flex', 'flex-row', 'align-items-baseline');
+            let flexDiv = document.createElement('div');
+            flexDiv.classList.add('d-flex', 'flex-row', 'align-items-baseline');
 
-        let iElement = document.createElement('i');
-        iElement.classList.add('fa', 'fa-info-circle', 'my-2', 'text-black-50', 'm-2');
-        iElement.setAttribute('data-toggle', 'tooltip');
-        iElement.setAttribute('data-placement', 'bottom');
-        iElement.setAttribute('title', '28.12.21');
-        iElement.setAttribute('data-original-title', 'Created date');
+            let iElement = document.createElement('i');
+            iElement.classList.add('fa', 'fa-info-circle', 'my-2', 'text-black-50', 'm-2');
+            iElement.setAttribute('data-toggle', 'tooltip');
+            iElement.setAttribute('data-placement', 'bottom');
+            iElement.setAttribute('title', '28.12.21');
+            iElement.setAttribute('data-original-title', 'Created date');
 
-        let labelElement = document.createElement('label');
-        labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
-        labelElement.innerHTML = '28.12.21';
+            let labelElement = document.createElement('label');
+            labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
+            labelElement.innerHTML = '28.12.21';
 
-        let iElementEdit = document.createElement('i');
-        iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
-        iElementEdit.setAttribute('data-toggle', 'tooltip');
-        iElementEdit.setAttribute('data-placement', 'bottom');
-        iElementEdit.setAttribute('title', 'Edit todo');
-
-
-        let iElementDelete = document.createElement('i');
-        iElementDelete.classList.add('fa', 'fa-trash-o', 'text-danger', 'm-2', 'p-0');
-        iElementDelete.setAttribute('data-toggle', 'tooltip');
-        iElementDelete.setAttribute('data-placement', 'bottom');
-        iElementDelete.setAttribute('title', 'Delete todo');
-
-        documentFragment = document.createDocumentFragment();
-        flexDiv.appendChild(iElement);
-        flexDiv.appendChild(labelElement);
-        flexDiv.appendChild(iElementEdit);
-        flexDiv.appendChild(iElementDelete);
-        cardDiv.appendChild(descP);
-        cardDiv.appendChild(flexDiv);
-        collapseDiv.appendChild(cardDiv);
-        mDiv.appendChild(collapseDiv);
-        secondRowDiv.appendChild(mDiv);
+            let iElementEdit = document.createElement('i');
+            iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
+            iElementEdit.setAttribute('data-toggle', 'tooltip');
+            iElementEdit.setAttribute('data-placement', 'bottom');
+            iElementEdit.setAttribute('title', 'Edit todo');
 
 
-        task.appendChild(secondRowDiv);
+            let iElementDelete = document.createElement('i');
+            iElementDelete.classList.add('fa', 'fa-trash-o', 'text-danger', 'm-2', 'p-0');
+            iElementDelete.setAttribute('data-toggle', 'tooltip');
+            iElementDelete.setAttribute('data-placement', 'bottom');
+            iElementDelete.setAttribute('title', 'Delete todo');
 
+
+            flexDiv.appendChild(iElement);
+            flexDiv.appendChild(labelElement);
+            flexDiv.appendChild(iElementEdit);
+            flexDiv.appendChild(iElementDelete);
+            cardDiv.appendChild(descP);
+            cardDiv.appendChild(flexDiv);
+            collapseDiv.appendChild(cardDiv);
+            mDiv.appendChild(collapseDiv);
+            secondRowDiv.appendChild(mDiv);
+
+            task.appendChild(rowDiv);
+            task.appendChild(secondRowDiv);
+
+            documentFragment = document.createDocumentFragment();
+            return (documentFragment.appendChild(task));
+
+        }
         //document.querySelector('#task-container').innerHTML = '';
-        document.querySelector('#task-container').appendChild(task);
+        document.querySelector('#task-container').appendChild(createTask());
     </script>
 
 
