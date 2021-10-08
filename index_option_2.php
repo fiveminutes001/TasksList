@@ -271,7 +271,7 @@
         secondRowDiv.classList.add('row');
 
         let mDiv = document.createElement('div');
-        mDiv.classList.add('m-0');
+        mDiv.classList.add('m-0', 'w-100');
 
         let collapseDiv = document.createElement('div');
         collapseDiv.classList.add('collapse');
