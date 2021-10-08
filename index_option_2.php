@@ -284,7 +284,7 @@
             constructor() {
                 this.innerHTML = template.innerHTML;
 
-                console.log(todo.innerHTML);
+                console.log(this.innerHTML);
                 // this.updateContent();
             }
 
