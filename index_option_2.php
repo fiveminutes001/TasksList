@@ -304,8 +304,8 @@
             }
         }
 
-        window.customElements.define('task', TaskElement);
-        let thisTask = document.createElement('task');
+        window.customElements.define('taskElement', TaskElement);
+        let thisTask = document.createElement('taskElement');
 
         // function searchFunc() {
         //     let a = document.querySelector('search-result');
