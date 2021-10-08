@@ -283,8 +283,8 @@
         class ToDo {
             constructor() {
                 this.innerHTML = template.innerHTML;
-                let todo = document.createElement('div').appendChild(template.content.cloneNode(true));
-                console.log(todo);
+
+                console.log(todo.innerHTML);
                 // this.updateContent();
             }
 
@@ -297,7 +297,7 @@
             }
 
             updateContent() {
-                this.innerHTML.querySelector('div').setAttribute('to-do-id', this._items[0]);
+                template.querySelector('div').setAttribute('to-do-id', this._items[0]);
                 this.innerHTML.querySelector('button').setAttribute('data-target', '#collapseNum' + this._items[0]);
                 this.innerHTML.querySelector('.collapse').setAttribute('id', '#collapseNum' + this._items[0]);
             }
