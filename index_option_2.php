@@ -302,6 +302,10 @@
                 return this._items;
             }
 
+            updateContent() {
+                shadow.querySelector('div').setAttribute('to-do-id', this._items[0]);
+            }
+
             static get observedAttributes() {
                 return ['name-attribute'];
             }
@@ -316,6 +320,8 @@
         window.customElements.define('to-do', ToDo);
         let thisTask = document.createElement('to-do');
         thisTask.items = ['1', '2'];
+        thisTask.updateContent();
+        document.body.appendChild(thisTask);
         console.log(thisTask);
         // thisTask.setAttribute('to-do-id', 1);
         // thisTask.setAttribute('text', 'some text');
