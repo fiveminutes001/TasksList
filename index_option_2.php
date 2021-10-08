@@ -311,8 +311,8 @@
         }
 
         window.customElements.define('to-do', ToDo);
-        //let thisTask = document.createElement('to-do');
-        let thisTask = Todo();
+        let thisTask = document.createElement('to-do');
+
         thisTask.setAttribute('to-do-id', 1);
         thisTask.setAttribute('text', 'some text');
 
