@@ -143,8 +143,8 @@
 
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
-            <search-result name-attribute="test"></search-result>
-            <button onclick="searchFunc()">Click to search text</button>
+            <Task name-attribute="test"></Task>
+
             <!-- Todo Item 1 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
@@ -176,11 +176,11 @@
             </div>
 
             <!-- Todo Item 2 -->
-            <div class="col-12 col-sm-6 m-0">
+            <div class="col-12 col-sm-6 m-0" id="task2">
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
-                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="task-name" class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
                             </button>
                         </p>
@@ -191,13 +191,13 @@
                     <div class="m-0">
                         <div class="collapse" id="collapseExample2">
 
-                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1">
+                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 task-details">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
                                     <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                    <label class="date-label my-2 text-black-50 m-2">28th Jun 2020</label>
-                                    <i class="fa fa-pencil text-info m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                                    <i class="fa fa-trash-o text-danger m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                                    <label class="date-label my-2 text-black-50 m-2 task-creation-date">28th Jun 2020</label>
+                                    <i class="fa fa-pencil text-info m-2 p-0 task-edit" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                    <i class="fa fa-trash-o text-danger m-2 p-0 task-delete" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
                                 </div>
                             </div>
                         </div>
@@ -242,33 +242,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
-        // class Task {
-
-        // }
         const template = document.createElement('template');
         template.innerHTML = `
-        <style>
-            div {
-            margin-top: 20px;
-            color: green;
-            }
-        </style>
-        <div>
-            <p>The Google search result of your name is <a target="_blank" rel="noopener">here</a></p>
-        </div>
+        <style></style>
+        <!-- Task -->
+            <div class="col-12 col-sm-6 m-0 top-div">
+                <div class="row">
+                    <div class="col-12 m-0 p-1 pb-0">
+                        <p class="m-1">
+                            <button class="task-name btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                                Button with data-target
+                            </button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="m-0">
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 task-details">
+                                <p>details details details details details details details details details details details details details </p>
+                                <div class="d-flex flex-row align-items-baseline">
+                                    <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                                    <label class="date-label my-2 text-black-50 m-2 task-creation-date">28th Jun 2020</label>
+                                    <i class="fa fa-pencil text-info m-2 p-0 task-edit" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                    <i class="fa fa-trash-o text-danger m-2 p-0 task-delete" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         `;
 
-        class SearchResult extends HTMLElement {
-            constructor() {
-                super();
+        const items = ['Task 1', 'Task 2', 'Task 3'];
+        const descriptions = ['Desc 1', 'Desc 2', 'Desc 3'];
 
+        class Task extends HTMLElement {
+            constructor(item, description) {
+                super();
                 this.attachShadow({
                     mode: 'open'
                 });
 
                 this.shadowRoot.appendChild(template.content.cloneNode(true));
+                console.log("this is:", this);
 
-                this.shadowRoot.querySelector('a').href = '';
+                // const items = Array.from(this.querySelectorAll('li'));
+                // const descriptions = Array.from(this.querySelectorAll('p'));
+
             }
 
             static get observedAttributes() {
@@ -277,22 +299,19 @@
 
             attributeChangedCallback(name, oldValue, newValue) {
                 if (name == 'name-attribute') {
-                    this.shadowRoot.querySelector(
-                        'a'
-                    ).href = `https://www.google.com/search?q=${newValue}`;
+                    this.shadowRoot.querySelector('a').href = `https://www.google.com/search?q=${newValue}`;
                 }
             }
         }
 
-        window.customElements.define('search-result', SearchResult);
-        let expandingList = document.createElement('search-result');
-        console.log(expandingList);
+        window.customElements.define('task', Task);
+        let thisTask = document.createElement('task');
 
-        function searchFunc() {
-            let a = document.querySelector('search-result');
-            a.setAttribute("name-attribute", "text");
-            console.log(a);
-        }
+        // function searchFunc() {
+        //     let a = document.querySelector('search-result');
+        //     a.setAttribute("name-attribute", "text");
+        //     console.log(a);
+        // }
     </script>
 
 
