@@ -286,8 +286,8 @@
                 });
 
                 this.shadowRoot.appendChild(template.content.cloneNode(true));
-                let todo = this.shadowRoot;
-                console.log("this is:", todo.querySelector('div'));
+
+                console.log("this is:", this.shadowRoot.querySelector('div'));
 
                 // const items = Array.from(this.querySelectorAll('li'));
                 // const descriptions = Array.from(this.querySelectorAll('p'));
