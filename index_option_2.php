@@ -303,7 +303,7 @@
 
         }
 
-        let thisTask = new ToDo(item, description);
+        let thisTask = new ToDo(items[0], descriptions[0]);
     </script>
 
 
