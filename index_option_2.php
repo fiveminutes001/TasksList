@@ -283,6 +283,7 @@
         class ToDo {
             constructor() {
                 this.innerHTML = template.innerHTML;
+                this.updateContent();
             }
 
             set items(value) {
@@ -294,9 +295,9 @@
             }
 
             updateContent() {
-                this.shadowRoot.querySelector('div').setAttribute('to-do-id', this._items[0]);
-                this.shadowRoot.querySelector('button').setAttribute('data-target', '#collapseNum' + this._items[0]);
-                this.shadowRoot.querySelector('.collapse').setAttribute('id', '#collapseNum' + this._items[0]);
+                this.innerHTML.querySelector('div').setAttribute('to-do-id', this._items[0]);
+                this.innerHTML.querySelector('button').setAttribute('data-target', '#collapseNum' + this._items[0]);
+                this.innerHTML.querySelector('.collapse').setAttribute('id', '#collapseNum' + this._items[0]);
             }
 
         }
