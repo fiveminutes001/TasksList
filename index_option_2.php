@@ -243,9 +243,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
-        let task = document.createElement('div');
-        task.classList.add('col-12', 'col-sm-6', 'm-0');
-        task.appendChild(document.createElement('div').classList.add('row'));
+        let todo = document.createElement('div');
+        todo.classList.add('col-12', 'col-sm-6', 'm-0');
+        todo.appendChild(document.createElement('div').classList.add('row'));
 
 
         //document.querySelector('#task-container').innerHTML = '';
