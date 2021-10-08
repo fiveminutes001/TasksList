@@ -173,7 +173,7 @@
             buttonElement.setAttribute('data-target', '#collapseExample' + params.taskId);
             buttonElement.setAttribute('aria-expanded', 'false');
             buttonElement.setAttribute('aria-controls', 'collapseExample' + params.taskId);
-            buttonElement.innerHTML = 'Task name';
+            buttonElement.innerHTML = params.taskName;
 
             pElement.appendChild(buttonElement);
             colDiv.appendChild(pElement);
@@ -193,7 +193,7 @@
             cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
 
             let descP = document.createElement('p');
-            descP.innerHTML = 'details details details details';
+            descP.innerHTML = params.taskDetails;
 
             let flexDiv = document.createElement('div');
             flexDiv.classList.add('d-flex', 'flex-row', 'align-items-baseline');
@@ -244,7 +244,9 @@
         //document.querySelector('#task-container').innerHTML = '';
 
         let params = {
-            'taskId': 1
+            'taskId': 1,
+            'taskName': 'Task name',
+            'taskDetails': 'Task details'
         };
         document.querySelector('#task-container').appendChild(createTask(params));
         document.querySelector('#task-container').appendChild(createTask(params));
