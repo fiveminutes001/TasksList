@@ -174,12 +174,12 @@
                 </div>
             </div>
 
-            <!-- Todo Item 2 -->
-            <div class="col-12 col-sm-6 m-0" id="task2">
+            <!-- Todo Item 1 -->
+            <div class="col-12 col-sm-6 m-0">
                 <div class="row">
                     <div class="col-12 m-0 p-1 pb-0">
                         <p class="m-1">
-                            <button class="task-name" class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                                 Button with data-target
                             </button>
                         </p>
@@ -190,13 +190,13 @@
                     <div class="m-0">
                         <div class="collapse" id="collapseExample2">
 
-                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 task-details">
+                            <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1">
                                 <p>details details details details details details details details details details details details details </p>
                                 <div class="d-flex flex-row align-items-baseline">
                                     <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
-                                    <label class="date-label my-2 text-black-50 m-2 task-creation-date">28th Jun 2020</label>
-                                    <i class="fa fa-pencil text-info m-2 p-0 task-edit" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
-                                    <i class="fa fa-trash-o text-danger m-2 p-0 task-delete" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                                    <label class="date-label my-2 text-black-50 m-2">28th Jun 2020</label>
+                                    <i class="fa fa-pencil text-info m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                    <i class="fa fa-trash-o text-danger m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
                                 </div>
                             </div>
                         </div>
@@ -237,10 +237,49 @@
         <div class="row mx-1 pb-3 w-80" id="tasks-div"></div>
     </div>
 
+    <template id="task-template">
+        <!-- Todo -->
+        <div class="col-12 col-sm-6 m-0">
+            <div class="row">
+                <div class="col-12 m-0 p-1 pb-0">
+                    <p class="m-1">
+                        <button class="task-name btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#a" aria-expanded="false" aria-controls="collapseExample">
+                            Button with data-target
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="m-0">
+                    <div class="collapse" id="#a">
+                        <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 task-details">
+                            <p>details details details details details details details details details details details details details </p>
+                            <div class="d-flex flex-row align-items-baseline">
+                                <i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Created date"></i>
+                                <label class="date-label my-2 text-black-50 m-2 task-creation-date">28th Jun 2020</label>
+                                <i class="fa fa-pencil text-info m-2 p-0 task-edit" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                                <i class="fa fa-trash-o text-danger m-2 p-0 task-delete" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootlint/1.1.0/bootlint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        const container = document.querySelector('#tasks-div');
+        const template = document.getElementById('task-template');
+        const fetchingNode = document.importNode(template.content, true);
+        container.replaceWith(fetchingNode);
+    </script>
+
 
     <script>
         window.onload = function() {
