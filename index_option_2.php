@@ -215,6 +215,7 @@
             iElementEdit.setAttribute('data-toggle', 'tooltip');
             iElementEdit.setAttribute('data-placement', 'bottom');
             iElementEdit.setAttribute('title', 'Edit todo');
+            iElementEdit.setAttribute('onclick', 'alert(' + params.taskId + ')');
 
 
             let iElementDelete = document.createElement('i');
