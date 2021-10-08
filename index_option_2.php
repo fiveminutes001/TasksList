@@ -156,6 +156,7 @@
         function createTask(params) {
             let task = document.createElement('div');
             task.classList.add('col-12', 'col-sm-6', 'm-0');
+            task.setAttribute('task-id', params.taskId);
 
             let rowDiv = document.createElement('div');
             rowDiv.classList.add('row');
