@@ -252,7 +252,7 @@
 
             <div class="row">
                 <div class="m-0">
-                    <div class="collapse" id="#a">
+                    <div class="collapse" id="a">
                         <div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 task-details">
                             <p>details details details details details details details details details details details details details </p>
                             <div class="d-flex flex-row align-items-baseline">
