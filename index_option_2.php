@@ -202,12 +202,12 @@
             iElement.classList.add('fa', 'fa-info-circle', 'my-2', 'text-black-50', 'm-2');
             iElement.setAttribute('data-toggle', 'tooltip');
             iElement.setAttribute('data-placement', 'bottom');
-            iElement.setAttribute('title', '28.12.21');
+            iElement.setAttribute('title', 'Due date');
             iElement.setAttribute('data-original-title', 'Created date');
 
             let labelElement = document.createElement('label');
             labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
-            labelElement.innerHTML = '28.12.21';
+            labelElement.innerHTML = params.dueDate;
 
             let iElementEdit = document.createElement('i');
             iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
@@ -246,17 +246,23 @@
         let paramsArr = [{
                 'taskId': 1,
                 'taskName': 'Task name',
-                'taskDetails': 'Task details'
+                'taskDetails': 'Task details',
+                'dueDate': '21/08/21',
+                'canBeDeleted': false
             },
             {
                 'taskId': 2,
                 'taskName': 'Task 2 name',
-                'taskDetails': 'Task 2 details'
+                'taskDetails': 'Task 2 details',
+                'dueDate': '22/08/21',
+                'canBeDeleted': false
             },
             {
                 'taskId': 3,
                 'taskName': 'Task 3 name',
-                'taskDetails': 'Task 3 details'
+                'taskDetails': 'Task 3 details',
+                'dueDate': '23/08/21',
+                'canBeDeleted': true
             }
         ];
 
