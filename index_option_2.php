@@ -243,15 +243,26 @@
 
         //document.querySelector('#task-container').innerHTML = '';
 
-        let params = {
-            'taskId': 1,
-            'taskName': 'Task name',
-            'taskDetails': 'Task details'
-        };
-        document.querySelector('#task-container').appendChild(createTask(params));
-        document.querySelector('#task-container').appendChild(createTask(params));
-        document.querySelector('#task-container').appendChild(createTask(params));
-        document.querySelector('#task-container').appendChild(createTask(params));
+        let paramsArr = [{
+                'taskId': 1,
+                'taskName': 'Task name',
+                'taskDetails': 'Task details'
+            },
+            {
+                'taskId': 2,
+                'taskName': 'Task 2 name',
+                'taskDetails': 'Task 2 details'
+            },
+            {
+                'taskId': 3,
+                'taskName': 'Task 3 name',
+                'taskDetails': 'Task 3 details'
+            }
+        ];
+
+        for (params of paramsArr) {
+            document.querySelector('#task-container').appendChild(createTask(params));
+        }
     </script>
 
 
