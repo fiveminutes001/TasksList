@@ -194,7 +194,7 @@
             let params = getTaskData(taskId);
 
             if (params) {
-                sectionHeader.innerHTML = "Editing task no." + taskId + "."
+                sectionHeader.innerHTML = "Editing task no." + taskId + ".";
                 taskName.value = params.taskName;
                 taskDueDate.value = params.dueDate;
                 taskDetails.value = params.taskDetails;
