@@ -274,8 +274,8 @@
         mDiv.classList.add('m-0');
 
         let collapseDiv = document.createElement('div');
-        colDiv.classList.add('collapse');
-        colDiv.setAttribute('id', 'collapseExample4');
+        collapseDiv.classList.add('collapse');
+        collapseDiv.setAttribute('id', 'collapseExample4');
 
         let cardDiv = document.createElement('div');
         cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
