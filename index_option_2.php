@@ -287,7 +287,9 @@
 
                 this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-                console.log("this is:", this.shadowRoot.querySelector('div'));
+                //Adding task id to top div
+                this.shadowRoot.querySelector('div').setAttribute('to-do-id', '1');
+                console.log("this is:", this);
 
                 // const items = Array.from(this.querySelectorAll('li'));
                 // const descriptions = Array.from(this.querySelectorAll('p'));
