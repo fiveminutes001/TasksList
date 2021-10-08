@@ -144,6 +144,7 @@
         <!-- Todo list section -->
         <div class="row mx-1 pb-3 w-80">
             <search-result name-attribute="test"></search-result>
+            <button onclick="searchFunc()">Click to search text</button>
             <!-- Todo Item 1 -->
             <div class="col-12 col-sm-6 m-0">
                 <div class="row">
@@ -286,6 +287,11 @@
         window.customElements.define('search-result', SearchResult);
         let expandingList = document.createElement('search-result');
         console.log(expandingList);
+
+        function searchFunc() {
+            let a = document.querySelector('search-result');
+            console.log(a);
+        }
     </script>
 
 
