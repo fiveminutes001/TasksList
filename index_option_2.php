@@ -245,7 +245,8 @@
     <script>
         let todo = document.createElement('div');
         todo.classList.add('col-12', 'col-sm-6', 'm-0');
-        todo.appendChild(document.createElement('div').classList.add('row'));
+        let h2 = document.createElement('h2');
+        todo.appendChild(h2);
 
 
         //document.querySelector('#task-container').innerHTML = '';
