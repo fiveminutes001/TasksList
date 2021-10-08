@@ -142,7 +142,7 @@
         </div>
 
         <!-- Todo list section -->
-        <div class="row mx-1 pb-3 w-80">
+        <div class="row mx-1 pb-3 w-80" id="task-container">
 
             <!-- Todo Item 1 -->
             <div class="col-12 col-sm-6 m-0">
@@ -237,14 +237,16 @@
         <div class="row mx-1 pb-3 w-80" id="tasks-div"></div>
     </div>
 
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootlint/1.1.0/bootlint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-
+    <script>
+        let task = document.createElement('div');
+        task.innerHTML = 'test';
+        document.querySelector('#task-container').appendChild(task);
+    </script>
 
 
     <script>
