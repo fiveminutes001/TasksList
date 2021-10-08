@@ -278,21 +278,24 @@
         const items = ['Task 1', 'Task 2', 'Task 3'];
         const descriptions = ['Desc 1', 'Desc 2', 'Desc 3'];
 
+        // const items = Array.from(this.querySelectorAll('li'));
+        // const descriptions = Array.from(this.querySelectorAll('p'));
+
         class ToDo extends HTMLElement {
-            constructor(item, description) {
+            constructor() {
                 super();
-                this.attachShadow({
+                const shadow = this.attachShadow({
                     mode: 'open'
                 });
-
-                this.shadowRoot.appendChild(template.content.cloneNode(true));
+                shadow.appendChild(template.content.cloneNode(true));
 
                 //Adding task id to top div
-                this.shadowRoot.querySelector('div').setAttribute('to-do-id', '1');
+                shadow.querySelector('div').setAttribute('to-do-id', this.getAttribute(`to-do-id`));
+                shadow.querySelector('button').innerHTML = this.getAttribute(`item`);
+                //shadow.querySelector('button').setAttribute('data-target','#collapseExample'+ this.shadowRoot.querySelector('div').getAttribute('to-do-id'));
                 console.log("this is:", this);
 
-                // const items = Array.from(this.querySelectorAll('li'));
-                // const descriptions = Array.from(this.querySelectorAll('p'));
+
 
             }
 
@@ -308,7 +311,10 @@
         }
 
         window.customElements.define('to-do', ToDo);
-        let thisTask = document.createElement('to-do');
+        //let thisTask = document.createElement('to-do');
+        let thisTask = Todo();
+        thisTask.setAttribute('to-do-id', 1);
+        thisTask.setAttribute('text', 'some text');
 
         // function searchFunc() {
         //     let a = document.querySelector('search-result');
