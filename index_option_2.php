@@ -278,7 +278,7 @@
         const items = ['Task 1', 'Task 2', 'Task 3'];
         const descriptions = ['Desc 1', 'Desc 2', 'Desc 3'];
 
-        class Task extends HTMLElement {
+        class TaskElement extends HTMLElement {
             constructor(item, description) {
                 super();
                 this.attachShadow({
@@ -304,7 +304,7 @@
             }
         }
 
-        window.customElements.define('task', Task);
+        window.customElements.define('task', TaskElement);
         let thisTask = document.createElement('task');
 
         // function searchFunc() {
