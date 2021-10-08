@@ -186,19 +186,20 @@
         }
 
         function updateTask(taskId) {
-            let sectionHeader = document.querySelector('#section-header');
-            let taskName = document.querySelector('#task-name');
-            let taskDueDate = document.querySelector('#task-due-date');
-            let taskDetails = document.querySelector('#task-details');
+            alert('hi');
+            // let sectionHeader = document.querySelector('#section-header');
+            // let taskName = document.querySelector('#task-name');
+            // let taskDueDate = document.querySelector('#task-due-date');
+            // let taskDetails = document.querySelector('#task-details');
 
-            let params = getTaskData(taskId);
+            // let params = getTaskData(taskId);
 
-            if (params) {
-                sectionHeader.innerHTML = "Editing task no." + taskId + ".";
-                taskName.value = params.taskName;
-                taskDueDate.value = params.dueDate;
-                taskDetails.value = params.taskDetails;
-            }
+            // if (params) {
+            //     sectionHeader.innerHTML = "Editing task no." + taskId + ".";
+            //     taskName.value = params.taskName;
+            //     taskDueDate.value = params.dueDate;
+            //     taskDetails.value = params.taskDetails;
+            // }
         }
 
         function createTask(params) {
