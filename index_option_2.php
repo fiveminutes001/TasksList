@@ -245,11 +245,11 @@
     <script>
         let task = document.createElement('div');
         task.classList.add('col-12', 'col-sm-6', 'm-0');
-        console.log(task.innerHTML);
+        task.appendChild(document.createElement('div').classList.add('row'));
 
 
         //document.querySelector('#task-container').innerHTML = '';
-        //document.querySelector('#task-container').appendChild(task);
+        document.querySelector('#task-container').appendChild(task);
     </script>
 
 
