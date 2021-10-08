@@ -245,8 +245,10 @@
     <script>
         let task = document.createElement('div');
         task.innerHTML = 'test';
-        document.querySelector('#task-container').innerHTML = '';
-        document.querySelector('#task-container').appendChild(task);
+
+
+        //document.querySelector('#task-container').innerHTML = '';
+        //document.querySelector('#task-container').appendChild(task);
     </script>
 
 
