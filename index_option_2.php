@@ -244,10 +244,30 @@
 
     <script>
         let task = document.createElement('div');
-        task.innerHTML = 'test';
         task.classList.add('col-12', 'col-sm-6', 'm-0');
-        let h2 = document.createElement('h2');
-        task.appendChild(h2);
+
+        let rowDiv = document.createElement('div');
+        rowDiv.classList.add('row');
+
+        let colDiv = document.createElement('div');
+        colDiv.classList.add('col-12', 'm-0', 'p-1', 'pb-0');
+
+        let pElement = document.createElement('p');
+        pElement.classList.add('m-1');
+
+        let buttonElement = document.createElement('button');
+        buttonElement.classList.add('btn', 'btn-primary', 'w-100');
+        buttonElement.setAttribute('type', 'button');
+        buttonElement.setAttribute('data-toggle', 'collapse');
+        buttonElement.setAttribute('data-target', 'collapseExample');
+        buttonElement.setAttribute('aria-expanded', 'false');
+        buttonElement.setAttribute('aria-controls', 'collapseExample');
+        buttonElement.innerHTML = 'Task name';
+
+        pElement.appendChild(buttonElement);
+        colDiv.appendChild(pElement);
+        rowDiv.appendChild(colDiv);
+        task.appendChild(rowDiv);
 
 
         //document.querySelector('#task-container').innerHTML = '';
