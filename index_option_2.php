@@ -233,8 +233,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mx-1 pb-3 w-80" id="tasks-div"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -267,6 +265,7 @@
         pElement.appendChild(buttonElement);
         colDiv.appendChild(pElement);
         rowDiv.appendChild(colDiv);
+        task.appendChild(rowDiv);
 
         let secondRowDiv = document.createElement('div');
         secondRowDiv.classList.add('row');
@@ -322,7 +321,7 @@
         mDiv.appendChild(collapseDiv);
         secondRowDiv.appendChild(mDiv);
 
-        task.appendChild(rowDiv);
+
         task.appendChild(secondRowDiv);
 
         //document.querySelector('#task-container').innerHTML = '';
