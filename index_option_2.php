@@ -244,7 +244,8 @@
 
     <script>
         let task = document.createElement('div');
-        task.innerHTML = 'test';
+        task.classList.add('col-12 col-sm-6 m-0');
+        console.log(task);
 
 
         //document.querySelector('#task-container').innerHTML = '';
