@@ -187,11 +187,13 @@
         }
 
         function updateTask(taskId, paramsArr) {
-            alert('hi');
+
             let sectionHeader = document.querySelector('#section-header');
             let taskName = document.querySelector('#task-name');
             let taskDueDate = document.querySelector('#task-due-date');
             let taskDetails = document.querySelector('#task-details');
+
+            console.log(paramsArr);
 
             let params = getTaskData(taskId, paramsArr);
 
