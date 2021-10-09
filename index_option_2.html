@@ -154,6 +154,39 @@
 					</form>
 				</div>
 			</template>
+
+			<!-- Todo Template -->
+			<template>
+				<div class="col-12 col-sm-6 m-0 task-1">
+					<div class="row">
+						<div class="col-12 m-0 p-1 pb-0">
+							<p class="m-1">
+								<!-- prettier-ignore -->
+								<button class="btn btn-primary w-100 task-1-name" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1">
+									Task name
+								</button>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="m-0 w-100">
+							<div class="collapse show" id="collapseExample1" style="">
+								<div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1">
+									<form class="is-readonly">
+										<p class="task-1-details">Task details</p>
+										<div class="d-flex flex-row align-items-baseline">
+											<i class="fa fa-info-circle my-2 text-black-50 m-2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Due date"></i>
+											<label class="date-label my-2 text-black-50 m-2 task-1-due-date">21/08/21</label>
+											<i class="fa fa-pencil text-info m-2 p-0" onclick="updateTask(1);"></i>
+											<i class="fa fa-trash-o text-danger m-2 p-0" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete todo"></i>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</template>
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
