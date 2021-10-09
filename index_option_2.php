@@ -50,7 +50,7 @@
             display: inline-block !important
         }
     </style>
-
+    <link rel="stylesheet" href="css/formBox.css">
 </head>
 
 <body>
@@ -145,6 +145,25 @@
         <div class="row mx-1 pb-3 w-80" id="task-container">
 
         </div>
+
+        <!-- Template -->
+        <template>
+            <div class="container">
+                <form class="is-readonly">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Full Name</label>
+                        <input type="text" class="form-control is-disabled" id="exampleInputPassword1" placeholder="Name" value="Jon Stewart" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control is-disabled" id="exampleInputEmail1" placeholder="Email" value="MyEmail@MyDowmain.Com" disabled>
+                    </div>
+                    <button type="button" class="btn btn-default btn-edit js-edit">Edit</button>
+                    <button type="button" class="btn btn-default btn-save js-save">Save</button>
+                </form>
+
+            </div>
+        </template>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -176,6 +195,13 @@
             }
         ];
 
+        function getTemplate() {
+            var temp = document.getElementsByTagName("template")[0];
+            var clon = temp.content.cloneNode(true);
+            //document.body.appendChild(clon);
+            return clon;
+        }
+
         function getTaskData(taskId) {
             return oldTask = {
                 'taskId': taskId,
@@ -202,7 +228,7 @@
             console.log(newTaskElements);
 
             if (oldTask) {
-                alert('ready to edit!');
+                newTaskElements.taskName.outerHTML = '';
             }
         }
 
@@ -266,18 +292,13 @@
 
             let iElementEdit = document.createElement('i');
             iElementEdit.classList.add('fa', 'fa-pencil', 'text-info', 'm-2', 'p-0');
-            // iElementEdit.setAttribute('data-toggle', 'tooltip');
-            // iElementEdit.setAttribute('data-placement', 'bottom');
-            // iElementEdit.setAttribute('title', 'Edit todo');
             iElementEdit.setAttribute('onclick', 'updateTask(' + params.taskId + ');');
-
 
             let iElementDelete = document.createElement('i');
             iElementDelete.classList.add('fa', 'fa-trash-o', 'text-danger', 'm-2', 'p-0');
             iElementDelete.setAttribute('data-toggle', 'tooltip');
             iElementDelete.setAttribute('data-placement', 'bottom');
             iElementDelete.setAttribute('title', 'Delete todo');
-
 
             flexDiv.appendChild(iElement);
             flexDiv.appendChild(labelElement);
@@ -293,8 +314,10 @@
             task.appendChild(secondRowDiv);
 
             documentFragment = document.createDocumentFragment();
-            return (documentFragment.appendChild(task));
+            //return (documentFragment.appendChild(task));
 
+            task = getTemplate();
+            return (documentFragment.appendChild(task));
         }
 
         //document.querySelector('#task-container').innerHTML = '';
