@@ -137,7 +137,7 @@
 			<!-- Todo list section -->
 			<div class="row mx-1 pb-3 w-80" id="task-container"></div>
 
-			<!-- Template -->
+			<!-- Form Template -->
 			<template>
 				<div class="container">
 					<form class="is-readonly">
@@ -311,8 +311,8 @@
 			//document.querySelector('#task-container').innerHTML = '';
 
 			for (params of paramsArr) {
-				//document.querySelector('#task-container').appendChild(createTask(params));
-				document.querySelector('#task-container').appendChild(getTemplate());
+				document.querySelector('#task-container').appendChild(createTask(params));
+				// document.querySelector('#task-container').appendChild(getTemplate());
 			}
 		</script>
 
