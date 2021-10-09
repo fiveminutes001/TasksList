@@ -195,9 +195,8 @@
                 'taskName': document.querySelector('#task-name'),
                 'taskDetails': document.querySelector('#task-details'),
                 'dueDate': document.querySelector('#task-due-date'),
-                'canBeDeleted': document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false;
+                'canBeDeleted': document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false,
             }
-
             let oldTask = getTaskData(taskId);
             console.log(oldTask);
             console.log(newTaskElements);
