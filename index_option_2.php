@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -18,9 +19,8 @@
             line-height: 1.6;
         }
 
-
         .view-opt-label,
-        .date-label {
+        .date-label {            
             font-size: 0.8rem;
         }
 
