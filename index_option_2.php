@@ -198,8 +198,7 @@
         function getTemplate() {
             var temp = document.getElementsByTagName("template")[0];
             var clon = temp.content.cloneNode(true);
-            //document.body.appendChild(clon);
-            return clon;
+            document.body.appendChild(clon);
         }
 
         function getTaskData(taskId) {
@@ -314,16 +313,15 @@
             task.appendChild(secondRowDiv);
 
             documentFragment = document.createDocumentFragment();
-            //return (documentFragment.appendChild(task));
-
-            task = getTemplate();
             return (documentFragment.appendChild(task));
+
         }
 
         //document.querySelector('#task-container').innerHTML = '';
 
         for (params of paramsArr) {
-            document.querySelector('#task-container').appendChild(createTask(params));
+            //document.querySelector('#task-container').appendChild(createTask(params));
+            document.querySelector('#task-container').appendChild(getTemplate());
         }
     </script>
 
