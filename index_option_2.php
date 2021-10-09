@@ -182,7 +182,7 @@
                 'taskName': document.querySelector('.task-' + taskId + '-name').innerHTML,
                 'taskDetails': document.querySelector('.task-' + taskId + '-details').innerHTML,
                 'dueDate': document.querySelector('.task-' + taskId + '-due-date').innerHTML,
-                'canBeDeleted': document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false;
+                'canBeDeleted': document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false,
             }
         }
 
