@@ -176,26 +176,18 @@
             }
         ];
 
-        function getTaskData(taskId, paramsArr) {
-            for (params in paramsArr) {
-                console.log(params.taskId);
-                if (params.taskId == taskId) {
-                    return params;
-                }
-            }
-            return 0;
+        function getTaskData(taskId) {
+
         }
 
-        function updateTask(taskId, paramsArr) {
+        function updateTask(taskId) {
 
             let sectionHeader = document.querySelector('#section-header');
             let taskName = document.querySelector('#task-name');
             let taskDueDate = document.querySelector('#task-due-date');
             let taskDetails = document.querySelector('#task-details');
 
-            console.log(paramsArr);
-
-            let params = getTaskData(taskId, paramsArr);
+            let params = getTaskData(taskId);
 
             if (params) {
                 sectionHeader.innerHTML = "Editing task no." + taskId + ".";
@@ -220,7 +212,7 @@
             pElement.classList.add('m-1');
 
             let buttonElement = document.createElement('button');
-            buttonElement.classList.add('btn', 'btn-primary', 'w-100');
+            buttonElement.classList.add('btn', 'btn-primary', 'w-100', 'task-' + params.taskId + '-name');
             buttonElement.setAttribute('type', 'button');
             buttonElement.setAttribute('data-toggle', 'collapse');
             buttonElement.setAttribute('data-target', '#collapseExample' + params.taskId);
@@ -246,6 +238,7 @@
             cardDiv.classList.add('card', 'card-body', 'ml-2', 'mr-2', 'mt-0', 'mb-3', 'pt-2', 'pb-1');
 
             let descP = document.createElement('p');
+            descP.classList.add('task-' + params.taskId + '-details');
             descP.innerHTML = params.taskDetails;
 
             let flexDiv = document.createElement('div');
@@ -259,7 +252,7 @@
             iElement.setAttribute('data-original-title', 'Created date');
 
             let labelElement = document.createElement('label');
-            labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2');
+            labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2', 'task-' + params.taskId + '-dueDate');
             labelElement.innerHTML = params.dueDate;
 
             let iElementEdit = document.createElement('i');
