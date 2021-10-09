@@ -227,6 +227,13 @@
 				return clon;
 			}
 
+			function getTemplateTwo() {
+				var temp = document.getElementsByTagName('template')[1];
+				var clon = temp.content.cloneNode(true);
+				//document.body.appendChild(clon);
+				return clon;
+			}
+
 			function getTaskData(taskId) {
 				return (oldTask = {
 					taskId: taskId,
@@ -346,6 +353,7 @@
 			for (params of paramsArr) {
 				document.querySelector('#task-container').appendChild(createTask(params));
 				document.querySelector('#task-container').appendChild(getTemplate());
+				document.querySelector('#task-container').appendChild(getTemplateTwo());
 			}
 		</script>
 
