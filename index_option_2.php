@@ -177,19 +177,32 @@
         ];
 
         function getTaskData(taskId) {
-
+            return oldTask = {
+                'taskId': taskId,
+                'taskName': document.querySelector('.task-' + taskId + '-name').innerHTML,
+                'taskDetails': document.querySelector('.task-' + taskId + '-details').innerHTML,
+                'dueDate': document.querySelector('.task-' + taskId + '-due-date').innerHTML,
+                'canBeDeleted': document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false;
+            }
         }
 
         function updateTask(taskId) {
 
             let sectionHeader = document.querySelector('#section-header');
-            let taskName = document.querySelector('#task-name');
-            let taskDueDate = document.querySelector('#task-due-date');
-            let taskDetails = document.querySelector('#task-details');
 
-            let params = getTaskData(taskId);
+            let newTaskElements = {
+                'taskId': taskId,
+                'taskName': document.querySelector('#task-name'),
+                'taskDetails': document.querySelector('#task-details'),
+                'dueDate': document.querySelector('#task-due-date'),
+                'canBeDeleted': document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false;
+            }
 
-            if (params) {
+            let oldTask = getTaskData(taskId);
+            console.log(oldTask);
+            console.log(newTaskElements);
+
+            if (oldTask) {
                 sectionHeader.innerHTML = "Editing task no." + taskId + ".";
                 taskName.value = params.taskName;
                 taskDueDate.value = params.dueDate;
@@ -252,7 +265,7 @@
             iElement.setAttribute('data-original-title', 'Created date');
 
             let labelElement = document.createElement('label');
-            labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2', 'task-' + params.taskId + '-dueDate');
+            labelElement.classList.add('date-label', 'my-2', 'my-2', 'text-black-50', 'm-2', 'task-' + params.taskId + '-due-date');
             labelElement.innerHTML = params.dueDate;
 
             let iElementEdit = document.createElement('i');
