@@ -13,4 +13,4 @@ function formSetup() {
 	});
 }
 
-export { initiateTooltips, setNewTaskSection, formSetup };
+export { initiateTooltips, formSetup };
