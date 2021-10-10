@@ -378,7 +378,9 @@
 			}
 
 			function getTodayDate() {
-				return date.getFullYear() + '-' + (date.getMonth() + 1) + 'date.getDate()';
+				let today = new Date();
+				let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+				return date;
 			}
 
 			window.onload = function () {
