@@ -178,11 +178,11 @@
 											<input type="text" class="form-control is-disabled" id="task-1-name" placeholder="Name" value="Task Name" disabled />
 										</div>
 										<div class="form-group">
-											<label for="task-1-due-date">Task Name</label>
-											<input id="task-1-due-date" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" disabled />
+											<label for="task-1-due-date">Due Date</label>
+											<input id="task-1-due-date" class="form-control is-disabled" type="date" placeholder="Due date" value="getTodayDate()" min="getTodayDate()" max="2029-12-31" disabled />
 										</div>
 										<div class="form-group">
-											<label for="task-1-details">Task Details</label>
+											<label for="task-1-details">Details</label>
 											<textarea class="form-control is-disabled" aria-label="With textarea" id="task-1-details" placeholder="Task Details" disabled></textarea>
 										</div>
 
@@ -383,6 +383,10 @@
 
 				function formatDate(date) {
 					return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+				}
+
+				function getTodayDate() {
+					return formatDate(new Date());
 				}
 
 				var currentDate = formatDate(new Date());
