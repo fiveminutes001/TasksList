@@ -11,7 +11,7 @@ window.onload = function () {
 
 	$('[data-toggle="tooltip"]').tooltip();
 
-	let newTask = new task();
+	console.log(task);
 
 	let newTaskDueDate = document.querySelector('#new-task-due-date');
 	newTaskDueDate.setAttribute('value', newTask.getTodayDate());
