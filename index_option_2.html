@@ -259,7 +259,12 @@
 			}
 		</script>
 
-		<script>
+		<script type="module">
+			import { formBox } from './js/modules/formBox.js';
+			import { getTodayDate } from './js/modules/getTodayDate.js';
+
+			getTodayDate();
+
 			window.onload = function () {
 				bootlint.showLintReportForCurrentDocument([], {
 					hasProblems: false,
