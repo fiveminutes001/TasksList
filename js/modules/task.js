@@ -44,14 +44,22 @@ function getTaskFromTemplate(params) {
 	let detailsLabel = toDo.querySelector('label[for="task-0-details"]');
 	nameLabel.setAttribute('for', 'task-' + params.taskId + '-details');
 
+	let statusLabel = toDo.querySelector('label[for="task-0-status-select"]');
+	statusLabel.setAttribute('for', 'task-' + params.taskId + '-status-select');
+
 	let nameInputElement = toDo.querySelector('#task-0-name');
 	nameInputElement.id = '#task-' + params.taskId + '-name';
 
 	let dateInputElement = toDo.querySelector('#task-0-due-date');
-	nameInputElement.id = '#task-' + params.taskId + '-due-date';
+	dateInputElement.value = params.dueDate;
 
 	let detailsInputElement = toDo.querySelector('#task-0-details');
-	nameInputElement.id = '#task-' + params.taskId + '-details';
+	detailsInputElement.id = '#task-' + params.taskId + '-details';
+	detailsInputElement.innerHTML = params.taskDetails;
+
+	let statusInputElement = toDo.querySelector('#task-0-status-select');
+	statusInputElement.id = 'task-' + params.taskId + '-status-select';
+	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
 
 	return toDo;
 }
