@@ -246,7 +246,9 @@
 				let temp = document.getElementsByTagName('template')[1];
 				let clon = temp.content.cloneNode(true);
 
-				console.log(clon.querySelector('#task-1-due-date'));
+				let dueDate = clon.querySelector('#task-1-due-date');
+				dueDate.setAttribute('value', getTodayDate());
+				dueDate.setAttribute('min', getTodayDate());
 
 				return clon;
 			}
