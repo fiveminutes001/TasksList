@@ -15,7 +15,7 @@ function formSetup() {
 		var $form = $(this).closest('form');
 		$form.toggleClass('is-readonly is-editing');
 		var isReadonly = $form.hasClass('is-readonly');
-		$form.find('input,textarea').prop('disabled', isReadonly);
+		$form.find('input,textarea,select').prop('disabled', isReadonly);
 	});
 }
 
