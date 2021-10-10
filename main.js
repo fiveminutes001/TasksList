@@ -1,5 +1,5 @@
 import { formBox } from './js/modules/formBox.js';
-import { getTodayDate } from './js/modules/getTodayDate.js';
+import * as task from './js/modules/task.js';
 
 window.onload = function () {
 	bootlint.showLintReportForCurrentDocument([], {
@@ -11,7 +11,9 @@ window.onload = function () {
 
 	$('[data-toggle="tooltip"]').tooltip();
 
+	let newTask = new task();
+
 	let newTaskDueDate = document.querySelector('#new-task-due-date');
-	newTaskDueDate.setAttribute('value', getTodayDate());
-	newTaskDueDate.setAttribute('min', getTodayDate());
+	newTaskDueDate.setAttribute('value', newTask.getTodayDate());
+	newTaskDueDate.setAttribute('min', newTask.getTodayDate());
 };

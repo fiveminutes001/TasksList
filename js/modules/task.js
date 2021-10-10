@@ -1,3 +1,5 @@
+import { params } from './params.js';
+
 function getTodayDate() {
 	let today = new Date();
 	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -14,7 +16,7 @@ function getTaskData(taskId) {
 	});
 }
 
-function getTodoFromTemplate(params) {
+function getTaskFromTemplate(params) {
 	let temp = document.getElementsByTagName('template')[0];
 	let toDo = temp.content.cloneNode(true);
 
@@ -54,4 +56,4 @@ function getTodoFromTemplate(params) {
 	return toDo;
 }
 
-export { getTodayDate, getTaskData, getTodoFromTemplate };
+export { getTodayDate, getTaskData, getTaskFromTemplate };
