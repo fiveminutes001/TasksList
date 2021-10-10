@@ -16,7 +16,8 @@ function getTaskData(taskId) {
 	});
 }
 
-function getTaskFromTemplate(getParams()) {
+let params = getParams();
+function getTaskFromTemplate(params) {
 	let temp = document.getElementsByTagName('template')[0];
 	let toDo = temp.content.cloneNode(true);
 
