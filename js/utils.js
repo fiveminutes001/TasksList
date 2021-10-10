@@ -1,4 +1,4 @@
-//import const getTodayDate;
+import { formBox } from './formBox.js';
 
 function getTodayDate() {
 	let today = new Date();
