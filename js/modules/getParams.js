@@ -1,4 +1,4 @@
-function getParams() {
+function getParamsArr() {
 	return [
 		{
 			taskId: 1,
@@ -24,4 +24,4 @@ function getParams() {
 	];
 }
 
-export { getParams };
+export { getParamsArr };

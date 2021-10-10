@@ -1,4 +1,6 @@
-import { getParams } from './getParams.js';
+import { getParamsArr } from './getParamsArr.js';
+
+let paramsArr = getParamsArr();
 
 function getTodayDate() {
 	let today = new Date();
@@ -16,7 +18,6 @@ function getTaskData(taskId) {
 	});
 }
 
-let params = getParams();
 function getTaskFromTemplate(params) {
 	let temp = document.getElementsByTagName('template')[0];
 	let toDo = temp.content.cloneNode(true);
@@ -57,4 +58,28 @@ function getTaskFromTemplate(params) {
 	return toDo;
 }
 
-export { getTodayDate, getTaskData, getTaskFromTemplate };
+function sendTasksToContainer(paramsArr) {
+	for (params of paramsArr) {
+		document.querySelector('#task-container').appendChild(getTodoFromTemplate(params));
+	}
+}
+
+function updateTask(taskId) {
+	let sectionHeader = document.querySelector('#section-header');
+
+	let newTaskElements = {
+		taskId: taskId,
+		taskName: document.querySelector('#task-name'),
+		taskDetails: document.querySelector('#task-details'),
+		dueDate: document.querySelector('#task-due-date'),
+		canBeDeleted: document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false,
+	};
+	let oldTask = getTaskData(taskId);
+	console.log(oldTask);
+	console.log(newTaskElements);
+
+	if (oldTask) {
+		newTaskElements.taskName.outerHTML = '';
+	}
+}
+export { getTodayDate, getTaskData, getTaskFromTemplate, updateTask };
