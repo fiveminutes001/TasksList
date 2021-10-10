@@ -1,4 +1,4 @@
-import { params } from './params.js';
+import { getParams } from './params.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -16,7 +16,7 @@ function getTaskData(taskId) {
 	});
 }
 
-function getTaskFromTemplate(params) {
+function getTaskFromTemplate(getParams()) {
 	let temp = document.getElementsByTagName('template')[0];
 	let toDo = temp.content.cloneNode(true);
 
