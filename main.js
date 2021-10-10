@@ -7,6 +7,8 @@ window.onload = function () {
 		problemFree: false,
 	});
 
+	formBox();
+
 	$('[data-toggle="tooltip"]').tooltip();
 
 	let newTaskDueDate = document.querySelector('#new-task-due-date');
