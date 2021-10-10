@@ -219,7 +219,7 @@
 				let temp = document.getElementsByTagName('template')[0];
 				let toDo = temp.content.cloneNode(true);
 
-				toDo.querySelector('#task-0').setAttribute('id', 'task-' + params.taskId);
+				toDo.querySelector('#task-0').id = 'task-' + params.taskId;
 
 				let dueDate = toDo.querySelector('#task-0-due-date');
 				dueDate.setAttribute('value', getTodayDate());
