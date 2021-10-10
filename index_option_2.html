@@ -373,6 +373,14 @@
 		</script>
 
 		<script>
+			function formatDate(date) {
+				return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+			}
+
+			function getTodayDate() {
+				return formatDate(new Date());
+			}
+
 			window.onload = function () {
 				bootlint.showLintReportForCurrentDocument([], {
 					hasProblems: false,
@@ -380,14 +388,6 @@
 				});
 
 				$('[data-toggle="tooltip"]').tooltip();
-
-				function formatDate(date) {
-					return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-				}
-
-				function getTodayDate() {
-					return formatDate(new Date());
-				}
 
 				var currentDate = formatDate(new Date());
 
