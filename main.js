@@ -7,9 +7,9 @@ window.onload = function () {
 		problemFree: false,
 	});
 
-	setup.formSetup();
 	setup.initiateTooltips();
 	setup.setNewTaskSection();
 
 	task.sendTasksToContainer(task.getParamsArr());
+	setup.formSetup();
 };
