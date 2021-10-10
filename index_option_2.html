@@ -216,7 +216,7 @@
 			}
 
 			function getTodoFromTemplate() {
-				let temp = document.getElementsByTagName('template')[1];
+				let temp = document.getElementsByTagName('template')[0];
 				let clon = temp.content.cloneNode(true);
 
 				let dueDate = clon.querySelector('#task-1-due-date');
