@@ -11,5 +11,5 @@ window.onload = function () {
 	setup.initiateTooltips();
 	setup.setNewTaskSection();
 
-	task.sendTasksToContainer();
+	task.sendTasksToContainer(task.getParamsArr());
 };
