@@ -6,7 +6,7 @@
 // 		$form.find('input,textarea').prop('disabled', isReadonly);
 // 	});
 // });
-function formBox () {
+function formBox() {
 	$('.js-edit, .js-save').on('click', function () {
 		var $form = $(this).closest('form');
 		$form.toggleClass('is-readonly is-editing');
@@ -15,4 +15,4 @@ function formBox () {
 	});
 }
 
-export const formBox;
+export { formBox };
