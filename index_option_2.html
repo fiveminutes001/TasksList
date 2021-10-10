@@ -144,7 +144,7 @@
 						<div class="col-12 m-0 p-1 pb-0">
 							<p class="m-1">
 								<!-- prettier-ignore -->
-								<button class="btn btn-primary w-100 task-0-name" type="button" data-toggle="collapse" data-target="#collapseToDo0" aria-expanded="true" aria-controls="collapseToDo0">
+								<button class="btn btn-primary w-100" id="task-0-button" type="button" data-toggle="collapse" data-target="#collapseToDo0" aria-expanded="true" aria-controls="collapseToDo0">
 									Task name
 								</button>
 							</p>
@@ -219,11 +219,38 @@
 				let temp = document.getElementsByTagName('template')[0];
 				let toDo = temp.content.cloneNode(true);
 
-				toDo.querySelector('#task-0').id = 'task-' + params.taskId;
-
 				let dueDate = toDo.querySelector('#task-0-due-date');
 				dueDate.setAttribute('value', getTodayDate());
 				dueDate.setAttribute('min', getTodayDate());
+
+				toDo.querySelector('#task-0').id = 'task-' + params.taskId;
+
+				let buttonElement = toDo.querySelector('#task-0-button');
+				buttonElement.id = 'task-' + params.taskId + '-button';
+				buttonElement.innerHTML = 'Task #' + params.taskId;
+				buttonElement.setAttribute('data-target', '#collapseToDo' + params.taskId);
+				buttonElement.setAttribute('aria-controls', 'collapseToDo' + params.taskId);
+
+				let divElement = toDo.querySelector('#collapseToDo0');
+				divElement.id = 'collapseTodo' + params.taskId;
+
+				let nameLabel = toDo.querySelector('label[for="task-0-name"]');
+				nameLabel.setAttribute('for', 'task-' + params.taskId + '-name');
+
+				let dateLabel = toDo.querySelector('label[for="task-0-due-date"]');
+				nameLabel.setAttribute('for', 'task-' + params.taskId + '-due-date');
+
+				let detailsLabel = toDo.querySelector('label[for="task-0-details"]');
+				nameLabel.setAttribute('for', 'task-' + params.taskId + '-details');
+
+				let nameInputElement = toDo.querySelector('#task-0-name');
+				nameInputElement.id = '#task-' + params.taskId + '-name';
+
+				let dateInputElement = toDo.querySelector('#task-0-due-date');
+				nameInputElement.id = '#task-' + params.taskId + '-due-date';
+
+				let detailsInputElement = toDo.querySelector('#task-0-details');
+				nameInputElement.id = '#task-' + params.taskId + '-details';
 
 				return toDo;
 			}
