@@ -1,4 +1,3 @@
-import { formBox } from './js/modules/formBox.js';
 import * as setup from './js/modules/initialSetup.js';
 import * as task from './js/modules/task.js';
 
