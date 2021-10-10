@@ -20,7 +20,7 @@ function getParamsArr() {
 			taskId: 3,
 			taskName: 'Task 3 name',
 			taskDetails: 'Task 3 details',
-			dueDate: '23/08/21',
+			dueDate: '10/10/2021',
 			taskStatus: 'Not finished',
 			canBeDeleted: true,
 		},
