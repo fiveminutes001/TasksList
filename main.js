@@ -7,6 +7,12 @@ window.onload = function () {
 		problemFree: false,
 	});
 
+	$('.datepicker').datepicker({
+		format: 'dd/mm/yyyy',
+		startDate: '0d',
+		endDate: '+365d',
+	});
+
 	setup.initiateTooltips();
 	setup.setNewTaskSection();
 	task.sendTasksToContainer(task.getParamsArr());
