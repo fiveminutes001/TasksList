@@ -5,11 +5,7 @@ $(document).ready(function () {
 		var isReadonly = $form.hasClass('is-readonly');
 		$form.find('input,textarea').prop('disabled', isReadonly);
 	});
-	$('.task-button').on('click', function (e) {
-		var $_target = $(e.currentTarget);
-		var $_taskBody = $_target.find('.collapse');
-		if ($_taskBody) {
-			$_taskBody.collapse('toggle');
-		}
-	});
+	let newTaskDueDate = toDo.querySelector('#new-task-due-date');
+	newTaskDueDate.setAttribute('value', getTodayDate());
+	newTaskDueDate.setAttribute('min', getTodayDate());
 });
