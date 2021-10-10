@@ -30,7 +30,7 @@ window.onload = function () {
 	});
 
 	setup.initiateTooltips();
-	setup.setNewTaskSection();
+
 	task.sendTasksToContainer(task.getParamsArr());
 	setup.formSetup();
 };
