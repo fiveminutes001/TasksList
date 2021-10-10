@@ -57,7 +57,7 @@ function getTaskFromTemplate(params) {
 }
 
 function sendTasksToContainer(paramsArr) {
-	for (params of paramsArr) {
+	for (const params of paramsArr) {
 		document.querySelector('#task-container').appendChild(getTodoFromTemplate(params));
 	}
 }
