@@ -1,7 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
 
-let paramsArr = getParamsArr();
-
 function getTodayDate() {
 	let today = new Date();
 	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -82,4 +80,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer };
+export { getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr };

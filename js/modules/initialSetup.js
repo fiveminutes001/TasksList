@@ -1,3 +1,5 @@
+import * as task from './task.js';
+
 function initiateTooltips() {
 	$('[data-toggle="tooltip"]').tooltip();
 }
