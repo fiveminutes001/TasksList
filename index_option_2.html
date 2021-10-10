@@ -139,12 +139,12 @@
 
 			<!-- Todo Template -->
 			<template>
-				<div class="col-12 col-sm-6 m-0 task-1">
+				<div class="col-12 col-sm-6 m-0" id="task 0">
 					<div class="row">
 						<div class="col-12 m-0 p-1 pb-0">
 							<p class="m-1">
 								<!-- prettier-ignore -->
-								<button class="btn btn-primary w-100 task-1-name" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="true" aria-controls="collapseExample5">
+								<button class="btn btn-primary w-100 task-0-name" type="button" data-toggle="collapse" data-target="#collapseToDo0" aria-expanded="true" aria-controls="collapseToDo0">
 									Task name
 								</button>
 							</p>
@@ -152,20 +152,20 @@
 					</div>
 					<div class="row">
 						<div class="m-0 w-100">
-							<div class="collapse show" id="collapseExample5">
+							<div class="collapse show" id="collapseToDo0">
 								<div class="card card-body ml-2 mr-2 mt-0 mb-3 pt-2 pb-1 bg-light">
 									<form class="is-readonly">
 										<div class="form-group">
-											<label for="task-1-name">Task Name</label>
-											<input type="text" class="form-control is-disabled" id="task-1-name" placeholder="Name" value="Task Name" disabled />
+											<label for="task-0-name">Task Name</label>
+											<input type="text" class="form-control is-disabled" id="task-0-name" placeholder="Name" value="Task Name" disabled />
 										</div>
 										<div class="form-group">
-											<label for="task-1-due-date">Due Date</label>
-											<input id="task-1-due-date" class="form-control is-disabled" type="date" placeholder="Due date" max="2029-12-31" disabled />
+											<label for="task-0-due-date">Due Date</label>
+											<input type="date" class="form-control is-disabled" id="task-0-due-date" placeholder="Due date" max="2029-12-31" disabled />
 										</div>
 										<div class="form-group">
-											<label for="task-1-details">Details</label>
-											<textarea class="form-control is-disabled" aria-label="With textarea" id="task-1-details" placeholder="Task Details" disabled></textarea>
+											<label for="task-0-details">Details</label>
+											<textarea class="form-control is-disabled" aria-label="With textarea" id="task-0-details" placeholder="Task Details" disabled></textarea>
 										</div>
 										<button type="button" class="btn btn-default btn-edit js-edit">Edit</button>
 										<button type="button" class="btn btn-default btn-save js-save">Save</button>
@@ -215,11 +215,13 @@
 				return date;
 			}
 
-			function getTodoFromTemplate() {
+			function getTodoFromTemplate(params) {
 				let temp = document.getElementsByTagName('template')[0];
-				let clon = temp.content.cloneNode(true);
+				let toDo = temp.content.cloneNode(true);
 
-				let dueDate = clon.querySelector('#task-1-due-date');
+				toDo.querySelector('#task-0').setAttribute('id', 'task-' + params.taskId);
+
+				let dueDate = toDo.querySelector('#task-0-due-date');
 				dueDate.setAttribute('value', getTodayDate());
 				dueDate.setAttribute('min', getTodayDate());
 
@@ -258,7 +260,7 @@
 			//document.querySelector('#task-container').innerHTML = '';
 
 			for (params of paramsArr) {
-				document.querySelector('#task-container').appendChild(getTodoFromTemplate());
+				document.querySelector('#task-container').appendChild(getTodoFromTemplate(params));
 			}
 		</script>
 
