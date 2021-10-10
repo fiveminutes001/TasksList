@@ -21,8 +21,9 @@ function getTaskFromTemplate(params) {
 	let toDo = temp.content.cloneNode(true);
 
 	let dueDate = toDo.querySelector('#task-0-due-date');
-	dueDate.setAttribute('value', getTodayDate());
+	dueDate.setAttribute('value', params.dueDate);
 	dueDate.setAttribute('min', getTodayDate());
+	dueDate.id = 'task-' + params.taskId + '-due-date';
 
 	toDo.querySelector('#task-0').id = 'task-' + params.taskId;
 
@@ -49,9 +50,6 @@ function getTaskFromTemplate(params) {
 
 	let nameInputElement = toDo.querySelector('#task-0-name');
 	nameInputElement.id = '#task-' + params.taskId + '-name';
-
-	let dateInputElement = toDo.querySelector('#task-0-due-date');
-	dateInputElement.value = params.dueDate;
 
 	let detailsInputElement = toDo.querySelector('#task-0-details');
 	detailsInputElement.id = '#task-' + params.taskId + '-details';
