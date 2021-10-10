@@ -242,6 +242,12 @@
 				return clon;
 			}
 
+			function getTodayDate() {
+				let today = new Date();
+				let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+				return date;
+			}
+
 			function getTemplateTwo() {
 				let temp = document.getElementsByTagName('template')[1];
 				let clon = temp.content.cloneNode(true);
@@ -379,12 +385,6 @@
 		<script>
 			function formatDate(date) {
 				return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-			}
-
-			function getTodayDate() {
-				let today = new Date();
-				let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-				return date;
 			}
 
 			window.onload = function () {
