@@ -1,4 +1,5 @@
 import { formBox } from './js/modules/formBox.js';
+import * as setup from './js/modules/initialSetup.js';
 import * as task from './js/modules/task.js';
 
 window.onload = function () {
@@ -7,11 +8,9 @@ window.onload = function () {
 		problemFree: false,
 	});
 
-	formBox();
+	setup.formSetup();
+	setup.initiateTooltips();
+	setup.setNewTaskSection();
 
-	$('[data-toggle="tooltip"]').tooltip();
-
-	let newTaskDueDate = document.querySelector('#new-task-due-date');
-	newTaskDueDate.setAttribute('value', task.getTodayDate());
-	newTaskDueDate.setAttribute('min', task.getTodayDate());
+	task.sendTasksToContainer();
 };

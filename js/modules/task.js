@@ -82,4 +82,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { getTodayDate, getTaskData, getTaskFromTemplate, updateTask };
+export { getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer };
