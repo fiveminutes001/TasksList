@@ -11,5 +11,6 @@ window.onload = function () {
 	setup.setNewTaskSection();
 
 	task.sendTasksToContainer(task.getParamsArr());
+
 	setup.formSetup();
 };
