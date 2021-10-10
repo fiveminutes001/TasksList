@@ -10,6 +10,6 @@ window.onload = function () {
 	setup.formSetup();
 	setup.initiateTooltips();
 	setup.setNewTaskSection();
-	console.log(task.getParamsArr());
-	task.sendTasksToContainer();
+
+	task.sendTasksToContainer(task.getParamsArr());
 };
