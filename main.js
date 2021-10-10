@@ -11,7 +11,8 @@ window.onload = function () {
 		return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 	}
 	var currentDate = formatDate(new Date());
-	$('#setDate').datepicker({
+
+	$('#new-task-due-date').datepicker({
 		format: 'dd/mm/yyyy',
 		autoclose: true,
 		todayHighlight: true,
@@ -20,12 +21,12 @@ window.onload = function () {
 		maxViewMode: 2,
 	});
 
-	$('#setDate').on('click', function (event) {
-		$('#setDate')
+	$('#new-task-due-date').on('click', function (event) {
+		$('#new-task-due-date')
 			.datepicker('show')
 			.on('changeDate', function (dateChangeEvent) {
-				$('#setDate').datepicker('hide');
-				$('#setDate').text(formatDate(dateChangeEvent.date));
+				$('#new-task-due-date').datepicker('hide');
+				$('#new-task-due-date').text(formatDate(dateChangeEvent.date));
 			});
 	});
 
