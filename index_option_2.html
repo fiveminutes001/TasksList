@@ -179,7 +179,7 @@
 										</div>
 										<div class="form-group">
 											<label for="task-1-due-date">Due Date</label>
-											<input id="task-1-due-date" class="form-control is-disabled" type="date" placeholder="Due date" value="getTodayDate()" min="getTodayDate()" max="2029-12-31" disabled />
+											<input id="task-1-due-date" class="form-control is-disabled" type="date" placeholder="Due date" max="2029-12-31" disabled />
 										</div>
 										<div class="form-group">
 											<label for="task-1-details">Details</label>
@@ -243,9 +243,11 @@
 			}
 
 			function getTemplateTwo() {
-				var temp = document.getElementsByTagName('template')[1];
-				var clon = temp.content.cloneNode(true);
-				//document.body.appendChild(clon);
+				let temp = document.getElementsByTagName('template')[1];
+				let clon = temp.content.cloneNode(true);
+
+				console.log(clon.querySelector('#task-1-due-date'));
+
 				return clon;
 			}
 
