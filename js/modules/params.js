@@ -24,4 +24,4 @@ function getParams() {
 	];
 }
 
-export { params };
+export { getParams };
