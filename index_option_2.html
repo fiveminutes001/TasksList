@@ -9,10 +9,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet" />
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
 		<link rel="stylesheet" href="css/body.css" />
 		<link rel="stylesheet" href="css/formBox.css" />
+
+		<script type="module" src="js/utils.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	</head>
 
 	<body>
@@ -43,6 +45,7 @@
 									<input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required id="task-name" />
 								</div>
 							</div>
+							<!-- Set due date -->
 							<div class="col-12 col-sm-6 col-md-4 p-0 m-0 mt-2">
 								<div class="form-group">
 									<input type="date" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" id="new-task-due-date" placeholder="Due date" max="2029-12-31" />
@@ -59,7 +62,7 @@
 								<textarea class="form-control" aria-label="With textarea" id="task-details"></textarea>
 							</div>
 						</div>
-						<!-- Set due date-->
+						<!-- Submit -->
 						<div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-end">
 							<div class="px-0 mx-0 mr-2">
 								<button type="submit" class="btn btn-primary">Add</button>
@@ -174,11 +177,11 @@
 				},
 			];
 
-			function getTodayDate() {
-				let today = new Date();
-				let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-				return date;
-			}
+			// function getTodayDate() {
+			// 	let today = new Date();
+			// 	let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+			// 	return date;
+			// }
 
 			function getTodoFromTemplate(params) {
 				let temp = document.getElementsByTagName('template')[0];
@@ -257,10 +260,6 @@
 		</script>
 
 		<script>
-			function formatDate(date) {
-				return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-			}
-
 			window.onload = function () {
 				bootlint.showLintReportForCurrentDocument([], {
 					hasProblems: false,
@@ -269,35 +268,9 @@
 
 				$('[data-toggle="tooltip"]').tooltip();
 
-				function getTodayDate() {
-					let today = new Date();
-					let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-					return date;
-				}
-
 				let newTaskDueDate = toDo.querySelector('#new-task-due-date');
 				newTaskDueDate.setAttribute('value', getTodayDate());
 				newTaskDueDate.setAttribute('min', getTodayDate());
-
-				var currentDate = formatDate(new Date());
-
-				$('#setDate').datepicker({
-					format: 'dd/mm/yyyy',
-					autoclose: true,
-					todayHighlight: true,
-					startDate: currentDate,
-					minDate: currentDate,
-					maxViewMode: 2,
-				});
-
-				$('#setDate').on('click', function (event) {
-					$('#setDate')
-						.datepicker('show')
-						.on('changeDate', function (dateChangeEvent) {
-							$('#setDate').datepicker('hide');
-							$('#setDate').text(formatDate(dateChangeEvent.date));
-						});
-				});
 			};
 		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
