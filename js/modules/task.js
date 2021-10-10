@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { formatdate, datePickerSetup } from './initialSetup.js';
+import { formatDate, datePickerSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
