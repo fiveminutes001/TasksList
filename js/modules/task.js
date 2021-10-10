@@ -1,4 +1,4 @@
-import { getParams } from './params.js';
+import { getParams } from './getParams.js';
 
 function getTodayDate() {
 	let today = new Date();
