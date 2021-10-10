@@ -1,4 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
+import { formatdate, datePickerSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -24,6 +25,7 @@ function getTaskFromTemplate(params) {
 	dueDate.setAttribute('value', params.dueDate);
 	dueDate.setAttribute('min', getTodayDate());
 	dueDate.id = 'task-' + params.taskId + '-due-date';
+	datePickerSetup(dueDate.id);
 
 	toDo.querySelector('#task-0').id = 'task-' + params.taskId;
 
@@ -40,10 +42,10 @@ function getTaskFromTemplate(params) {
 	nameLabel.setAttribute('for', 'task-' + params.taskId + '-name');
 
 	let dateLabel = toDo.querySelector('label[for="task-0-due-date"]');
-	nameLabel.setAttribute('for', 'task-' + params.taskId + '-due-date');
+	dateLabel.setAttribute('for', 'task-' + params.taskId + '-due-date');
 
 	let detailsLabel = toDo.querySelector('label[for="task-0-details"]');
-	nameLabel.setAttribute('for', 'task-' + params.taskId + '-details');
+	detailsLabel.setAttribute('for', 'task-' + params.taskId + '-details');
 
 	let statusLabel = toDo.querySelector('label[for="task-0-status-select"]');
 	statusLabel.setAttribute('for', 'task-' + params.taskId + '-status-select');

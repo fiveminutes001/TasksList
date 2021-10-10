@@ -13,4 +13,30 @@ function formSetup() {
 	});
 }
 
-export { initiateTooltips, formSetup };
+function formatDate(date) {
+	return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+}
+
+function datePickerSetup(dateInputId) {
+	var currentDate = formatDate(new Date());
+
+	$('#' + dateInputId).datepicker({
+		format: 'dd/mm/yyyy',
+		autoclose: true,
+		todayHighlight: true,
+		startDate: currentDate,
+		minDate: currentDate,
+		maxViewMode: 2,
+	});
+
+	$('#' + dateInputId).on('click', function (event) {
+		$('#' + dateInputId)
+			.datepicker('show')
+			.on('changeDate', function (dateChangeEvent) {
+				$('#' + dateInputId).datepicker('hide');
+				$('#' + dateInputId).text(formatDate(dateChangeEvent.date));
+			});
+	});
+}
+
+export { initiateTooltips, formSetup, formatDate, datePickerSetup };
