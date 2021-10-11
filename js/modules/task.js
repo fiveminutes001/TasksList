@@ -73,11 +73,11 @@ function getTaskFromTemplate(params) {
 	statusInputElement.id = 'task-' + params.taskId + '-status-select';
 	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
 
-	let deleteButton = document.querySelector('#delete-task-0');
-	deleteButton.id = 'delete-task-' + params.taskId;
+	// let deleteButton = document.querySelector('#delete-task-0');
+	// deleteButton.id = 'delete-task-' + params.taskId;
 
-	let saveButton = document.querySelector('#save-task-0');
-	saveButton.id = 'save-task-' + params.taskId;
+	// let saveButton = document.querySelector('#save-task-0');
+	// saveButton.id = 'save-task-' + params.taskId;
 
 	return toDo;
 }
