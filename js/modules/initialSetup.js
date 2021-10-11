@@ -9,7 +9,7 @@ function saveButtonSetup(saveButton) {
 
 function deleteButtonSetup(deleteButtonArr) {
 	console.log(deleteButtonArr);
-	for (let button of deleteButtonArr) {
+	for (const button of deleteButtonArr) {
 		console.log(button);
 		//console.log(button.getAttribute('task-id'));
 	}
