@@ -8,9 +8,10 @@ function saveButtonSetup(saveButton) {
 }
 
 function deleteButtonSetup(deleteButtonArr) {
-	for (let button in deleteButtonArr) {
-		console.log(button);
-	}
+	console.log(deleteButtonArr);
+	// for (let button in deleteButtonArr) {
+	// 	console.log(button);
+	// }
 	// $(deleteButton).on('click', function () {
 	// 	const paramsArr = getParamsArr();
 	// 	// for (params in paramsArr) {
