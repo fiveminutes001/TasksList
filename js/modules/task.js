@@ -60,13 +60,14 @@ function getTaskFromTemplate(params) {
 	statusInputElement.id = 'task-' + params.taskId + '-status-select';
 	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
 
-	return dueDate;
+	return toDo;
 }
 
 function sendTasksToContainer(paramsArr) {
 	for (const params of paramsArr) {
-		let dueDate = document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
-		datePickerSetup(dueDate.id);
+		document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
+		let dueDateId = document.querySelector('#task-' + params.taskId + '-due-date');
+		datePickerSetup(dueDateId);
 	}
 }
 
