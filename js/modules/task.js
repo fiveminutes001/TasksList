@@ -72,9 +72,13 @@ function sendTasksToContainer(paramsArr) {
 }
 
 function deleteTask(params) {
-	let currentDate = new Date();
-	let dueDate = new Date('2021-08-21');
+	const currentDate = new Date();
+	const dueDateFormatted = params.dueDate.slice(0, 2) + '-' + params.dueDate.slice(3, 5) + '-20' + params.dueDate.slice(2);
+	console.log(dueDateFormatted);
+
+	let dueDate = new Date(dueDateFormatted);
 	console.log(params.dueDate);
+
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
 
