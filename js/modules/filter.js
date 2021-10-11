@@ -5,7 +5,7 @@ function filterChange() {
 }
 
 function sortChange() {
-	$('#task-filter').change(function () {
+	$('#task-sort').change(function () {
 		console.log($(this).find(':selected').text());
 	});
 }
