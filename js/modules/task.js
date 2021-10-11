@@ -18,7 +18,6 @@ function getTaskData(taskId) {
 }
 
 function getTaskFromTemplate(params) {
-	console.log('!' + datePickerSetup(dueDate.id));
 	let temp = document.getElementsByTagName('template')[0];
 	let toDo = temp.content.cloneNode(true);
 
