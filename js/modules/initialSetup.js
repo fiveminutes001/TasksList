@@ -19,9 +19,9 @@ function formatDate(date) {
 
 function datePickerSetup(dateInputId) {
 	let currentDate = formatDate(new Date());
-	var dynamicSelector = '#' + dateInputId;
-	console.log(dynamicSelector);
-	$(dynamicSelector).datepicker({
+
+	console.log(dateInputId);
+	$(dateInputId).datepicker({
 		format: 'dd/mm/yyyy',
 		autoclose: true,
 		todayHighlight: true,
@@ -30,12 +30,12 @@ function datePickerSetup(dateInputId) {
 		maxViewMode: 2,
 	});
 
-	$(dynamicSelector).on('click', function (event) {
-		$(dynamicSelector)
+	$(dateInputId).on('click', function (event) {
+		$(dateInputId)
 			.datepicker('show')
 			.on('changeDate', function (dateChangeEvent) {
-				$(dynamicSelector).datepicker('hide');
-				$(dynamicSelector).text(formatDate(dateChangeEvent.date));
+				$(dateInputId).datepicker('hide');
+				$(dateInputId).text(formatDate(dateChangeEvent.date));
 			});
 	});
 }
