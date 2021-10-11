@@ -77,7 +77,7 @@ function deleteTask(params) {
 	console.log(dueDateFormatted);
 
 	let dueDate = new Date(dueDateFormatted);
-	console.log(params.dueDate);
+	console.log(dueDate);
 
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
