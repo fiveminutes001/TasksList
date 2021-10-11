@@ -17,5 +17,5 @@ window.onload = function () {
 	searchResults.ascendingSort();
 	searchResults.descendingSort();
 
-	task.checkIfCanDeleteTask(task.getParamsArr()[0]);
+	console.log(task.checkIfCanDeleteTask(task.getParamsArr()[0]));
 };

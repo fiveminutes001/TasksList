@@ -83,6 +83,7 @@ function checkIfCanDeleteTask(params) {
 
 	return result;
 }
+
 function setNewTask() {
 	let dueDateId = document.querySelector('#new-task-due-date');
 	datePickerSetup(dueDateId);
