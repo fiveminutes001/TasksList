@@ -10,7 +10,8 @@ function saveButtonSetup(saveButton) {
 function deleteButtonSetup(deleteButtonArr) {
 	console.log(deleteButtonArr);
 	for (let button in deleteButtonArr) {
-		console.log(button.getAttribute('task-id'));
+		console.log(button);
+		//console.log(button.getAttribute('task-id'));
 	}
 	// $(deleteButton).on('click', function () {
 	// 	const paramsArr = getParamsArr();
