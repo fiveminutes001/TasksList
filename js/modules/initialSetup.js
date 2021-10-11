@@ -19,6 +19,7 @@ function formatDate(date) {
 
 function datePickerSetup(dateInputId) {
 	let currentDate = formatDate(new Date());
+	console.log('!');
 	let dynamicSelector = '#' + dateInputId;
 	$(dynamicSelector).datepicker({
 		format: 'dd/mm/yyyy',
