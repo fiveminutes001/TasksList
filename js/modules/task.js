@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { formatDate, datePickerSetup } from './initialSetup.js';
+import { datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -15,6 +15,19 @@ function getTaskData(taskId) {
 		dueDate: document.querySelector('.task-' + taskId + '-due-date').innerHTML,
 		canBeDeleted: document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false,
 	});
+}
+
+function checkIfCanDeleteTask(params) {
+	const dueDateFormatted = '20' + params.dueDate.slice(-2) + '-' + params.dueDate.slice(3, 5) + '-' + params.dueDate.slice(0, 2);
+	const currentDate = new Date();
+	const dueDate = new Date(dueDateFormatted);
+	const start = currentDate.getTime();
+	const end = dueDate.getTime();
+	const diff = end - start;
+	const difInDays = diff / (1000 * 3600 * 24);
+	const result = difInDays > 6 ? true : difInDays < 0 ? true : false;
+
+	return result;
 }
 
 function getTaskFromTemplate(params) {
@@ -60,28 +73,28 @@ function getTaskFromTemplate(params) {
 	statusInputElement.id = 'task-' + params.taskId + '-status-select';
 	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
 
+	let deleteButton = document.querySelector('#delete-task-0');
+	deleteButton.id = 'delete-task-' + params.taskId;
+
+	let saveButton = document.querySelector('#save-task-0');
+	saveButton.id = 'save-task-' + params.taskId;
+
 	return toDo;
 }
 
 function sendTasksToContainer(paramsArr) {
 	for (const params of paramsArr) {
 		document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
+
 		let dueDateId = document.querySelector('#task-' + params.taskId + '-due-date');
 		datePickerSetup(dueDateId);
+
+		let deleteButton = document.querySelector('#delete-task-' + params.taskId);
+		deleteButtonSetup(deleteButton);
+
+		let saveButton = document.querySelector('#save-task-' + params.taskId);
+		saveButtonSetup(saveButton);
 	}
-}
-
-function checkIfCanDeleteTask(params) {
-	const dueDateFormatted = '20' + params.dueDate.slice(-2) + '-' + params.dueDate.slice(3, 5) + '-' + params.dueDate.slice(0, 2);
-	const currentDate = new Date();
-	const dueDate = new Date(dueDateFormatted);
-	const start = currentDate.getTime();
-	const end = dueDate.getTime();
-	const diff = end - start;
-	const difInDays = diff / (1000 * 3600 * 24);
-	const result = difInDays > 6 || difInDays < 0 ? true : false;
-
-	return result;
 }
 
 function setNewTask() {

@@ -1,3 +1,27 @@
+import { checkIfCanDeleteTask } from './task.js';
+import { getParamsArr } from './getParamsArr.js';
+
+function saveButtonSetup(saveButton) {
+	$(saveButton).on('click', function () {
+		console.log('save');
+	});
+}
+
+function deleteButtonSetup(deleteButtonArr) {
+	for (button in deleteButtonArr) {
+		console.log(button);
+	}
+	// $(deleteButton).on('click', function () {
+	// 	const paramsArr = getParamsArr();
+	// 	// for (params in paramsArr) {
+	// 	// 	if (params.taskId == )
+	// 	// 	return params;
+	// 	// }
+	// 	console.log(deleteButton.taskId);
+	// 	console.log(checkIfCanDeleteTask(getParamsArr()[0]));
+	// });
+}
+
 function initiateTooltips() {
 	$('[data-toggle="tooltip"]').tooltip();
 }
@@ -37,4 +61,4 @@ function datePickerSetup(dateInputId) {
 	});
 }
 
-export { initiateTooltips, formSetup, formatDate, datePickerSetup };
+export { deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
