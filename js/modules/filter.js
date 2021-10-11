@@ -1,7 +1,13 @@
-function optionChange() {
+function filterChange() {
 	$('#task-filter').change(function () {
 		console.log($(this).find(':selected').text());
 	});
 }
 
-export { optionChange };
+function sortChange() {
+	$('#task-filter').change(function () {
+		console.log($(this).find(':selected').text());
+	});
+}
+
+export { filterChange, sortChange };

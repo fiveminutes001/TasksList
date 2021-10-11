@@ -1,6 +1,6 @@
 import * as setup from './js/modules/initialSetup.js';
 import * as task from './js/modules/task.js';
-import * as filter from './js/modules/filter.js';
+import * as searchResults from './js/modules/filter.js';
 
 window.onload = function () {
 	bootlint.showLintReportForCurrentDocument([], {
@@ -12,5 +12,6 @@ window.onload = function () {
 	task.setNewTask();
 	task.sendTasksToContainer(task.getParamsArr());
 	setup.formSetup();
-	filter.optionChange();
+	searchResults.sortChange();
+	searchResults.filterChange();
 };
