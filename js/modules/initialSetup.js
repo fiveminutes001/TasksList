@@ -61,4 +61,4 @@ function datePickerSetup(dateInputId) {
 	});
 }
 
-export { deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
+export { saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
