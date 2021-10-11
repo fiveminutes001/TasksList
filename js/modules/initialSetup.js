@@ -20,7 +20,7 @@ function formatDate(date) {
 function datePickerSetup(dateInputId) {
 	let currentDate = formatDate(new Date());
 	console.log('#' + dateInputId);
-	let dynamicSelector = '#new-task-due-date';
+	let dynamicSelector = '#' + 'new-task-due-date';
 	$(dynamicSelector).datepicker({
 		format: 'dd/mm/yyyy',
 		autoclose: true,
