@@ -1,6 +1,6 @@
 function optionChange() {
 	$('#task-filter').change(function () {
-		console.log(this.find(':selected').text());
+		console.log($(this).find(':selected').text());
 	});
 }
 
