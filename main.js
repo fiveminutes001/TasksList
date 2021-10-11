@@ -8,7 +8,7 @@ window.onload = function () {
 	});
 
 	setup.initiateTooltips();
-
+	task.setNewTask();
 	task.sendTasksToContainer(task.getParamsArr());
 	setup.formSetup();
 };
