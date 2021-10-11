@@ -25,7 +25,6 @@ function getTaskFromTemplate(params) {
 	dueDate.setAttribute('value', params.dueDate);
 	dueDate.setAttribute('min', getTodayDate());
 	dueDate.id = 'task-' + params.taskId + '-due-date';
-	datePickerSetup(dueDate.id);
 
 	toDo.querySelector('#task-0').id = 'task-' + params.taskId;
 
@@ -61,12 +60,13 @@ function getTaskFromTemplate(params) {
 	statusInputElement.id = 'task-' + params.taskId + '-status-select';
 	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
 
-	return toDo;
+	return dueDate;
 }
 
 function sendTasksToContainer(paramsArr) {
 	for (const params of paramsArr) {
-		document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
+		let dueDate = document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
+		datePickerSetup(dueDate.id);
 	}
 }
 
