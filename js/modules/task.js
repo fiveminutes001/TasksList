@@ -77,7 +77,7 @@ function deleteTask(params) {
 	console.log(currentDate);
 	console.log(params.dueDate);
 	console.log(params);
-	console.log(dueDate - currentDate);
+	console.log((dueDate - currentDate) / 3600 / 24);
 }
 function setNewTask() {
 	let dueDateId = document.querySelector('#new-task-due-date');
