@@ -16,7 +16,6 @@ window.onload = function () {
 	searchResults.filterChange();
 	searchResults.ascendingSort();
 	searchResults.descendingSort();
-	setup.deleteButtonSetup(Array.from(document.querySelectorAll('button.delete-task-btn')));
 
 	console.log(task.checkIfCanDeleteTask(task.getParamsArr()[0]));
 };

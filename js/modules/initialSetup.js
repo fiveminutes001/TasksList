@@ -7,12 +7,9 @@ function saveButtonSetup(saveButton) {
 	});
 }
 
-function deleteButtonSetup(deleteButtonArr) {
-	console.log(deleteButtonArr);
-	for (const button of deleteButtonArr) {
-		console.log(button);
-		//console.log(button.getAttribute('task-id'));
-	}
+function deleteButtonSetup(deleteButton) {
+	console.log(deleteButton.getAttribute('task-id'));
+
 	// $(deleteButton).on('click', function () {
 	// 	const paramsArr = getParamsArr();
 	// 	// for (params in paramsArr) {
