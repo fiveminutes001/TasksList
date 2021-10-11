@@ -71,20 +71,17 @@ function sendTasksToContainer(paramsArr) {
 	}
 }
 
-function deleteTask(params) {
-	const currentDate = new Date();
+function checkIfCanDeleteTask(params) {
 	const dueDateFormatted = '20' + params.dueDate.slice(-2) + '-' + params.dueDate.slice(3, 5) + '-' + params.dueDate.slice(0, 2);
-	console.log(dueDateFormatted);
-
-	let dueDate = new Date(dueDateFormatted);
-	console.log(dueDate);
-
+	const currentDate = new Date();
+	const dueDate = new Date(dueDateFormatted);
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
-
 	const diff = end - start;
+	const difInDays = diff / (1000 * 3600 * 24);
+	const result = difInDays > 6 ? true : false;
 
-	console.log(diff / (1000 * 3600 * 24));
+	return result;
 }
 function setNewTask() {
 	let dueDateId = document.querySelector('#new-task-due-date');
@@ -109,4 +106,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { deleteTask, getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { checkIfCanDeleteTask, getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
