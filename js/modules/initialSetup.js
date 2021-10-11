@@ -18,8 +18,8 @@ function formatDate(date) {
 }
 
 function datePickerSetup(dateInputId) {
-	var currentDate = formatDate(new Date());
-
+	let currentDate = formatDate(new Date());
+	console.log('#' + dateInputId);
 	$('#' + dateInputId).datepicker({
 		format: 'dd/mm/yyyy',
 		autoclose: true,
