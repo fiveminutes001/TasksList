@@ -73,8 +73,11 @@ function sendTasksToContainer(paramsArr) {
 
 function deleteTask(params) {
 	let currentDate = new Date();
+	let dueDate = new Date(params.dueDate);
 	console.log(currentDate);
+	console.log(dueDate);
 	console.log(params);
+	console.log(dueDate - currentDate);
 }
 function setNewTask() {
 	let dueDateId = document.querySelector('#new-task-due-date');
