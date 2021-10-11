@@ -79,7 +79,7 @@ function checkIfCanDeleteTask(params) {
 	const end = dueDate.getTime();
 	const diff = end - start;
 	const difInDays = diff / (1000 * 3600 * 24);
-	const result = difInDays > 6 ? true : false;
+	const result = difInDays > 6 || difInDays < 0 ? true : false;
 
 	return result;
 }
