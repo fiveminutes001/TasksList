@@ -10,15 +10,15 @@ function sortChange() {
 	});
 }
 
-function ascendingSort () {
-    $('#ascending').on('click', function () {
-		console.log("asc");
-    }
+function ascendingSort() {
+	$('#ascending').on('click', function () {
+		console.log('asc');
+	});
 }
 
-function descendingSort () {
-    $('#descending').on('click', function () {
-		console.log("des");
-    }
+function descendingSort() {
+	$('#descending').on('click', function () {
+		console.log('des');
+	});
 }
 export { filterChange, sortChange, ascendingSort, descendingSort };
