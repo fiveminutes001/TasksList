@@ -71,6 +71,11 @@ function sendTasksToContainer(paramsArr) {
 	}
 }
 
+function deleteTask(params) {
+	let currentDate = new Date();
+	console.log(currentDate);
+	console.log(params);
+}
 function setNewTask() {
 	let dueDateId = document.querySelector('#new-task-due-date');
 	datePickerSetup(dueDateId);
@@ -94,4 +99,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { deleteTask, getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
