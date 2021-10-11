@@ -1,6 +1,6 @@
 function optionChange() {
 	$('#task-filter').change(function () {
-		alert(this);
+		console.log(this);
 	});
 }
 
