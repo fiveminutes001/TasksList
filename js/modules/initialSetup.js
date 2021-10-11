@@ -8,7 +8,7 @@ function saveButtonSetup(saveButton) {
 }
 
 function deleteButtonSetup(deleteButtonArr) {
-	for (button in deleteButtonArr) {
+	for (let button in deleteButtonArr) {
 		console.log(button);
 	}
 	// $(deleteButton).on('click', function () {
