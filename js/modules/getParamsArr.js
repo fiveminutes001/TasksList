@@ -1,6 +1,7 @@
 function getParamsArr() {
 	return paramsArr.initialParams;
 }
+
 function getTaskIndexInParamsArr(params) {
 	for (let i = 0; i < paramsArr.length; i++) {
 		if (params.taskId == paramsArr[i].taskId) {
