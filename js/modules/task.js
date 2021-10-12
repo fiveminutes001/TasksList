@@ -8,14 +8,17 @@ function getTodayDate() {
 }
 
 function getTaskCurrentData(taskId) {
-	return {
+	let TaskCurrentData = {
 		taskId: taskId,
 		taskName: document.querySelector('#task-' + taskId + '-name').value,
 		taskDetails: document.querySelector('#task-' + taskId + '-details').value,
 		dueDate: document.querySelector('#task-' + taskId + '-due-date').value,
 		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value,
-		canBeDeleted: checkIfCanDeleteTask(console.log(this)),
 	};
+	const canBeDeleted = checkIfCanDeleteTask(TaskCurrentData);
+	console.log(canBeDeleted);
+
+	return;
 }
 
 function checkIfCanDeleteTask(params) {
