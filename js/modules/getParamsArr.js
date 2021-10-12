@@ -1,5 +1,5 @@
 function getParamsArr() {
-	return paramsArr.initialParams;
+	return Window.paramsArr.initialParams;
 }
 
 function getTaskIndexInParamsArr(params) {

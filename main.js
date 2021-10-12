@@ -8,7 +8,7 @@ window.onload = function () {
 			hasProblems: false,
 			problemFree: false,
 		});
-		var paramsArr = {
+		Window.paramsArr = {
 			initialParams: [
 				{
 					taskId: 1,
