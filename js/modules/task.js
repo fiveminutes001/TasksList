@@ -22,7 +22,7 @@ function getTaskIndexInParamsArr(params) {
 
 	for (let i = 0; i < paramsArr.length; i++) {
 		if (params.taskId == paramsArr[i].taskId) {
-			console.log('Task ' + taskId + ' found in place ' + i + ' in paramsArr.');
+			console.log('Task ' + params.taskId + ' found in place ' + i + ' in paramsArr.');
 			return i;
 		}
 	}
