@@ -1,4 +1,4 @@
-import { checkIfCanDeleteTask, getNewTaskCurrentData, getTaskCurrentData, mergeCurrentTaskData, deleteTask } from './task.js';
+import { checkIfCanDeleteTask, getNewTaskCurrentData, getTaskCurrentData, mergeCurrentTaskData, mergeNewTaskData, deleteTask } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
 function getTaskParamsFromTaskId(taskId) {
