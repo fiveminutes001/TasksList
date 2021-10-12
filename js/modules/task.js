@@ -34,6 +34,7 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
 		Window.data.paramsArr.push(taskParams);
+		task.sendTasksToContainer(task.getParamsArr());
 		console.log('Task ' + taskParams.taskId + ' was added.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
@@ -140,6 +141,7 @@ function getTaskFromTemplate(params) {
 }
 
 function sendTasksToContainer(paramsArr) {
+	document.querySelector('#task-container').innerHTML = '';
 	for (const params of paramsArr) {
 		document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
 
