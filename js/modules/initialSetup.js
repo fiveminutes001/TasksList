@@ -29,7 +29,7 @@ function saveButtonSetup(saveButton) {
 	$(saveButton).on('click', function () {
 		const taskId = saveButton.getAttribute('task-id');
 		const taskParams = getTaskParamsFromTaskId(taskId);
-		let getTaskCurrentData(taskId);
+		let newTaskParams = getTaskCurrentData(taskId);
 		taskParams
 			? confirm('Task ' + taskParams.taskId + ' will be saved. Continue?')
 				? console.log('Task ' + taskParams.taskId + ' saved.')
