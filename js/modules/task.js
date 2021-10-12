@@ -17,18 +17,6 @@ function deleteTask(taskParams, newTaskParams) {
 	}
 }
 
-function getTaskIndexInParamsArr(params) {
-	const paramsArr = getParamsArr();
-
-	for (let i = 0; i < paramsArr.length; i++) {
-		if (params.taskId == paramsArr[i].taskId) {
-			console.log('Task ' + params.taskId + ' found in place ' + i + ' in paramsArr.');
-			return i;
-		}
-	}
-	console.log('Task ' + taskId + ' was not found in paramsArr.');
-}
-
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
@@ -162,4 +150,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { getTaskIndexInParamsArr, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
