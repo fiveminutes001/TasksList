@@ -10,15 +10,14 @@ function saveButtonSetup(saveButton) {
 function deleteButtonSetup(deleteButton) {
 	console.log(deleteButton.getAttribute('task-id'));
 
-	// $(deleteButton).on('click', function () {
-	// 	const paramsArr = getParamsArr();
-	// 	// for (params in paramsArr) {
-	// 	// 	if (params.taskId == )
-	// 	// 	return params;
-	// 	// }
-	// 	console.log(deleteButton.taskId);
-	// 	console.log(checkIfCanDeleteTask(getParamsArr()[0]));
-	// });
+	$(deleteButton).on('click', function () {
+		const paramsArr = getParamsArr();
+		for (params in paramsArr) {
+			if (params.taskId == deleteButton.getAttribute('task-id')) return params;
+		}
+		console.log(params);
+		console.log(checkIfCanDeleteTask(getParamsArr()[0]));
+	});
 }
 
 function initiateTooltips() {
