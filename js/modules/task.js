@@ -18,7 +18,7 @@ function getTaskCurrentData(taskId) {
 	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(taskCurrentData) };
 	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
 
-	console.log(TaskCurrentData);
+	console.log(taskCurrentData);
 
 	return;
 }
