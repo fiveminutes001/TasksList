@@ -6,9 +6,11 @@ function getTaskParamsFromTaskId(taskId) {
 
 	for (let params of paramsArr) {
 		if (params.taskId == taskId) {
+			console.log('Task ' + taskId + ' data is:', params);
 			return params;
 		}
 	}
+	console.log('No data was found for task ' + taskId + '.');
 }
 
 function deleteButtonSetup(deleteButton) {
