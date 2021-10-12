@@ -8,8 +8,8 @@ window.onload = function () {
 			hasProblems: false,
 			problemFree: false,
 		});
-		Window.paramsArr = {
-			initialParams: [
+		Window.data = {
+			paramsArr: [
 				{
 					taskId: 1,
 					taskName: 'Task name',

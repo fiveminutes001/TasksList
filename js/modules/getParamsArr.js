@@ -1,5 +1,5 @@
 function getParamsArr() {
-	return Window.paramsArr.initialParams;
+	return Window.data.paramsArr;
 }
 
 function updateParamsArr(newTaskParams) {
@@ -9,7 +9,7 @@ function updateParamsArr(newTaskParams) {
 			if (newTaskParams.taskId == params.taskId) {
 				params = Object.assign(params, newTaskParams);
 				const newParamsArr = Object.assign(paramsArr, params);
-				Window.paramsArr.initialParams = newParamsArr;
+				Window.data.paramsArr = newParamsArr;
 				console.log('Task ' + params.taskId + ' updated:', params);
 				return params;
 			}
