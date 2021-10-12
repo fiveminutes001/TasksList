@@ -67,7 +67,7 @@ function formSetupForNewTasks(taskId) {
 	const saveButton = document.querySelector('#save-task-' + taskId);
 	const deleteButton = document.querySelector('#delete-task-' + taskId);
 	const editButton = document.querySelector('#edit-task-' + taskId);
-	$(saveButton, deleteButton, editButton).on('click', function () {
+	$('#edit-task-' + taskId).on('click', function () {
 		console.log('!');
 		var $form = $(this).closest('form');
 		$form.toggleClass('is-readonly is-editing');
