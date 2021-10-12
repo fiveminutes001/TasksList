@@ -17,7 +17,7 @@ function deleteButtonSetup(deleteButton) {
 				break;
 			}
 		}
-		console.log(params);
+		console.log(taskParams);
 		// console.log(checkIfCanDeleteTask(getParamsArr()[0]));
 	});
 }
