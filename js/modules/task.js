@@ -63,11 +63,11 @@ function getTaskFromTemplate(params) {
 	statusLabel.setAttribute('for', 'task-' + params.taskId + '-status-select');
 
 	let nameInputElement = toDo.querySelector('#task-0-name');
-	nameInputElement.id = '#task-' + params.taskId + '-name';
+	nameInputElement.id = 'task-' + params.taskId + '-name';
 	nameInputElement.value = params.taskName;
 
 	let detailsInputElement = toDo.querySelector('#task-0-details');
-	detailsInputElement.id = '#task-' + params.taskId + '-details';
+	detailsInputElement.id = 'task-' + params.taskId + '-details';
 	detailsInputElement.innerHTML = params.taskDetails;
 
 	let statusInputElement = toDo.querySelector('#task-0-status-select');
