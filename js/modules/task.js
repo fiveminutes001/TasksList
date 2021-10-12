@@ -58,6 +58,12 @@ function getTaskCurrentData(taskId) {
 
 	return taskCurrentData;
 }
+function resetNewForm() {
+	document.querySelector('#new-task-name').value = null;
+	document.querySelector('#new-task-details').value = null;
+	document.querySelector('#new-task-due-date').value = null;
+}
+
 function getNewTaskCurrentData(taskId) {
 	let taskCurrentData = {
 		taskId: taskId,
@@ -69,7 +75,7 @@ function getNewTaskCurrentData(taskId) {
 	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
 
 	console.log('Task ' + taskId + ' current data:', taskCurrentData);
-
+	resetNewForm();
 	return taskCurrentData;
 }
 
