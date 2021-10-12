@@ -22,7 +22,7 @@ function deleteTask(taskParams, newTaskParams) {
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
-		updateParamsArr(taskParams);
+		//updateParamsArr(taskParams);
 		console.log('Task ' + taskParams.taskId + ' was saved.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
