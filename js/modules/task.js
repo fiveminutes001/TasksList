@@ -64,7 +64,7 @@ function getTaskFromTemplate(params) {
 
 	let nameInputElement = toDo.querySelector('#task-0-name');
 	nameInputElement.id = '#task-' + params.taskId + '-name';
-	nameInputElement.innerHTML = params.taskName;
+	nameInputElement.value = params.taskName;
 
 	let detailsInputElement = toDo.querySelector('#task-0-details');
 	detailsInputElement.id = '#task-' + params.taskId + '-details';
