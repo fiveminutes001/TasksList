@@ -14,7 +14,7 @@ function getTaskCurrentData(taskId) {
 		taskDetails: document.querySelector('#task-' + taskId + '-details').value,
 		dueDate: document.querySelector('#task-' + taskId + '-due-date').value,
 		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value,
-		canBeDeleted: checkIfCanDeleteTask(this),
+		canBeDeleted: checkIfCanDeleteTask(console.log(this)),
 	};
 }
 
