@@ -7,16 +7,20 @@ function saveButtonSetup(saveButton) {
 	});
 }
 
+function getTaskParamsFromTaskId(taskId) {
+	const paramsArr = getParamsArr();
+
+	for (let params of paramsArr) {
+		if (params.taskId == taskId) {
+			return params;
+		}
+	}
+}
+
 function deleteButtonSetup(deleteButton) {
 	$(deleteButton).on('click', function () {
-		const paramsArr = getParamsArr();
-		let taskParams = null;
-		for (let params of paramsArr) {
-			if (params.taskId == deleteButton.getAttribute('task-id')) {
-				taskParams = params;
-				break;
-			}
-		}
+		const taskParams = getTaskParamsFromTaskId(deleteButton.getAttribute('task-id'));
+
 		if (taskParams) {
 			checkIfCanDeleteTask(taskParams)
 				? confirm('Task ' + taskParams.taskId + ' will be deleted. Continue?')
