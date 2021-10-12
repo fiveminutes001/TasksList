@@ -25,6 +25,7 @@ function deleteButtonSetup(deleteButton) {
 	});
 }
 function saveButtonSetup(saveButton) {
+	console.log(saveButton);
 	$(saveButton).on('click', function () {
 		const taskParams = getTaskParamsFromTaskId(saveButton.getAttribute('task-id'));
 

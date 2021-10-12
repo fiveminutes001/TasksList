@@ -77,8 +77,9 @@ function getTaskFromTemplate(params) {
 	deleteButton.id = 'delete-task-' + params.taskId;
 	deleteButton.setAttribute('task-id', params.taskId);
 
-	// let saveButton = document.querySelector('#save-task-0');
-	// saveButton.id = 'save-task-' + params.taskId;
+	let saveButton = document.querySelector('#save-task-0');
+	saveButton.id = 'save-task-' + params.taskId;
+	saveButton.setAttribute('task-id', params.taskId);
 
 	return toDo;
 }
