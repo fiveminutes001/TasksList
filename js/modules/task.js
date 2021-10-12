@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { getTaskParamsFromTaskId, datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
+import { datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -20,11 +20,11 @@ function deleteTask(taskParams, newTaskParams) {
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
-		updateParamsArr(taskParams);
+		//updateParamsArr(taskParams);
 		console.log('Task ' + taskParams.taskId + ' was saved.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
-		console.log('Task ' + taskParams.taskId + ' was not saved.' + error);
+		console.log('Task ' + taskParams.taskId + ' was not saved. ' + error);
 	}
 }
 
