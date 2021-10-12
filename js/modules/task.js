@@ -10,6 +10,7 @@ function getTodayDate() {
 function deleteTask(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
+		updateParamsArr(taskParams);
 		console.log('Task ' + taskParams.taskId + ' was deleted.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
