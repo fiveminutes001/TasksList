@@ -30,7 +30,7 @@ function getTaskCurrentData(taskId) {
 
 	console.log('Task ' + taskId + ' current data:', taskCurrentData);
 
-	return;
+	return taskCurrentData;
 }
 
 function checkIfCanDeleteTask(params) {
