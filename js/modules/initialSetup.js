@@ -11,7 +11,7 @@ function deleteButtonSetup(deleteButton) {
 	$(deleteButton).on('click', function () {
 		const paramsArr = getParamsArr();
 		const taskParams = null;
-		for (params in paramsArr) {
+		for (const params of paramsArr) {
 			if (params.taskId == deleteButton.getAttribute('task-id')) {
 				taskParams = params;
 				break;
