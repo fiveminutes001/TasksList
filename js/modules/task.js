@@ -15,8 +15,8 @@ function getTaskCurrentData(taskId) {
 		dueDate: document.querySelector('#task-' + taskId + '-due-date').value,
 		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value,
 	};
-	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(TaskCurrentData) };
-	const taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
+	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(taskCurrentData) };
+	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
 
 	console.log(TaskCurrentData);
 
