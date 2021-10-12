@@ -63,6 +63,17 @@ function formSetup() {
 		$form.find('input,textarea,select').prop('disabled', isReadonly);
 	});
 }
+function formSetupForNewTasks(taskId) {
+	const saveButton = document.querySelector('#save-task-' + taskId);
+	const deleteButton = document.querySelector('#delete-task-' + taskId);
+	const editButton = document.querySelector('#edit-task-' + taskId);
+	$(saveButton, deleteButton, editButton).on('click', function () {
+		var $form = $(this).closest('form');
+		$form.toggleClass('is-readonly is-editing');
+		var isReadonly = $form.hasClass('is-readonly');
+		$form.find('input,textarea,select').prop('disabled', isReadonly);
+	});
+}
 
 function formatDate(date) {
 	return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
@@ -90,4 +101,4 @@ function datePickerSetup(dateInputId) {
 	});
 }
 
-export { addNewTaskButtonSetup, getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
+export { formSetupForNewTasks, addNewTaskButtonSetup, getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };

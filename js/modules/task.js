@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup } from './initialSetup.js';
+import { formSetupForNewTasks, datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -35,6 +35,7 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 		taskParams = Object.assign(taskParams, newTaskParams);
 		Window.data.paramsArr.push(taskParams);
 		sendTasksToContainer(getParamsArr());
+		formSetupForNewTasks(taskParams.taskId);
 		console.log('Task ' + taskParams.taskId + ' was added.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
@@ -128,6 +129,10 @@ function getTaskFromTemplate(params) {
 	let statusInputElement = toDo.querySelector('#task-0-status-select');
 	statusInputElement.id = 'task-' + params.taskId + '-status-select';
 	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
+
+	let editButton = toDo.querySelector('#edit-task-0');
+	editButton.id = 'edit-task-' + params.taskId;
+	editButton.setAttribute('task-id', params.taskId);
 
 	let deleteButton = toDo.querySelector('#delete-task-0');
 	deleteButton.id = 'delete-task-' + params.taskId;
