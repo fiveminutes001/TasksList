@@ -106,6 +106,7 @@ function formSetup() {
 		$form.find('input,textarea,select').prop('disabled', isReadonly);
 	});
 }
+
 function formSetupForNewTasks(taskId) {
 	const saveButton = '#save-task-' + taskId;
 	const deleteButton = '#delete-task-' + taskId;

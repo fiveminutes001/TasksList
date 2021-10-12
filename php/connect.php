@@ -1,24 +1,15 @@
 <?php
-// include "get_connection_details.php";
-//GET FUNCTION TO GET DB DETAILS FROM FAR FILE//OUTPUT 00
 function getfile($path)
 {
-    //VARS
-    $dir = 'taskslist';
-    $main_path = '../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
-    //OPENING FILE
-    $myfile = fopen($main_path . $dir . "/$path.txt", "r") or die("Unable to open file!");
-    //GETTING FILE CONTENT//OUTPUT 01
-    $r = file_get_contents($main_path . $dir . "/$path.txt");
-    //CLOSING FILE
-    fclose($myfile);
-    //SPLITTING BY SPACES
-    $p = explode("\n", $r);
-    //RETURN DB DETAILS ARRAY
-    return $p;
+	$dir = 'taskslist';
+	$main_path = '../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
+	($myfile = fopen($main_path . $dir . "/$path.txt", 'r')) or die('Unable to open file!');
+	$r = file_get_contents($main_path . $dir . "/$path.txt");
+	fclose($myfile);
+	$p = explode("\n", $r);
+	return $p;
 }
 
-//GET DB DETAILS
 $path = 'data';
 $db_details = getfile($path);
 
@@ -32,21 +23,21 @@ $con = mysqli_connect($host, $username, $password, $db);
 
 //CHECKING CONNECTION
 if ($con) {
-    $check_mark = '<i class="fas fa-check" style="font-size:12px;color:green;"></i>';
+	$check_mark = '<i class="fas fa-check" style="font-size:12px;color:green;"></i>';
 } else {
-    $check_mark = '<i class="fas fa-times" style="font-size:12px;color:red;"></i>';
+	$check_mark = '<i class="fas fa-times" style="font-size:12px;color:red;"></i>';
 }
-
+echo $check_mark;
 //SELECTING DATABASE
 mysqli_select_db($con, $db);
 
 //ENABLING HEBREW
-mysqli_query($con, "SET character_set_client=utf8mb4");
-mysqli_query($con, "SET character_set_connection=utf8mb4");
-mysqli_query($con, "SET character_set_database=utf8mb4");
-mysqli_query($con, "SET character_set_results=utf8mb4");
-mysqli_query($con, "SET character_set_server=utf8mb4");
+mysqli_query($con, 'SET character_set_client=utf8mb4');
+mysqli_query($con, 'SET character_set_connection=utf8mb4');
+mysqli_query($con, 'SET character_set_database=utf8mb4');
+mysqli_query($con, 'SET character_set_results=utf8mb4');
+mysqli_query($con, 'SET character_set_server=utf8mb4');
 
-//SETTING TIME	
+//SETTING TIME
 $sql_Time = "SET time_zone = '+03:00';";
 $query = mysqli_query($con, $sql_Time);
