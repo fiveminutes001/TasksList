@@ -10,11 +10,14 @@ function saveButtonSetup(saveButton) {
 function deleteButtonSetup(deleteButton) {
 	$(deleteButton).on('click', function () {
 		const paramsArr = getParamsArr();
-		console.log(paramsArr);
-		// for (params in paramsArr) {
-		// 	if (params.taskId == deleteButton.getAttribute('task-id')) return params;
-		// }
-		// console.log(params);
+		const taskParams = null;
+		for (params in paramsArr) {
+			if (params.taskId == deleteButton.getAttribute('task-id')) {
+				taskParams = params;
+				break;
+			}
+		}
+		console.log(params);
 		// console.log(checkIfCanDeleteTask(getParamsArr()[0]));
 	});
 }
