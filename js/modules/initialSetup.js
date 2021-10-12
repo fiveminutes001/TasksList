@@ -8,12 +8,9 @@ function saveButtonSetup(saveButton) {
 }
 
 function deleteButtonSetup(deleteButton) {
-	console.log(deleteButton.getAttribute('task-id'));
-	console.log(deleteButton);
-
 	$(deleteButton).on('click', function () {
-		console.log('!');
-		// const paramsArr = getParamsArr();
+		const paramsArr = getParamsArr();
+		console.log(paramsArr);
 		// for (params in paramsArr) {
 		// 	if (params.taskId == deleteButton.getAttribute('task-id')) return params;
 		// }
