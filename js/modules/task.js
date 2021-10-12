@@ -1,4 +1,4 @@
-import { getParamsArr } from './getParamsArr.js';
+import { getParamsArr, updateParamsArr } from './getParamsArr.js';
 import { datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
@@ -17,9 +17,22 @@ function deleteTask(taskParams, newTaskParams) {
 	}
 }
 
+function getTaskIndexInParamsArr(params) {
+	const paramsArr = getParamsArr();
+
+	for (let i = 0; i < paramsArr.length; i++) {
+		if (params.taskId == paramsArr[i].taskId) {
+			console.log('Task ' + taskId + ' found in place ' + i + ' in paramsArr.');
+			return i;
+		}
+	}
+	console.log('Task ' + taskId + ' was not found in paramsArr.');
+}
+
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
+
 		//updateParamsArr(taskParams);
 		console.log('Task ' + taskParams.taskId + ' was saved.');
 		console.log('New task data: ', taskParams);
@@ -150,4 +163,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { getTaskIndexInParamsArr, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };

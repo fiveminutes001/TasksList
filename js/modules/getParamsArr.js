@@ -1,3 +1,5 @@
+import { getTaskIndexInParamsArr } from './task.js';
+
 function getParamsArr() {
 	return [
 		{
@@ -30,4 +32,8 @@ function getParamsArr() {
 	];
 }
 
-export { getParamsArr };
+function updateParamsArr(params) {
+	getTaskIndexInParamsArr(params);
+}
+
+export { getParamsArr, updateParamsArr };
