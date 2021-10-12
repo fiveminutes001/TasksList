@@ -59,9 +59,9 @@ function getTaskCurrentData(taskId) {
 	return taskCurrentData;
 }
 function resetNewForm() {
-	document.querySelector('#new-task-name').value = null;
-	document.querySelector('#new-task-details').value = null;
-	document.querySelector('#new-task-due-date').value = null;
+	document.querySelector('#new-task-name').reset();
+	document.querySelector('#new-task-details').reset();
+	document.querySelector('#new-task-due-date').reset();
 }
 
 function getNewTaskCurrentData(taskId) {
