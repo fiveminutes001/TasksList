@@ -21,7 +21,7 @@ function deleteButtonSetup(deleteButton) {
 			checkIfCanDeleteTask(taskParams)
 				? confirm('Task ' + taskParams.taskId + ' will be deleted. Continue?')
 					? console.log('Task ' + taskParams.taskId + ' deleted.')
-					: console.log('Task' + taskParams.taskId + 'deletion canceled.')
+					: console.log('Task ' + taskParams.taskId + ' deletion canceled.')
 				: alert('Task' + taskParams.taskId + "can't be deleted");
 		}
 	});
