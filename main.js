@@ -16,6 +16,4 @@ window.onload = function () {
 	searchResults.filterChange();
 	searchResults.ascendingSort();
 	searchResults.descendingSort();
-
-	console.log(task.checkIfCanDeleteTask(task.getParamsArr()[0]));
 };
