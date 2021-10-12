@@ -12,12 +12,13 @@ function deleteButtonSetup(deleteButton) {
 	console.log(deleteButton);
 
 	$(deleteButton).on('click', function () {
-		const paramsArr = getParamsArr();
-		for (params in paramsArr) {
-			if (params.taskId == deleteButton.getAttribute('task-id')) return params;
-		}
-		console.log(params);
-		console.log(checkIfCanDeleteTask(getParamsArr()[0]));
+		console.log('!');
+		// const paramsArr = getParamsArr();
+		// for (params in paramsArr) {
+		// 	if (params.taskId == deleteButton.getAttribute('task-id')) return params;
+		// }
+		// console.log(params);
+		// console.log(checkIfCanDeleteTask(getParamsArr()[0]));
 	});
 }
 
