@@ -30,6 +30,17 @@ function deleteButtonSetup(deleteButton) {
 		}
 	});
 }
+function saveButtonSetup(saveButton) {
+	$(saveButton).on('click', function () {
+		const taskParams = getTaskParamsFromTaskId(saveButton.getAttribute('task-id'));
+
+		taskParams
+			? confirm('Task ' + taskParams.taskId + ' will be saved. Continue?')
+				? console.log('Task ' + taskParams.taskId + ' saved.')
+				: console.log('Task ' + taskParams.taskId + ' save canceled.')
+			: alert('Task' + taskParams.taskId + "can't be saved");
+	});
+}
 
 function initiateTooltips() {
 	$('[data-toggle="tooltip"]').tooltip();
