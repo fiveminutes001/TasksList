@@ -33,7 +33,7 @@ function mergeCurrentTaskData(taskParams, newTaskParams) {
 function mergeNewTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
-
+		Window.data.paramsArr.push(taskParams);
 		console.log('Task ' + taskParams.taskId + ' was added.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
