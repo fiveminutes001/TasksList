@@ -7,6 +7,14 @@ function getTodayDate() {
 	return date;
 }
 
+function mergeCurrentTaskData(taskParams, newTaskParams) {
+	try {
+		Object.assign(taskParams, newTaskParams);
+		console.log('Task ' + taskParams.taskId + ' was saved.');
+	} catch (error) {}
+	console.log('Task ' + taskParams.taskId + ' was not saved.' + error);
+}
+
 function getTaskCurrentData(taskId) {
 	let taskCurrentData = {
 		taskId: taskId,
@@ -129,4 +137,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };

@@ -1,4 +1,4 @@
-import { checkIfCanDeleteTask, getTaskCurrentData } from './task.js';
+import { checkIfCanDeleteTask, getTaskCurrentData, mergeCurrentTaskData } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
 function getTaskParamsFromTaskId(taskId) {
@@ -34,7 +34,7 @@ function saveButtonSetup(saveButton) {
 		let newTaskParams = getTaskCurrentData(taskId);
 		taskParams
 			? confirm('Task ' + taskParams.taskId + ' will be saved. Continue?')
-				? console.log('Task ' + taskParams.taskId + ' saved.')
+				? mergeCurrentTaskData(taskParams, newTaskParams)
 				: console.log('Task ' + taskParams.taskId + ' save canceled.')
 			: alert('Task' + taskParams.taskId + "can't be saved");
 	});
