@@ -17,6 +17,7 @@ function deleteButtonSetup(deleteButton) {
 	$(deleteButton).on('click', function () {
 		const taskId = deleteButton.getAttribute('task-id');
 		const taskParams = getTaskParamsFromTaskId(taskId);
+
 		let newTaskParams = { taskDeleted: true };
 		if (taskParams) {
 			checkIfCanDeleteTask(taskParams)
