@@ -11,8 +11,9 @@ function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		Object.assign(taskParams, newTaskParams);
 		console.log('Task ' + taskParams.taskId + ' was saved.');
-	} catch (error) {}
-	console.log('Task ' + taskParams.taskId + ' was not saved.' + error);
+	} catch (error) {
+		console.log('Task ' + taskParams.taskId + ' was not saved.' + error);
+	}
 }
 
 function getTaskCurrentData(taskId) {
