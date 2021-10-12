@@ -1,12 +1,6 @@
 import { checkIfCanDeleteTask } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
-function saveButtonSetup(saveButton) {
-	$(saveButton).on('click', function () {
-		console.log('save');
-	});
-}
-
 function getTaskParamsFromTaskId(taskId) {
 	const paramsArr = getParamsArr();
 
