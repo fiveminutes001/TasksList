@@ -1,4 +1,4 @@
-import { checkIfCanDeleteTask, getTaskCurrentData, mergeCurrentTaskData, deleteTask } from './task.js';
+import { checkIfCanDeleteTask, getNewTaskCurrentData, getTaskCurrentData, mergeCurrentTaskData, deleteTask } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
 function getTaskParamsFromTaskId(taskId) {
@@ -42,6 +42,15 @@ function saveButtonSetup(saveButton) {
 	});
 }
 
+function addNewTaskButtonSetup(addButton) {
+	$(addButton).on('click', function () {
+		const taskId = Window.data.paramsArr.length;
+		const taskParams = Object.assign({}, Window.data.blankTask);
+		let newTaskParams = getNewTaskCurrentData(taskId);
+		taskParams ? (confirm('Task ' + taskParams.taskId + ' will be added. Continue?') ? mergeNewTaskData(taskParams, newTaskParams) : console.log('Task ' + taskParams.taskId + ' add canceled.')) : alert('Task' + taskParams.taskId + "can't be added");
+	});
+}
+
 function initiateTooltips() {
 	$('[data-toggle="tooltip"]').tooltip();
 }
@@ -81,4 +90,4 @@ function datePickerSetup(dateInputId) {
 	});
 }
 
-export { getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
+export { addNewTaskButtonSetup, getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };

@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
+import { datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -30,6 +30,17 @@ function mergeCurrentTaskData(taskParams, newTaskParams) {
 	}
 }
 
+function mergeNewTaskData(taskParams, newTaskParams) {
+	try {
+		taskParams = Object.assign(taskParams, newTaskParams);
+
+		console.log('Task ' + taskParams.taskId + ' was added.');
+		console.log('New task data: ', taskParams);
+	} catch (error) {
+		console.log('Task ' + taskParams.taskId + ' was not added. ' + error);
+	}
+}
+
 function getTaskCurrentData(taskId) {
 	let taskCurrentData = {
 		taskId: taskId,
@@ -37,6 +48,20 @@ function getTaskCurrentData(taskId) {
 		taskDetails: document.querySelector('#task-' + taskId + '-details').value,
 		dueDate: document.querySelector('#task-' + taskId + '-due-date').value,
 		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value,
+	};
+	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(taskCurrentData) };
+	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
+
+	console.log('Task ' + taskId + ' current data:', taskCurrentData);
+
+	return taskCurrentData;
+}
+function getNewTaskCurrentData(taskId) {
+	let taskCurrentData = {
+		taskId: taskId,
+		taskName: document.querySelector('#new-task-name').value,
+		taskDetails: document.querySelector('#new-task-details').value,
+		dueDate: document.querySelector('#new-task-due-date').value,
 	};
 	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(taskCurrentData) };
 	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
@@ -132,6 +157,9 @@ function sendTasksToContainer(paramsArr) {
 function setNewTask() {
 	let dueDateId = document.querySelector('#new-task-due-date');
 	datePickerSetup(dueDateId);
+
+	let addButton = document.querySelector('#add-new-task-button');
+	addNewTaskButtonSetup(addButton);
 }
 
 function updateTask(taskId) {
@@ -152,4 +180,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { getNewTaskCurrentData, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };

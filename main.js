@@ -38,6 +38,15 @@ window.onload = function () {
 					taskDeleted: false,
 				},
 			],
+			blankTask: {
+				taskId: null,
+				taskName: 'Task name',
+				taskDetails: 'Task details',
+				dueDate: null,
+				taskStatus: 'Not finished',
+				canBeDeleted: false,
+				taskDeleted: false,
+			},
 		};
 		setup.initiateTooltips();
 		task.setNewTask();
