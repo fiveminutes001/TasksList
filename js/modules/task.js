@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
+import { getTaskParamsFromTaskId, datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -7,14 +7,15 @@ function getTodayDate() {
 	return date;
 }
 
-function getTaskData(taskId) {
-	return (oldTask = {
+function getTaskCurrentData(taskId) {
+	return {
 		taskId: taskId,
-		taskName: document.querySelector('.task-' + taskId + '-name').innerHTML,
-		taskDetails: document.querySelector('.task-' + taskId + '-details').innerHTML,
-		dueDate: document.querySelector('.task-' + taskId + '-due-date').innerHTML,
-		canBeDeleted: document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false,
-	});
+		taskName: document.querySelector('#task-' + taskId + '-name').value,
+		taskDetails: document.querySelector('#task-' + taskId + '-details').value,
+		dueDate: document.querySelector('#task-' + taskId + '-due-date').value,
+		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value,
+		canBeDeleted: checkIfCanDeleteTask(this),
+	};
 }
 
 function checkIfCanDeleteTask(params) {
@@ -123,4 +124,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { checkIfCanDeleteTask, getTodayDate, getTaskData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };

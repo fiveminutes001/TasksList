@@ -1,4 +1,4 @@
-import { checkIfCanDeleteTask } from './task.js';
+import { checkIfCanDeleteTask, getTaskCurrentData } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
 function getTaskParamsFromTaskId(taskId) {
@@ -27,8 +27,9 @@ function deleteButtonSetup(deleteButton) {
 
 function saveButtonSetup(saveButton) {
 	$(saveButton).on('click', function () {
-		const taskParams = getTaskParamsFromTaskId(saveButton.getAttribute('task-id'));
-
+		const taskId = saveButton.getAttribute('task-id');
+		const taskParams = getTaskParamsFromTaskId(taskId);
+		let getTaskCurrentData(taskId);
 		taskParams
 			? confirm('Task ' + taskParams.taskId + ' will be saved. Continue?')
 				? console.log('Task ' + taskParams.taskId + ' saved.')
@@ -76,4 +77,4 @@ function datePickerSetup(dateInputId) {
 	});
 }
 
-export { saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
+export { getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
