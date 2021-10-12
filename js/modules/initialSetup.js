@@ -1,4 +1,4 @@
-import { checkIfCanDeleteTask, getTaskCurrentData, mergeCurrentTaskData } from './task.js';
+import { checkIfCanDeleteTask, getTaskCurrentData, mergeCurrentTaskData, deleteTask } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
 function getTaskParamsFromTaskId(taskId) {
@@ -15,12 +15,13 @@ function getTaskParamsFromTaskId(taskId) {
 
 function deleteButtonSetup(deleteButton) {
 	$(deleteButton).on('click', function () {
-		const taskParams = getTaskParamsFromTaskId(deleteButton.getAttribute('task-id'));
-
+		const taskId = deleteButton.getAttribute('task-id');
+		const taskParams = getTaskParamsFromTaskId(taskId);
+		let newTaskParams = { taskDeleted: true };
 		if (taskParams) {
 			checkIfCanDeleteTask(taskParams)
 				? confirm('Task ' + taskParams.taskId + ' will be deleted. Continue?')
-					? console.log('Task ' + taskParams.taskId + ' deleted.')
+					? deleteTask(taskParams, newTaskParams)
 					: console.log('Task ' + taskParams.taskId + ' deletion canceled.')
 				: alert('Task' + taskParams.taskId + "can't be deleted");
 		}

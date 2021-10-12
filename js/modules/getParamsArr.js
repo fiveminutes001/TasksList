@@ -7,6 +7,7 @@ function getParamsArr() {
 			dueDate: '13/10/21',
 			taskStatus: 'Completed',
 			canBeDeleted: false,
+			taskDeleted: false,
 		},
 		{
 			taskId: 2,
@@ -15,6 +16,7 @@ function getParamsArr() {
 			dueDate: '22/08/21',
 			taskStatus: 'Not finished',
 			canBeDeleted: false,
+			taskDeleted: false,
 		},
 		{
 			taskId: 3,
@@ -23,6 +25,7 @@ function getParamsArr() {
 			dueDate: '10/10/2021',
 			taskStatus: 'Not finished',
 			canBeDeleted: true,
+			taskDeleted: false,
 		},
 	];
 }

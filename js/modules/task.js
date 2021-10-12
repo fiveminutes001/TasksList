@@ -7,6 +7,16 @@ function getTodayDate() {
 	return date;
 }
 
+function deleteTask(taskParams, newTaskParams) {
+	try {
+		taskParams = Object.assign(taskParams, newTaskParams);
+		console.log('Task ' + taskParams.taskId + ' was deleted.');
+		console.log('New task data: ', taskParams);
+	} catch (error) {
+		console.log('Task ' + taskParams.taskId + ' was not deleted.' + error);
+	}
+}
+
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
@@ -139,4 +149,4 @@ function updateTask(taskId) {
 		newTaskElements.taskName.outerHTML = '';
 	}
 }
-export { mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
