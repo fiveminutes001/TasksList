@@ -2,7 +2,7 @@
 function getfile($path)
 {
 	$dir = 'taskslist';
-	$main_path = '../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
+	$main_path = '../../../../';
 	($myfile = fopen($main_path . $dir . "/$path.txt", 'r')) or die('Unable to open file!');
 	$r = file_get_contents($main_path . $dir . "/$path.txt");
 	fclose($myfile);
