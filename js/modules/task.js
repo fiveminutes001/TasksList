@@ -1,4 +1,4 @@
-import { getParamsArr, updateParamsArr } from './getParamsArr.js';
+import { getParamsArr } from './getParamsArr.js';
 import { getTaskParamsFromTaskId, datePickerSetup, saveButtonSetup, deleteButtonSetup } from './initialSetup.js';
 
 function getTodayDate() {
