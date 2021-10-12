@@ -10,7 +10,7 @@ function saveButtonSetup(saveButton) {
 function deleteButtonSetup(deleteButton) {
 	$(deleteButton).on('click', function () {
 		const paramsArr = getParamsArr();
-		const taskParams = null;
+		let taskParams = null;
 		for (let params of paramsArr) {
 			if (params.taskId == deleteButton.getAttribute('task-id')) {
 				taskParams = params;
