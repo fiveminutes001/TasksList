@@ -64,10 +64,10 @@ function formSetup() {
 	});
 }
 function formSetupForNewTasks(taskId) {
-	const saveButton = document.querySelector('#save-task-' + taskId);
-	const deleteButton = document.querySelector('#delete-task-' + taskId);
+	const saveButton = '#save-task-' + taskId;
+	const deleteButton = '#delete-task-' + taskId;
 	const editButton = '#edit-task-' + taskId;
-	$(editButton).on('click', function () {
+	$(editButton, saveButton, deleteButton).on('click', function () {
 		console.log('!');
 		var $form = $(this).closest('form');
 		$form.toggleClass('is-readonly is-editing');
