@@ -70,7 +70,7 @@ function getNewTaskCurrentData(taskId) {
 		taskId: taskId,
 		taskName: document.querySelector('#new-task-name').value,
 		taskDetails: document.querySelector('#new-task-details').value,
-		dueDate: document.querySelector('#new-task-due-date').value,
+		dueDate: formatDatepickerDate(document.querySelector('#new-task-due-date').value),
 	};
 	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(taskCurrentData) };
 	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
@@ -80,10 +80,14 @@ function getNewTaskCurrentData(taskId) {
 	return taskCurrentData;
 }
 
+function formatDatepickerDate(dueDate) {
+	const formattedDate = '20' + dueDate.slice(-2) + '-' + dueDate.slice(3, 5) + '-' + dueDate.slice(0, 2);
+	return new Date(formattedDate);
+}
+
 function checkIfCanDeleteTask(params) {
-	const dueDateFormatted = '20' + params.dueDate.slice(-2) + '-' + params.dueDate.slice(3, 5) + '-' + params.dueDate.slice(0, 2);
 	const currentDate = new Date();
-	const dueDate = new Date(dueDateFormatted);
+	const dueDate = formatDatepickerDate(params.dueDate);
 	//const dueDate = new Date(params.dueDate);
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
@@ -177,4 +181,4 @@ function setNewTask() {
 	addNewTaskButtonSetup(addButton);
 }
 
-export { mergeNewTaskData, getNewTaskCurrentData, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, sendTasksToContainer, getParamsArr, setNewTask };
+export { formatDatepickerDate, mergeNewTaskData, getNewTaskCurrentData, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, sendTasksToContainer, getParamsArr, setNewTask };
