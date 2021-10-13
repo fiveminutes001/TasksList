@@ -17,10 +17,11 @@ function getAllTasks(opts) {
 
 		xhr.open(opts.method, opts.url, true);
 
-		xhr.onload = function () {
+		xhr.onload = function (params) {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
 				console.log('db query successful: ', response);
+				console.log('!!', params.q);
 				resolve(response);
 			} else {
 				console.log('db query not successful.');
@@ -46,6 +47,16 @@ function updateTasks(params) {
 		method: 'GET',
 		url: 'db.php',
 		params: { q: 0, data: JSON.stringify(params) },
+	};
+
+	getAllTasks(opts);
+}
+
+function getTotalTasksNumber() {
+	let opts = {
+		method: 'GET',
+		url: 'db.php',
+		params: { q: 3, data: 0 },
 	};
 
 	getAllTasks(opts);

@@ -52,6 +52,26 @@ class update_query extends query
 	}
 }
 
+class total_query extends query
+{
+	public $column;
+	public $result;
+	public $results_array = [];
+	public $sql;
+
+	public function __construct($con)
+	{
+		$this->con = $con;
+		$this->sql = 'SELECT * FROM tasks';
+	}
+
+	public function return_results()
+	{
+		$result = count($this->query_results()->query_results_to_array());
+		return $result;
+	}
+}
+
 $response = '';
 
 switch ($q) {
@@ -67,6 +87,10 @@ switch ($q) {
 	case 2:
 		// $new_search = new filter_query('taskId', $con, $data);
 		// $query_result = $new_search->return_results();
+		break;
+	case 3:
+		$new_search = new total_query($con);
+		$query_result = $new_search->return_results();
 		break;
 }
 
