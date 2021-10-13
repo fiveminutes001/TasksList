@@ -19,6 +19,7 @@ window.onload = function () {
 		db.getAllTasks(opts).then(function (response) {
 			console.log('We got this:', response);
 			console.log('Window:', Window.data);
+			setParams(response);
 			task.sendTasksToContainer(task.getParamsArr());
 		});
 		//setup.setParams();
