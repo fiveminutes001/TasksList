@@ -177,22 +177,4 @@ function setNewTask() {
 	addNewTaskButtonSetup(addButton);
 }
 
-function updateTask(taskId) {
-	let sectionHeader = document.querySelector('#section-header');
-
-	let newTaskElements = {
-		taskId: taskId,
-		taskName: document.querySelector('#task-name'),
-		taskDetails: document.querySelector('#task-details'),
-		dueDate: document.querySelector('#task-due-date'),
-		canBeDeleted: document.querySelector('.task-' + taskId).classList.contains('can-be-deleted') ? true : false,
-	};
-	let oldTask = getTaskData(taskId);
-	console.log(oldTask);
-	console.log(newTaskElements);
-
-	if (oldTask) {
-		newTaskElements.taskName.outerHTML = '';
-	}
-}
-export { mergeNewTaskData, getNewTaskCurrentData, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, updateTask, sendTasksToContainer, getParamsArr, setNewTask };
+export { mergeNewTaskData, getNewTaskCurrentData, deleteTask, mergeCurrentTaskData, checkIfCanDeleteTask, getTodayDate, getTaskCurrentData, getTaskFromTemplate, sendTasksToContainer, getParamsArr, setNewTask };

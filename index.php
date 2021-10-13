@@ -46,7 +46,7 @@ include 'php/connect.php';
 			</div>
 
 			<!-- Create task section -->
-			<form id="new-task-form" onsubmit="event.preventDefault();">
+			<form id="new-task-form">
 				<div class="row m-1 p-3">
 					<div class="col mx-auto">
 						<!-- Set task name-->

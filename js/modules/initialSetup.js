@@ -80,7 +80,6 @@ function formSetup() {
 }
 
 function formatDate(date) {
-	console.log('date from format date: ', date);
 	return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 }
 
