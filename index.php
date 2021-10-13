@@ -69,6 +69,12 @@ include 'php/connect.php';
 							<div class="col-12 col-sm-6 col-md-4 p-0 m-0 mt-2">
 								<div class="form-group">
 									<input id="new-task-due-date" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required />
+									<div class="valid-feedback">
+      									Looks good!
+    								</div>
+									<div class="invalid-feedback">
+       									Please choose a Task name.
+      								</div>
 								</div>
 							</div>
 						</div>
