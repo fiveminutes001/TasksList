@@ -13,7 +13,7 @@ window.onload = function () {
 		let opts = {
 			method: 'GET',
 			url: 'db.php',
-			params: { q: 'all tasks', dev: 0 },
+			params: { q: 'a', dev: 0 },
 		};
 
 		db.getAllTasks(opts).then(function (response) {
