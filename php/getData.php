@@ -48,7 +48,22 @@ class update_query extends query
 	{
 		$this->column = $column;
 		$this->con = $con;
-		$this->sql = 'SELECT * FROM tasks WHERE taskDeleted != 0 ORDER BY ' . $column . ' ASC';
+		$this->sql =
+			'INSERT INTO tasks (`taskId`, `taskDetails`, `dueDate`, `taskStatus`, `taskName`, `canBeDeleted`, `taskDeleted`) VALUES (' .
+			$data['taskId'] .
+			',' .
+			$data['taskDetails'] .
+			',' .
+			$data['dueDate'] .
+			',' .
+			$data['taskStatus'] .
+			',' .
+			$data['taskName'] .
+			',' .
+			$data['canBeDeleted'] .
+			',' .
+			$data['taskDeleted'] .
+			')';
 	}
 }
 
@@ -78,7 +93,7 @@ switch ($q) {
 	case 0:
 		$data = json_decode($data);
 		$new_search = new update_query('taskId', $con, $data);
-		$query_result = $new_search->return_results();
+		$query_result = $new_search->query_results();
 		break;
 	case 1:
 		$new_search = new sort_query('taskId', $con);
