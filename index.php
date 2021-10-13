@@ -73,7 +73,7 @@ include 'php/connect.php';
       									Looks good!
     								</div>
 									<div class="invalid-feedback">
-       									Please choose a Task name.
+       									Please choose a due date.
       								</div>
 								</div>
 							</div>
