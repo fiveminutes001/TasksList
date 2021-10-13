@@ -17,12 +17,10 @@ window.onload = function () {
 		};
 
 		db.getAllTasks(opts).then(function (response) {
-			console.log('We got this:', response);
-			console.log('Window:', Window.data);
 			setup.setParams(response);
 			task.sendTasksToContainer(task.getParamsArr());
 		});
-		//setup.setParams();
+
 		setup.initiateTooltips();
 		task.setNewTask();
 
