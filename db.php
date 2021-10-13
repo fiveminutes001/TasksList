@@ -11,8 +11,7 @@ include 'php/connect.php';
 $q = $_GET['q'];
 $dev = $_GET['dev'];
 
-$c = $_GET['params'];
-var_dump($c);
+var_dump($_GET);
 
 //getting data from DB
 include 'php/getData.php';
