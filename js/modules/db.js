@@ -10,7 +10,7 @@ function getAllTasks(opts) {
 					return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
 				})
 				.join('&');
-			opts.url = opts.url + params;
+			opts.url = opts.url + '?' + params;
 			console.log('!', opts.url);
 		}
 
