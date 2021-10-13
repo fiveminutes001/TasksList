@@ -15,6 +15,6 @@ $response = $q;
 //include 'php/getData.php';
 
 //output the response
-echo $response;
+echo json_encode($response);
 
 ?>
