@@ -25,10 +25,6 @@ window.onload = function () {
 				setup.formSetup();
 				console.log('Tasks loaded.');
 			})
-			.then(function () {
-				formSubmit().then();
-				console.log('New task form updated.');
-			})
 			.catch(function (err) {
 				console.error('Tasks did not load currectly. ', err.statusText);
 			});
