@@ -1,37 +1,9 @@
 import { checkIfCanDeleteTask, getNewTaskCurrentData, getTaskCurrentData, mergeCurrentTaskData, mergeNewTaskData, deleteTask } from './task.js';
 import { getParamsArr } from './getParamsArr.js';
 
-function setParams() {
+function setParams(paramsArrDataFromDb) {
 	Window.data = {
-		paramsArr: [
-			{
-				taskId: '1',
-				taskName: 'Task name',
-				taskDetails: 'Task details',
-				dueDate: '13/10/21',
-				taskStatus: 'Completed',
-				canBeDeleted: false,
-				taskDeleted: false,
-			},
-			{
-				taskId: '2',
-				taskName: 'Task 2 name',
-				taskDetails: 'Task 2 details',
-				dueDate: '22/08/21',
-				taskStatus: 'Not finished',
-				canBeDeleted: false,
-				taskDeleted: false,
-			},
-			{
-				taskId: '3',
-				taskName: 'Task 3 name',
-				taskDetails: 'Task 3 details',
-				dueDate: '10/10/2021',
-				taskStatus: 'Not finished',
-				canBeDeleted: true,
-				taskDeleted: false,
-			},
-		],
+		paramsArr: paramsArrDataFromDb,
 		blankTask: {
 			taskId: null,
 			taskName: 'Task name',

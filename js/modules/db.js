@@ -1,22 +1,16 @@
+import { setParams } from './initialSetup.js';
 function getAllTasks() {
 	//sending AJAX request
 	const xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
-			let response = JSON.parse(xmlhttp.responseText);
-			console.log(response);
-			Window.data = {
-				paramsArr: response,
-				blankTask: {
-					taskId: null,
-					taskName: 'Task name',
-					taskDetails: 'Task details',
-					dueDate: null,
-					taskStatus: 'Not finished',
-					canBeDeleted: false,
-					taskDeleted: false,
-				},
-			};
+			try {
+				let response = JSON.parse(xmlhttp.responseText);
+				console.log('initial db data loaded: ' + response);
+				setParams(response);
+			} catch (error) {
+				console.log('initial db data not loaded: ' + error);
+			}
 		}
 	};
 	let dev = 0;
