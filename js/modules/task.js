@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { formSetupForNewTasks, datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup, formSetup } from './initialSetup.js';
+import { datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup, formSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -36,7 +36,7 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 		Window.data.paramsArr.push(taskParams);
 		sendTasksToContainer(getParamsArr());
 		formSetup();
-		//formSetupForNewTasks(taskParams.taskId);
+
 		console.log('Task ' + taskParams.taskId + ' was added.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
@@ -83,8 +83,8 @@ function getNewTaskCurrentData(taskId) {
 function checkIfCanDeleteTask(params) {
 	const dueDateFormatted = '20' + params.dueDate.slice(-2) + '-' + params.dueDate.slice(3, 5) + '-' + params.dueDate.slice(0, 2);
 	const currentDate = new Date();
-	//const dueDate = new Date(dueDateFormatted);
-	const dueDate = new Date(params.dueDate);
+	const dueDate = new Date(dueDateFormatted);
+	//const dueDate = new Date(params.dueDate);
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
 	const diff = end - start;

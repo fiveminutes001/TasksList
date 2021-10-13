@@ -79,18 +79,6 @@ function formSetup() {
 	});
 }
 
-function formSetupForNewTasks(taskId) {
-	const saveButton = '#save-task-' + taskId;
-	const deleteButton = '#delete-task-' + taskId;
-	const editButton = '#edit-task-' + taskId;
-	$(editButton + ',' + deleteButton + ',' + saveButton).on('click', function () {
-		var $form = $(this).closest('form');
-		$form.toggleClass('is-readonly is-editing');
-		var isReadonly = $form.hasClass('is-readonly');
-		$form.find('input,textarea,select').prop('disabled', isReadonly);
-	});
-}
-
 function formatDate(date) {
 	return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 }
@@ -113,8 +101,9 @@ function datePickerSetup(dateInputId) {
 			.on('changeDate', function (dateChangeEvent) {
 				$(dateInputId).datepicker('hide');
 				$(dateInputId).text(formatDate(dateChangeEvent.date));
+				$(dateInputId).value(dateChangeEvent.date);
 			});
 	});
 }
 
-export { setParams, formSetupForNewTasks, addNewTaskButtonSetup, getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
+export { setParams, addNewTaskButtonSetup, getTaskParamsFromTaskId, saveButtonSetup, deleteButtonSetup, initiateTooltips, formSetup, formatDate, datePickerSetup };
