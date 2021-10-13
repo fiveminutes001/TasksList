@@ -5,28 +5,6 @@ import * as db from './js/modules/db.js';
 
 window.onload = function () {
 	(function () {
-		function formSubmit() {
-			return new Promise(function (resolve, reject) {
-				var forms = document.querySelectorAll('.needs-validation');
-				Array.prototype.slice.call(forms).forEach(function (form) {
-					form.addEventListener(
-						'submit',
-						function (event) {
-							if (!form.checkValidity()) {
-								event.preventDefault();
-								event.stopPropagation();
-							}
-							event.preventDefault();
-							event.stopPropagation();
-							form.classList.add('was-validated');
-							resolve();
-						},
-						false
-					);
-				});
-			});
-		}
-
 		bootlint.showLintReportForCurrentDocument([], {
 			hasProblems: false,
 			problemFree: false,
@@ -48,7 +26,7 @@ window.onload = function () {
 				console.log('Tasks loaded.');
 			})
 			.then(function () {
-				formSubmit().then(task.setNewTask());
+				formSubmit().then();
 				console.log('New task form updated.');
 			})
 			.catch(function (err) {
@@ -57,6 +35,7 @@ window.onload = function () {
 
 		setup.initiateTooltips();
 
+		task.setNewTask();
 		searchResults.sortChange();
 		searchResults.filterChange();
 		searchResults.ascendingSort();
