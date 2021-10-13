@@ -38,8 +38,7 @@ class query
 		$arr = $this->results_array;
 
 		while ($row = mysqli_fetch_array($this->result)) {
-			var_dump($row);
-			//array_push($arr, $row['username']);
+			array_push($arr, $row);
 		}
 
 		$this->top_five_results_array = $arr;
