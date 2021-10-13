@@ -42,7 +42,15 @@ function getAllTasks(opts) {
 }
 
 function sendTasks() {
-	$.post('db.php', { name: 'John', time: '2pm' });
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log(this.responseText);
+		}
+	};
+	xhttp.open('POST', 'db.php', true);
+	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhttp.send('fname=Henry&lname=Ford');
 }
 
 function getTasks() {
