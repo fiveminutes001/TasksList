@@ -10,10 +10,8 @@ include 'php/connect.php';
 //get the search input from URL
 $q = $_GET['q'];
 $dev = $_GET['dev'];
-
-var_dump($_GET);
-var_dump($_POST);
-
+$a = $_POST['a'];
+$b = $_POST['b'];
 //getting data from DB
 include 'php/getData.php';
 
