@@ -50,7 +50,7 @@ class update_query extends query
 		$this->con = $con;
 		foreach ($data as $d) {
 			$this->sql =
-				'INSERT INTO tasks (`taskId`, `taskDetails`, `dueDate`, `taskStatus`, `taskName`, `canBeDeleted`, `taskDeleted`) VALUES ('' .
+				'INSERT INTO tasks (`taskId`, `taskDetails`, `dueDate`, `taskStatus`, `taskName`, `canBeDeleted`, `taskDeleted`) VALUES (' .
 				$d["taskId"] .
 				'','' .
 				$d["taskDetails"] .
@@ -64,7 +64,7 @@ class update_query extends query
 				$d["canBeDeleted"] .
 				'','' .
 				$d["taskDeleted"] .
-				'')';
+				')';
 			$this->query_results();
 		}
 	}
