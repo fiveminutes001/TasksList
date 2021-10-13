@@ -134,7 +134,7 @@ function getTaskFromTemplate(params) {
 
 	let statusInputElement = toDo.querySelector('#task-0-status-select');
 	statusInputElement.id = 'task-' + params.taskId + '-status-select';
-	statusInputElement.value = params.taskDetails == 'Completed' ? 1 : 2;
+	statusInputElement.value = params.taskStatus == 'Completed' ? 1 : 2;
 
 	let editButton = toDo.querySelector('#edit-task-0');
 	editButton.id = 'edit-task-' + params.taskId;
