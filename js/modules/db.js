@@ -21,6 +21,9 @@ function getAllTasks(opts) {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
 				console.log('db query successful: ', response);
+				if (params.q == 3) {
+					Window.data.totalLength = response;
+				}
 				resolve(response);
 			} else {
 				console.log('db query not successful.');
@@ -82,8 +85,8 @@ function getTasks() {
 		.then(function () {
 			getTotalTasksNumber();
 		})
-		.then(function (response) {
-			console.log('Total tasks counted: ' + response);
+		.then(function () {
+			console.log('Total tasks counted.' + Window.data.totalLength);
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
