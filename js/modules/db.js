@@ -5,6 +5,18 @@ function getAllTasks() {
 		if (this.readyState == 4 && this.status == 200) {
 			let response = JSON.parse(xmlhttp.responseText);
 			console.log(response);
+			Window.data = {
+				paramsArr: response,
+				blankTask: {
+					taskId: null,
+					taskName: 'Task name',
+					taskDetails: 'Task details',
+					dueDate: null,
+					taskStatus: 'Not finished',
+					canBeDeleted: false,
+					taskDeleted: false,
+				},
+			};
 		}
 	};
 	let dev = 0;

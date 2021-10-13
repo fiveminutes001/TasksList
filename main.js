@@ -10,7 +10,7 @@ window.onload = function () {
 			problemFree: false,
 		});
 		db.getAllTasks();
-		setup.setParams();
+		//setup.setParams();
 		setup.initiateTooltips();
 		task.setNewTask();
 		task.sendTasksToContainer(task.getParamsArr());
