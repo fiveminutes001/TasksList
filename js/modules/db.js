@@ -6,7 +6,7 @@ function getAllTasks() {
 		if (this.readyState == 4 && this.status == 200) {
 			try {
 				let response = JSON.parse(xmlhttp.responseText);
-				console.log('initial db data loaded: ' + response);
+				console.log('initial db data loaded: ', response);
 				setParams(response);
 			} catch (error) {
 				console.log('initial db data not loaded: ' + error);
