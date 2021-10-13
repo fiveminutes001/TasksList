@@ -78,7 +78,7 @@ function sendAllTasks(opts) {
 
 function sendTasks() {
 	//send
-	opts = {
+	let opts = {
 		method: 'POST',
 		url: 'db.php',
 		params: { b: 'a', c: 1 },
