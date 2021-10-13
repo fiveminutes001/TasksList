@@ -8,13 +8,13 @@ class insert_query
 	public $results_array = [];
 	public $sql;
 	public $q;
-	public $dev;
+	public $data;
 
-	public function __construct($column, $con, $q, $dev = null, $column_two = null, $column_three = null)
+	public function __construct($column, $con, $q, $data = null, $column_two = null, $column_three = null)
 	{
 		$this->column = $column;
 		$this->q = $q;
-		$this->dev = $dev;
+		$this->data = $data;
 		$this->con = $con;
 
 		$single_column_sql = 'SELECT * FROM tasks';
@@ -56,13 +56,13 @@ class search_query
 	public $results_array = [];
 	public $sql;
 	public $q;
-	public $dev;
+	public $data;
 
-	public function __construct($column, $con, $q, $dev = null, $column_two = null, $column_three = null)
+	public function __construct($column, $con, $q, $data = null, $column_two = null, $column_three = null)
 	{
 		$this->column = $column;
 		$this->q = $q;
-		$this->dev = $dev;
+		$this->data = $data;
 		$this->con = $con;
 
 		$single_column_sql = 'SELECT * FROM tasks';
@@ -100,7 +100,7 @@ class search_query
 $response = '';
 
 if ($q == 1) {
-	$new_search = new search_query('full_name', $con, $q, $dev);
+	$new_search = new search_query('full_name', $con, $q, $data);
 	$query_result = $new_search->return_results();
 } else {
 	$query_result = $data;
