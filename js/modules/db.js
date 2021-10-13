@@ -17,7 +17,7 @@ function getAllTasks(opts) {
 
 		xhr.open(opts.method, opts.url, true);
 
-		xhr.onload = function (opts.params) {
+		xhr.onload = function (opts) {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
 				console.log('db query successful: ', response);
