@@ -20,13 +20,9 @@ function getTotalTasks(opts) {
 		if (this.status >= 200 && this.status < 300) {
 			let response = JSON.parse(xhr.responseText);
 			console.log('Total tasks counted successfuly: ', response);
-			resolve(response);
+			Window.data.totalLength = response;
 		} else {
 			console.log('Total tasks count not successful.');
-			reject({
-				status: this.status,
-				statusText: xhr.statusText,
-			});
 		}
 	};
 	xhr.onerror = function () {
@@ -118,7 +114,7 @@ function getTasks() {
 			getTotalTasksNumber();
 		})
 		.then(function () {
-			console.log('Total tasks counted.' + Window.data.totalLength);
+			console.log('Total tasks counted.');
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
