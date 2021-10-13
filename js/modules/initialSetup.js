@@ -101,7 +101,7 @@ function datePickerSetup(dateInputId) {
 			.on('changeDate', function (dateChangeEvent) {
 				$(dateInputId).datepicker('hide');
 				$(dateInputId).text(formatDate(dateChangeEvent.date));
-				$(dateInputId).value(dateChangeEvent.date);
+				$(dateInputId).val(dateChangeEvent.date);
 			});
 	});
 }
