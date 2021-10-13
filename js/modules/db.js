@@ -59,7 +59,7 @@ function getTotalTasksNumber() {
 			params: { q: 3, data: 0 },
 		};
 
-		getAllTasks(opts);
+		resolve(getAllTasks(opts));
 	});
 }
 
