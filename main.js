@@ -9,11 +9,21 @@ window.onload = function () {
 			hasProblems: false,
 			problemFree: false,
 		});
-		db.getAllTasks();
+
+		let opts = {
+			method: 'GET',
+			url: 'db.php',
+			params: { q: 'all tasks', dev: 0 },
+		};
+
+		db.getAllTasks(opts).then(function (response) {
+			console.log('We got this:', response);
+			task.sendTasksToContainer(task.getParamsArr());
+		});
 		//setup.setParams();
 		setup.initiateTooltips();
 		task.setNewTask();
-		task.sendTasksToContainer(task.getParamsArr());
+
 		setup.formSetup();
 		searchResults.sortChange();
 		searchResults.filterChange();
