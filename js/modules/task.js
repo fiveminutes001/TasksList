@@ -82,7 +82,8 @@ function getNewTaskCurrentData(taskId) {
 function checkIfCanDeleteTask(params) {
 	const dueDateFormatted = '20' + params.dueDate.slice(-2) + '-' + params.dueDate.slice(3, 5) + '-' + params.dueDate.slice(0, 2);
 	const currentDate = new Date();
-	const dueDate = new Date(dueDateFormatted);
+	//const dueDate = new Date(dueDateFormatted);
+	const dueDate = new Date(params.dueDate);
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
 	const diff = end - start;
