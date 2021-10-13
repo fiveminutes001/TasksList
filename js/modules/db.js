@@ -5,7 +5,6 @@ function getAllTasks() {
 		if (this.readyState == 4 && this.status == 200) {
 			let response = JSON.parse(xmlhttp.responseText);
 			console.log(response);
-			console.log(this.responseText);
 		}
 	};
 	let dev = 0;
