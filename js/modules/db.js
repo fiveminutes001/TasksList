@@ -64,6 +64,13 @@ function sendAllTasks(opts) {
 				statusText: xhr.statusText,
 			});
 		};
+
+		if (opts.headers) {
+			Object.keys(opts.headers).forEach(function (key) {
+				xhr.setRequestHeader(key, opts.headers[key]);
+			});
+		}
+
 		let params = opts.params;
 		if (params && typeof params === 'object') {
 			params = Object.keys(params)
@@ -82,6 +89,9 @@ function sendTasks() {
 		method: 'POST',
 		url: 'db.php',
 		params: { b: 'a', c: 1 },
+		headers: {
+			'Content-type': 'application/x-www-form-urlencoded',
+		},
 	};
 
 	sendAllTasks(opts)
@@ -92,6 +102,7 @@ function sendTasks() {
 			console.error('Tasks were not sent currectly. ', err.statusText);
 		});
 }
+
 function getTasks() {
 	//receive
 	let opts = {
