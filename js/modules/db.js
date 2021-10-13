@@ -11,12 +11,10 @@ function getAllTasks(opts) {
 				})
 				.join('&');
 			opts.url = opts.url + '?' + params;
-			console.log('!', params);
-			console.log('!!', opts.url);
 		}
 
-		xhr.open(opts.method, opts.url);
-		//xmlhttp.open('GET', 'db.php?q=' + q + '&dev=' + dev, true);
+		xhr.open(opts.method, opts.url, true);
+
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
