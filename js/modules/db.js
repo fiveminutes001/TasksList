@@ -20,7 +20,7 @@ function getAllTasks(opts) {
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
-				if (params.q == 'a') {
+				if (opts.q == 'a') {
 					console.log('Initial db data loaded: ', response);
 				} else {
 					console.log('data inserted.');
