@@ -52,7 +52,7 @@ function getTaskCurrentData(taskId) {
 		taskName: document.querySelector('#task-' + taskId + '-name').value,
 		taskDetails: document.querySelector('#task-' + taskId + '-details').value,
 		dueDate: formatDatepickerDate(document.querySelector('#task-' + taskId + '-due-date').value),
-		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value,
+		taskStatus: document.querySelector('#task-' + taskId + '-status-select').value == 1 ? 'Completed' : 'Not finished',
 	};
 	const canBeDeleted = { canBeDeleted: checkIfCanDeleteTask(taskCurrentData) };
 	taskCurrentData = Object.assign(taskCurrentData, canBeDeleted);
