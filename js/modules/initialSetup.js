@@ -57,7 +57,8 @@ function saveButtonSetup(saveButton) {
 	});
 }
 
-function addNewTaskButtonSetup(addButton) {
+function addNewTaskButtonSetup() {
+	//function addNewTaskButtonSetup(addButton) {
 	// $(addButton).on('click', function () {
 	const taskId = (Window.data.paramsArr.length + 1).toString();
 	const taskParams = Object.assign({}, Window.data.blankTask);

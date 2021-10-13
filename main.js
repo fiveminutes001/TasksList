@@ -29,35 +29,30 @@ window.onload = function () {
 				console.error('Tasks did not load currectly. ', err.statusText);
 			});
 
-		(function () {
-			'use strict';
+		function formSubmit() {
+			return new Promise(function (resolve, reject) {
+				var forms = document.querySelectorAll('.needs-validation');
+				Array.prototype.slice.call(forms).forEach(function (form) {
+					form.addEventListener(
+						'submit',
+						function (event) {
+							if (!form.checkValidity()) {
+								event.preventDefault();
+								event.stopPropagation();
+							}
 
-			// Fetch all the forms we want to apply custom Bootstrap validation styles to
-			var forms = document.querySelectorAll('.needs-validation');
-
-			// Loop over them and prevent submission
-			Array.prototype.slice.call(forms).forEach(function (form) {
-				form.addEventListener(
-					'submit',
-					function (event) {
-						if (!form.checkValidity()) {
-							event.preventDefault();
-							event.stopPropagation();
-						}
-						console.log('form ok');
-						event.preventDefault();
-						event.stopPropagation();
-						setup.addNewTaskButtonSetup();
-						form.classList.add('was-validated');
-					},
-					false
-				);
+							form.classList.add('was-validated');
+							resolve();
+						},
+						false
+					);
+				});
 			});
-		})();
+		}
 
 		setup.initiateTooltips();
 		task.setNewTask();
-
+		formSubmit().then(setup.addNewTaskButtonSetup());
 		searchResults.sortChange();
 		searchResults.filterChange();
 		searchResults.ascendingSort();
