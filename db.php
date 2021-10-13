@@ -12,6 +12,7 @@ $q = $_GET['q'];
 $dev = $_GET['dev'];
 
 var_dump($_GET);
+var_dump($_POST);
 
 //getting data from DB
 include 'php/getData.php';

@@ -42,21 +42,7 @@ function getAllTasks(opts) {
 }
 
 function sendTasks() {
-	//send
-	console.log(Window.data);
-	let opts = {
-		method: 'GET',
-		url: 'db.php',
-		params: { q: JSON.stringify(Window.data), dev: 1 },
-	};
-
-	getAllTasks(opts)
-		.then(function (response) {
-			console.log('Tasks were sent currectly.');
-		})
-		.catch(function (err) {
-			console.error('Tasks were not sent currectly. ', err.statusText);
-		});
+	$.post('db.php', { name: 'John', time: '2pm' });
 }
 
 function getTasks() {
@@ -75,7 +61,6 @@ function getTasks() {
 		.then(function () {
 			setup.formSetup();
 			console.log('Tasks loaded.');
-			sendTasks();
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
