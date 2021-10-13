@@ -103,7 +103,7 @@ if ($q == 1) {
 	$new_search = new search_query('full_name', $con, $q, $data);
 	$query_result = $new_search->return_results();
 } else {
-	$query_result = $data;
+	$query_result = json_decode($data);
 }
 
 $response = json_encode($query_result);
