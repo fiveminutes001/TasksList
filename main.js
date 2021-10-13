@@ -12,7 +12,6 @@ window.onload = function () {
 		});
 
 		db.getTasks();
-
 		setup.initiateTooltips();
 		task.setNewTask();
 		searchResults.sortChange();

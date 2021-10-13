@@ -1,13 +1,11 @@
 <?php
-
-class query
+class insert_query
 {
 	// property declaration
 	public $column;
 	public $column_title;
 	public $result;
 	public $results_array = [];
-	public $top_five_results_array = [];
 	public $sql;
 	public $q;
 	public $dev;
@@ -35,67 +33,70 @@ class query
 
 	public function query_results_to_array()
 	{
-		$arr = $this->results_array;
-
 		while ($row = mysqli_fetch_array($this->result)) {
-			array_push($arr, $row);
+			array_push($this->results_array, $row);
 		}
 
-		$this->top_five_results_array = $arr;
-
-		if ($this->dev) {
-			if (count($arr) && $this->q != '') {
-				foreach ($arr as $key => $value) {
-					echo $value . '<br>';
-				}
-			} else {
-				echo 'No results found';
-			}
-			echo '</pre>';
-		}
-		return $this;
+		return $this->results_array;
 	}
 
-	public function output_text()
+	public function return_results()
 	{
-		if ($this->dev) {
-			echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
-			echo '<b>Query:</b> <br><br>' . $this->sql . '<br><br>';
-			echo '<b>Status:</b> <br><br>found ' . $this->result->num_rows . ' results in ' . $this->column_title . '<br><br>';
-			echo '<b>Results:</b> <br><br>';
-		}
-		return $this;
-	}
+		$result = $this->query_results()->query_results_to_array();
 
-	public function return_top_five_results_array_local()
-	{
-		return $this->top_five_results_array;
+		return $result;
 	}
 }
-
-function return_top_five_results_array_overall($dev, $obj, $top_five_results_array_overall)
+class search_query
 {
-	$top_five_results_array_local = $obj
-		->query_results()
-		->output_text()
-		->query_results_to_array()
-		->return_top_five_results_array_local();
+	// property declaration
+	public $column;
+	public $column_title;
+	public $result;
+	public $results_array = [];
+	public $sql;
+	public $q;
+	public $dev;
 
-	$result = count($top_five_results_array_overall) > 4 ? array_slice($top_five_results_array_overall, 0, 5, true) : array_slice(array_merge($top_five_results_array_overall, $top_five_results_array_local), 0, 5, true);
+	public function __construct($column, $con, $q, $dev = null, $column_two = null, $column_three = null)
+	{
+		$this->column = $column;
+		$this->q = $q;
+		$this->dev = $dev;
+		$this->con = $con;
 
-	if ($dev) {
-		echo '<pre style="padding:0px 8px;white-space:pre-wrap;background-color:yellow;">';
-		echo '<b>top_five_results_array_overall so far:</b> <br><br>';
-		var_dump($result);
-		echo '</pre>';
+		$single_column_sql = 'SELECT * FROM tasks';
+		$two_column_sql = 'SELECT username FROM playground_demo_all_data WHERE ' . $column . " LIKE '" . $q . "%' AND " . $column_two . " LIKE '" . $q . "%' LIMIT 5";
+		$three_column_sql = 'SELECT username FROM playground_demo_all_data WHERE ' . $column . " LIKE '" . $q . "%' AND " . $column_two . " LIKE '" . $q . "%' AND " . $column_three . " LIKE '" . $q . "%' LIMIT 5";
+
+		$this->sql = $column && $column_two && $column_three ? $three_column_sql : ($column && $column_two ? $two_column_sql : $single_column_sql);
+		$this->column_title = $column && $column_two && $column_three ? $column . ' and ' . $column_two . ' and ' . $column_three . ' columns.' : ($column && $column_two ? $column . ' and ' . $column_two . ' columns.' : $column . ' column.');
 	}
 
-	return $result;
+	public function query_results()
+	{
+		$this->result = mysqli_query($this->con, $this->sql);
+		return $this;
+	}
+
+	public function query_results_to_array()
+	{
+		while ($row = mysqli_fetch_array($this->result)) {
+			array_push($this->results_array, $row);
+		}
+
+		return $this->results_array;
+	}
+
+	public function return_results()
+	{
+		$result = $this->query_results()->query_results_to_array();
+
+		return $result;
+	}
 }
 
 //top five results array, local and overall, and response
-$top_five_results_array_local = [];
-$top_five_results_array_overall = [];
 $response = '';
 
 // //triple columns functions
@@ -118,9 +119,12 @@ $response = '';
 
 //single columns functions
 //full_name
-$full_name = new query('full_name', $con, $q, $dev);
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name, $top_five_results_array_overall);
-
+if ($q == 1) {
+	$new_search = new search_query('full_name', $con, $q, $dev);
+	$search_result = $new_search->return_results();
+} else {
+	$response = 'data inserted successfully';
+}
 // //mail
 // $mail = new query('mail', $con, $q, $dev);
 // $top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail, $top_five_results_array_overall);
@@ -134,4 +138,4 @@ $top_five_results_array_overall = return_top_five_results_array_overall($dev, $f
 // $department = new query('department', $con, $q, $dev);
 // $top_five_results_array_overall = return_top_five_results_array_overall($dev, $department, $top_five_results_array_overall);
 
-$response = json_encode($top_five_results_array_overall);
+$response = json_encode($search_result);

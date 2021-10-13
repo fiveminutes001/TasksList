@@ -56,7 +56,7 @@ function getTasks() {
 	let opts = {
 		method: 'GET',
 		url: 'db.php',
-		params: { q: 'a', dev: 0 },
+		params: { q: 1, dev: 0 },
 	};
 
 	getAllTasks(opts)
