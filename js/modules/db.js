@@ -48,7 +48,7 @@ function sendTasks(params) {
 			console.log(this.responseText);
 		}
 	};
-	xhttp.open('POST', 'db.php', true);
+	xhttp.open('GET', 'db.php', true);
 	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	//xhttp.send('fname=Henry&lname=Ford');
 
@@ -71,6 +71,7 @@ function getTasks() {
 		.then(function () {
 			setup.formSetup();
 			console.log('Tasks loaded.');
+			sendTasks(task.getParamsArr());
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);

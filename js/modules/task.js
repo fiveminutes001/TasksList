@@ -158,19 +158,22 @@ function getTaskFromTemplate(params) {
 }
 
 function sendTasksToContainer(paramsArr) {
-	document.querySelector('#task-container').innerHTML = '';
-	for (const params of paramsArr) {
-		document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
+	return new Promise(function (resolve, reject) {
+		document.querySelector('#task-container').innerHTML = '';
+		for (const params of paramsArr) {
+			document.querySelector('#task-container').appendChild(getTaskFromTemplate(params));
 
-		let dueDateId = document.querySelector('#task-' + params.taskId + '-due-date');
-		datePickerSetup(dueDateId);
+			let dueDateId = document.querySelector('#task-' + params.taskId + '-due-date');
+			datePickerSetup(dueDateId);
 
-		let deleteButton = document.querySelector('#delete-task-' + params.taskId);
-		deleteButtonSetup(deleteButton);
+			let deleteButton = document.querySelector('#delete-task-' + params.taskId);
+			deleteButtonSetup(deleteButton);
 
-		let saveButton = document.querySelector('#save-task-' + params.taskId);
-		saveButtonSetup(saveButton);
-	}
+			let saveButton = document.querySelector('#save-task-' + params.taskId);
+			saveButtonSetup(saveButton);
+		}
+		resolve();
+	});
 }
 
 function setNewTask() {
