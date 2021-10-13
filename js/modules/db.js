@@ -21,6 +21,7 @@ function getAllTasks(opts) {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
 				console.log('db query successful: ', response);
+				console.log('db query successful: ', params);
 				if (params.q == 3) {
 					Window.data.totalLength = response;
 				}
