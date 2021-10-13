@@ -3,8 +3,8 @@ function getAllTasks() {
 	const xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
-			// let response = JSON.parse(xmlhttp.responseText);
-			// console.log(response);
+			let response = JSON.parse(xmlhttp.responseText);
+			console.log(response);
 			console.log(this.responseText);
 		}
 	};
