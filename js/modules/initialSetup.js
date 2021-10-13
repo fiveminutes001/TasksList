@@ -58,8 +58,7 @@ function saveButtonSetup(saveButton) {
 }
 
 function addNewTaskButtonSetup(addButton) {
-	$(document).on('submit', 'form.new-task-form', function () {
-		//$(addButton).on('click', function () {
+	$(addButton).on('click', function () {
 		const taskId = (Window.data.paramsArr.length + 1).toString();
 		const taskParams = Object.assign({}, Window.data.blankTask);
 		let newTaskParams = getNewTaskCurrentData(taskId);

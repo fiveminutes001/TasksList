@@ -29,6 +29,10 @@ window.onload = function () {
 				console.error('Tasks did not load currectly. ', err.statusText);
 			});
 
+		jQuery('.new-task-form').submit(function (e) {
+			e.preventDefault();
+		});
+
 		setup.initiateTooltips();
 		task.setNewTask();
 
