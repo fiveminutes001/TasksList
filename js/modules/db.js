@@ -48,6 +48,7 @@ function sendTasks(params) {
 		url: 'db.php',
 		params: { q: 'b', dev: 0 },
 	};
+
 	getAllTasks(opts);
 }
 

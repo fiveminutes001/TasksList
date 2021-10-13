@@ -23,7 +23,7 @@ function deleteTask(taskParams, newTaskParams) {
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
-		sendTasks(task.getParamsArr());
+		sendTasks(getParamsArr());
 		console.log('Task ' + taskParams.taskId + ' was saved.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
@@ -35,7 +35,7 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
 		Window.data.paramsArr.push(taskParams);
-		sendTasksToContainer(getParamsArr());
+		sendTasks(getParamsArr());
 		formSetup();
 
 		console.log('Task ' + taskParams.taskId + ' was added.');
