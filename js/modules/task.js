@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup, formSetup } from './initialSetup.js';
+import { formatDate, datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup, formSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -99,7 +99,7 @@ function getTaskFromTemplate(params) {
 	let toDo = temp.content.cloneNode(true);
 
 	let dueDate = toDo.querySelector('#task-0-due-date');
-	dueDate.setAttribute('value', params.dueDate);
+	dueDate.setAttribute('value', formatDate(params.dueDate));
 	dueDate.setAttribute('min', getTodayDate());
 	dueDate.id = 'task-' + params.taskId + '-due-date';
 
