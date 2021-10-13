@@ -61,7 +61,7 @@ function addNewTaskButtonSetup(addButton) {
 	$(addButton).on('click', function () {
 		const form = document.querySelector('#new-task-form');
 		console.log(form);
-		form.checkValidity();
+
 		// const taskId = (Window.data.paramsArr.length + 1).toString();
 		// const taskParams = Object.assign({}, Window.data.blankTask);
 		// let newTaskParams = getNewTaskCurrentData(taskId);
