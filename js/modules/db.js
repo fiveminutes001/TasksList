@@ -50,7 +50,7 @@ function sendTasks(params) {
 	let opts = {
 		method: 'GET',
 		url: 'db.php',
-		params: { q: 'b', dev: 1 },
+		params: { q: 'b', dev: 0 },
 	};
 	getAllTasks(opts);
 }
