@@ -21,7 +21,6 @@ function getAllTasks(opts) {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
 				console.log('db query successful: ', response);
-				console.log('!!', params.q);
 				resolve(response);
 			} else {
 				console.log('db query not successful.');
@@ -53,13 +52,15 @@ function updateTasks(params) {
 }
 
 function getTotalTasksNumber() {
-	let opts = {
-		method: 'GET',
-		url: 'db.php',
-		params: { q: 3, data: 0 },
-	};
+	return new Promise(function (resolve, reject) {
+		let opts = {
+			method: 'GET',
+			url: 'db.php',
+			params: { q: 3, data: 0 },
+		};
 
-	getAllTasks(opts);
+		getAllTasks(opts);
+	});
 }
 
 function getTasks() {
@@ -77,6 +78,10 @@ function getTasks() {
 		.then(function () {
 			setup.formSetup();
 			console.log('Tasks loaded.');
+		})
+		.then(function () {
+			getTotalTasksNumber();
+			console.log('Total tasks counted.');
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
