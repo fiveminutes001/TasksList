@@ -9,7 +9,7 @@ include 'php/connect.php';
 
 //get the search input from URL
 $q = $_GET['q'];
-$dev = $_GET['dev'];
+$data = $_GET['data'];
 
 //getting data from DB
 include 'php/getData.php';

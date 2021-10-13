@@ -99,43 +99,11 @@ class search_query
 //top five results array, local and overall, and response
 $response = '';
 
-// //triple columns functions
-// //full_name and mail and username
-// $full_name_and_mail_and_username = new query('full_name', $con, $q, $dev, 'mail', 'username');
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_mail_and_username, $top_five_results_array_overall);
-
-// //double columns functions
-// //full_name and mail
-// $full_name_and_mail = new query('full_name', $con, $q, $dev, 'mail');
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_mail, $top_five_results_array_overall);
-
-// //full_name and username
-// $full_name_and_username = new query('full_name', $con, $q, $dev, 'username');
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_username, $top_five_results_array_overall);
-
-// //mail and username
-// $mail_and_username = new query('mail', $con, $q, $dev, 'username');
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail_and_username, $top_five_results_array_overall);
-
-//single columns functions
-//full_name
 if ($q == 1) {
 	$new_search = new search_query('full_name', $con, $q, $dev);
 	$query_result = $new_search->return_results();
 } else {
-	$query_result = 'data inserted successfully';
+	$query_result = $data;
 }
-// //mail
-// $mail = new query('mail', $con, $q, $dev);
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail, $top_five_results_array_overall);
-// //username
-// $username = new query('username', $con, $q, $dev);
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $username, $top_five_results_array_overall);
-// //region
-// $region = new query('region', $con, $q, $dev);
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $region, $top_five_results_array_overall);
-// //department
-// $department = new query('department', $con, $q, $dev);
-// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $department, $top_five_results_array_overall);
 
 $response = json_encode($query_result);
