@@ -80,9 +80,9 @@ function getNewTaskCurrentData(taskId) {
 	return taskCurrentData;
 }
 
-function formatDatepickerDate(dueDate) {
-	console.log('!', dueDate);
-	const formattedDate = '20' + dueDate.slice(-2) + '-' + dueDate.slice(3, 5) + '-' + dueDate.slice(0, 2);
+function formatDatepickerDate(dateToFormat) {
+	console.log('!', dateToFormat);
+	const formattedDate = '20' + dateToFormat.slice(-2) + '-' + dateToFormat.slice(3, 5) + '-' + dateToFormat.slice(0, 2);
 	return new Date(formattedDate);
 }
 
