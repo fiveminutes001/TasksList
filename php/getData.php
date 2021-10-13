@@ -95,8 +95,9 @@ $response = '';
 switch ($q) {
 	case 0:
 		$data = json_decode($data);
-		$new_search = new update_query('taskId', $con, $data);
-		$query_result = $new_search->query_results();
+		var_dump($data);
+		// $new_search = new update_query('taskId', $con, $data);
+		// $query_result = $new_search->query_results();
 		break;
 	case 1:
 		$new_search = new sort_query('taskId', $con);
