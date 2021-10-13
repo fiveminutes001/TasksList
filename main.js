@@ -45,14 +45,16 @@ window.onload = function () {
 			.then(function () {
 				setup.formSetup();
 				console.log('Tasks loaded.');
-				formSubmit().then(setup.addNewTaskButtonSetup());
+			})
+			.then(function () {
+				formSubmit().then(task.setNewTask());
+				console.log('New task form updated.');
 			})
 			.catch(function (err) {
 				console.error('Tasks did not load currectly. ', err.statusText);
 			});
 
 		setup.initiateTooltips();
-		task.setNewTask();
 
 		searchResults.sortChange();
 		searchResults.filterChange();
