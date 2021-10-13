@@ -16,7 +16,8 @@ window.onload = function () {
 								event.preventDefault();
 								event.stopPropagation();
 							}
-
+							event.preventDefault();
+							event.stopPropagation();
 							form.classList.add('was-validated');
 							resolve();
 						},
