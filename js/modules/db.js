@@ -41,7 +41,7 @@ function getAllTasks(opts) {
 	});
 }
 
-function sendTasks(params) {
+function updateTasks(params) {
 	let opts = {
 		method: 'GET',
 		url: 'db.php',
@@ -52,7 +52,6 @@ function sendTasks(params) {
 }
 
 function getTasks() {
-	//receive
 	let opts = {
 		method: 'GET',
 		url: 'db.php',
@@ -72,4 +71,4 @@ function getTasks() {
 			console.error('Tasks did not load currectly. ', err.statusText);
 		});
 }
-export { getTasks, sendTasks };
+export { getTasks, updateTasks };

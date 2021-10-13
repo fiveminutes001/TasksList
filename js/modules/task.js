@@ -1,4 +1,4 @@
-import { sendTasks } from './db.js';
+import { updateTasks } from './db.js';
 import { getParamsArr } from './getParamsArr.js';
 import { formatDate, datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup, formSetup } from './initialSetup.js';
 
@@ -23,7 +23,7 @@ function deleteTask(taskParams, newTaskParams) {
 function mergeCurrentTaskData(taskParams, newTaskParams) {
 	try {
 		taskParams = Object.assign(taskParams, newTaskParams);
-		sendTasks(getParamsArr());
+		updateTasks(getParamsArr());
 		console.log('Task ' + taskParams.taskId + ' was saved.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
@@ -36,7 +36,7 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 		taskParams = Object.assign(taskParams, newTaskParams);
 		Window.data.paramsArr.push(taskParams);
 		sendTasksToContainer(getParamsArr());
-		sendTasks(getParamsArr());
+		updateTasks(getParamsArr());
 		formSetup();
 
 		console.log('Task ' + taskParams.taskId + ' was added.');

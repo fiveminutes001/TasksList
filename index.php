@@ -106,8 +106,7 @@ include 'php/connect.php';
 				<div class="col-12 col-sm-6 align-items-center d-flex justify-content-between">
 					<label class="label text-secondary my-2 pr-2 view-opt-label">Sort</label>
 					<select class="custom-select custom-select-sm my-2" id="task-sort">
-						<option value="added-date-desc" selected>Added date</option>
-						<option value="due-date-desc">Due date</option>
+						<option value="due-date-desc" selected>Due date</option>
 						<option value="task-details-desc">Details</option>
 						<option value="task-status-desc">Status</option>
 					</select>
