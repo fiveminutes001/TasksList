@@ -60,7 +60,7 @@ function saveButtonSetup(saveButton) {
 function addNewTaskButtonSetup(addButton) {
 	$(addButton).on('click', function () {
 		const form = document.querySelector('#new-task-form');
-		console.log(form);
+		console.log(form.reportValidity());
 
 		// const taskId = (Window.data.paramsArr.length + 1).toString();
 		// const taskParams = Object.assign({}, Window.data.blankTask);
