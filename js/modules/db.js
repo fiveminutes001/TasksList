@@ -75,6 +75,7 @@ function getTasks() {
 		.then(function () {
 			setup.formSetup();
 			console.log('Tasks loaded.');
+			sendTasks();
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
