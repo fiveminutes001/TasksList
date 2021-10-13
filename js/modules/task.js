@@ -91,6 +91,7 @@ function formatDatepickerDate(dateToFormat) {
 function checkIfCanDeleteTask(params) {
 	const currentDate = new Date();
 	const dueDate = new Date(formatDatepickerDate(params.dueDate));
+	console.log('!', dueDate);
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
 	const diff = end - start;
