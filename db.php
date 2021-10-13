@@ -10,9 +10,9 @@ include 'php/connect.php';
 //get the search input from URL
 $q = $_GET['q'];
 $dev = $_GET['dev'];
-
+$response = $q;
 //getting data from DB
-include 'php/getData.php';
+//include 'php/getData.php';
 
 //output the response
 echo $response;
