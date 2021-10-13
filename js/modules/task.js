@@ -83,7 +83,6 @@ function getNewTaskCurrentData(taskId) {
 }
 
 function formatDatepickerDate(dateToFormat) {
-	//console.log('!', dateToFormat);
 	const formattedDate = '20' + dateToFormat.slice(-2) + '-' + dateToFormat.slice(3, 5) + '-' + dateToFormat.slice(0, 2);
 	return formattedDate;
 }

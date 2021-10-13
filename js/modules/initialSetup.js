@@ -62,6 +62,7 @@ function addNewTaskButtonSetup(addButton) {
 		const form = document.querySelector('#new-task-form');
 		if (form.reportValidity()) {
 			const taskId = (Window.data.totalLength + 1).toString();
+			Window.data.totalLength += 1;
 			const taskParams = Object.assign({}, Window.data.blankTask);
 			let newTaskParams = getNewTaskCurrentData(taskId);
 			taskParams ? (confirm('Task ' + taskId + ' will be added. Continue?') ? mergeNewTaskData(taskParams, newTaskParams) : console.log('Task ' + taskParams.taskId + ' add canceled.')) : alert('Task' + taskParams.taskId + "can't be added");
