@@ -2,6 +2,18 @@ import { setParams } from './initialSetup.js';
 function getAllTasks(opts) {
 	return new Promise(function (resolve, reject) {
 		let xhr = new XMLHttpRequest();
+		let params = opts.params;
+
+		if (params && typeof params === 'object') {
+			params = Object.keys(params)
+				.map(function (key) {
+					return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+				})
+				.join('&');
+			opts.url = opts.url + params;
+			console.log('!', opts.url);
+		}
+
 		xhr.open(opts.method, opts.url);
 		//xmlhttp.open('GET', 'db.php?q=' + q + '&dev=' + dev, true);
 		xhr.onload = function () {
@@ -24,23 +36,7 @@ function getAllTasks(opts) {
 			});
 		};
 
-		if (opts.headers) {
-			Object.keys(opts.headers).forEach(function (key) {
-				xhr.setRequestHeader(key, opts.headers[key]);
-			});
-		}
-		var params = opts.params;
-		// We'll need to stringify if we've been given an object
-		// If we have a string, this is skipped.
-		if (params && typeof params === 'object') {
-			params = Object.keys(params)
-				.map(function (key) {
-					return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-				})
-				.join('&');
-			console.log('params:', params);
-		}
-		xhr.send(params);
+		xhr.send();
 	});
 }
 export { getAllTasks };
