@@ -18,5 +18,7 @@ window.onload = function () {
 		searchResults.filterChange();
 		searchResults.ascendingSort();
 		searchResults.descendingSort();
+
+		db.sendTasks();
 	})();
 };
