@@ -173,7 +173,7 @@ include 'php/connect.php';
 				</div>
 			</template>
 		</div>
-        <script>if(<?= $con ?>) {console.log(<?= $con ?>)};</script>
+        <script>console.log(<?= json_encode($con) ?>);</script>
 		<script type="module" src="main.js"></script>
 	</body>
 </html>
