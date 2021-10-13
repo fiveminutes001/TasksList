@@ -23,7 +23,7 @@ include 'php/connect.php';
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/body.css" />
 		<link rel="stylesheet" href="css/formBox.css" />
-
+    
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -173,6 +173,7 @@ include 'php/connect.php';
 				</div>
 			</template>
 		</div>
+        <script>if(<?= $con ?>) {console.log(<?= $con ?>)};</script>
 		<script type="module" src="main.js"></script>
 	</body>
 </html>

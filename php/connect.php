@@ -21,10 +21,6 @@ $db = $db_details[3];
 //CREATING CONNECTION
 $con = mysqli_connect($host, $username, $password, $db);
 
-//CHECKING CONNECTION
-if ($con) {
-	echo 'OK';
-}
 //SELECTING DATABASE
 mysqli_select_db($con, $db);
 
