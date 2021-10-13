@@ -83,14 +83,12 @@ function getNewTaskCurrentData(taskId) {
 function formatDatepickerDate(dateToFormat) {
 	//console.log('!', dateToFormat);
 	const formattedDate = '20' + dateToFormat.slice(-2) + '-' + dateToFormat.slice(3, 5) + '-' + dateToFormat.slice(0, 2);
-	return new Date(formattedDate);
+	return formattedDate;
 }
 
 function checkIfCanDeleteTask(params) {
 	const currentDate = new Date();
-	console.log('a', params.dueDate); //
-	const dueDate = formatDatepickerDate(params.dueDate);
-	//const dueDate = new Date(params.dueDate);
+	const dueDate = new Date(formatDatepickerDate(params.dueDate));
 	const start = currentDate.getTime();
 	const end = dueDate.getTime();
 	const diff = end - start;
