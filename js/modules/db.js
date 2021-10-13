@@ -20,10 +20,10 @@ function getAllTasks(opts) {
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
-				console.log('Initial db data loaded: ', response);
+				console.log('db query successful: ', response);
 				resolve(response);
 			} else {
-				console.log('Initial db data not loaded.');
+				console.log('db query not successful.');
 				reject({
 					status: this.status,
 					statusText: xhr.statusText,
