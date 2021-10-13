@@ -12,7 +12,7 @@ $q = $_GET['q'];
 $dev = $_GET['dev'];
 
 //getting data from DB
-//include 'php/getData.php';
+include 'php/getData.php';
 
 //output the response
 echo $response;
