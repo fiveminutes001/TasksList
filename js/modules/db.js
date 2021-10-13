@@ -20,11 +20,7 @@ function getAllTasks(opts) {
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
-				if (opts.q == 'a') {
-					console.log('Initial db data loaded: ', response);
-				} else {
-					console.log('data inserted.');
-				}
+				console.log('Initial db data loaded: ', response);
 				resolve(response);
 			} else {
 				console.log('Initial db data not loaded.');
@@ -71,7 +67,6 @@ function getTasks() {
 		.then(function () {
 			setup.formSetup();
 			console.log('Tasks loaded.');
-			sendTasks(task.getParamsArr());
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
