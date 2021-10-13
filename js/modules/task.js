@@ -101,6 +101,8 @@ function getTaskFromTemplate(params) {
 	let dueDate = toDo.querySelector('#task-0-due-date');
 	//dueDate.setAttribute('value', formatDate(params.dueDate));
 	console.log('params.dueDate: ', params.dueDate);
+	let a = new Date(params.dueDate);
+	console.log('a: ', a);
 	dueDate.setAttribute('value', params.dueDate);
 	dueDate.id = 'task-' + params.taskId + '-due-date';
 
