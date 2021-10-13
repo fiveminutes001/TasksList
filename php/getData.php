@@ -51,19 +51,19 @@ class update_query extends query
 		foreach ($data as $d) {
 			$this->sql =
 				'INSERT INTO tasks (`taskId`, `taskDetails`, `dueDate`, `taskStatus`, `taskName`, `canBeDeleted`, `taskDeleted`) VALUES (' .
-				$d["taskId"] .
-				'','' .
-				$d["taskDetails"] .
-				'','' .
-				$d["dueDate"] .
-				'','' .
-				$d["taskStatus"] .
-				'','' .
-				$d["taskName"] .
-				'','' .
-				$d["canBeDeleted"] .
-				'','' .
-				$d["taskDeleted"] .
+				$d['taskId'] .
+				',' .
+				$d['taskDetails'] .
+				',' .
+				$d['dueDate'] .
+				',' .
+				$d['taskStatus'] .
+				',' .
+				$d['taskName'] .
+				',' .
+				$d['canBeDeleted'] .
+				',' .
+				$d['taskDeleted'] .
 				')';
 			$this->query_results();
 		}
