@@ -59,11 +59,11 @@ function saveButtonSetup(saveButton) {
 
 function addNewTaskButtonSetup(addButton) {
 	// $(addButton).on('click', function () {
-	// 	const taskId = (Window.data.paramsArr.length + 1).toString();
-	// 	const taskParams = Object.assign({}, Window.data.blankTask);
-	// 	let newTaskParams = getNewTaskCurrentData(taskId);
-	// 	taskParams ? (confirm('Task ' + taskId + ' will be added. Continue?') ? mergeNewTaskData(taskParams, newTaskParams) : console.log('Task ' + taskParams.taskId + ' add canceled.')) : alert('Task' + taskParams.taskId + "can't be added");
-	// });
+	const taskId = (Window.data.paramsArr.length + 1).toString();
+	const taskParams = Object.assign({}, Window.data.blankTask);
+	let newTaskParams = getNewTaskCurrentData(taskId);
+	taskParams ? (confirm('Task ' + taskId + ' will be added. Continue?') ? mergeNewTaskData(taskParams, newTaskParams) : console.log('Task ' + taskParams.taskId + ' add canceled.')) : alert('Task' + taskParams.taskId + "can't be added");
+	//});
 }
 
 function initiateTooltips() {
