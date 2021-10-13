@@ -121,9 +121,9 @@ $response = '';
 //full_name
 if ($q == 1) {
 	$new_search = new search_query('full_name', $con, $q, $dev);
-	$search_result = $new_search->return_results();
+	$query_result = $new_search->return_results();
 } else {
-	$response = 'data inserted successfully';
+	$query_result = 'data inserted successfully';
 }
 // //mail
 // $mail = new query('mail', $con, $q, $dev);
@@ -138,4 +138,4 @@ if ($q == 1) {
 // $department = new query('department', $con, $q, $dev);
 // $top_five_results_array_overall = return_top_five_results_array_overall($dev, $department, $top_five_results_array_overall);
 
-$response = json_encode($search_result);
+$response = json_encode($query_result);
