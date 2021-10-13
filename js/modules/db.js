@@ -43,10 +43,11 @@ function getAllTasks(opts) {
 
 function sendTasks() {
 	//send
+	console.log(Window.data);
 	let opts = {
 		method: 'GET',
 		url: 'db.php',
-		params: { q: JSON.stringify(Window.data), dev: 0 },
+		params: { q: JSON.stringify(Window.data), dev: 1 },
 	};
 
 	getAllTasks(opts)
