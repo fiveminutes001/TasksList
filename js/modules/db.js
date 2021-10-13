@@ -20,7 +20,11 @@ function getAllTasks(opts) {
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
-				console.log('Initial db data loaded: ', response);
+				if (params.q == 'a') {
+					console.log('Initial db data loaded: ', response);
+				} else {
+					console.log('data inserted.');
+				}
 				resolve(response);
 			} else {
 				console.log('Initial db data not loaded.');
@@ -43,17 +47,12 @@ function getAllTasks(opts) {
 
 function sendTasks(params) {
 	console.log('!', params);
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
-			console.log(this.responseText);
-		}
+	let opts = {
+		method: 'GET',
+		url: 'db.php',
+		params: { q: 'b', dev: 1 },
 	};
-	xhttp.open('GET', 'db.php', true);
-	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-	//xhttp.send('fname=Henry&lname=Ford');
-
-	xhttp.send('q=Henry&dev=Ford');
+	getAllTasks(opts);
 }
 
 function getTasks() {
