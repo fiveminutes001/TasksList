@@ -17,11 +17,11 @@ function getAllTasks(opts) {
 
 		xhr.open(opts.method, opts.url, true);
 
-		xhr.onload = function (params) {
+		xhr.onload = function (opts.params) {
 			if (this.status >= 200 && this.status < 300) {
 				let response = JSON.parse(xhr.responseText);
 				console.log('db query successful: ', response);
-				console.log('db query successful: ', params);
+				console.log('db query successful: ', opts.params);
 				if (params.q == 3) {
 					Window.data.totalLength = response;
 				}
