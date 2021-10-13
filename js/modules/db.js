@@ -81,7 +81,9 @@ function getTasks() {
 		})
 		.then(function () {
 			getTotalTasksNumber();
-			console.log('Total tasks counted.');
+		})
+		.then(function (response) {
+			console.log('Total tasks counted: ' + response);
 		})
 		.catch(function (err) {
 			console.error('Tasks did not load currectly. ', err.statusText);
