@@ -54,17 +54,17 @@ class update_query extends query
 				$d['taskId'] .
 				'`,`' .
 				$d['taskDetails'] .
-				'`,' .
+				'`,`' .
 				$d['dueDate'] .
-				',' .
+				'`,`' .
 				$d['taskStatus'] .
-				',' .
+				'`,`' .
 				$d['taskName'] .
-				',' .
+				'`,`' .
 				$d['canBeDeleted'] .
-				',' .
+				'`,`' .
 				$d['taskDeleted'] .
-				')';
+				'`)';
 			$this->query_results();
 		}
 	}
