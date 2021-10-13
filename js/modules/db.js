@@ -11,7 +11,8 @@ function getAllTasks(opts) {
 				})
 				.join('&');
 			opts.url = opts.url + '?' + params;
-			console.log('!', opts.url);
+			console.log('!', params);
+			console.log('!!', opts.url);
 		}
 
 		xhr.open(opts.method, opts.url);
