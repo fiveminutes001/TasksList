@@ -173,7 +173,7 @@ include 'php/connect.php';
 				</div>
 			</template>
 		</div>
-        <script>console.log('db connection: ' + <?= $connection_status ?>);</script>
+        <script>console.log('db connection: ' + <?= json_encode($connection_status) ?>);</script>
 		<script type="module" src="main.js"></script>
 	</body>
 </html>
