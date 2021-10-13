@@ -36,6 +36,7 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 		taskParams = Object.assign(taskParams, newTaskParams);
 		Window.data.paramsArr.push(taskParams);
 		sendTasksToContainer(getParamsArr());
+		sendTasks(getParamsArr());
 		formSetup();
 
 		console.log('Task ' + taskParams.taskId + ' was added.');
