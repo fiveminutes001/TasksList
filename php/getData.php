@@ -48,22 +48,25 @@ class update_query extends query
 	{
 		$this->column = $column;
 		$this->con = $con;
-		$this->sql =
-			'INSERT INTO tasks (`taskId`, `taskDetails`, `dueDate`, `taskStatus`, `taskName`, `canBeDeleted`, `taskDeleted`) VALUES (' .
-			$data['taskId'] .
-			',' .
-			$data['taskDetails'] .
-			',' .
-			$data['dueDate'] .
-			',' .
-			$data['taskStatus'] .
-			',' .
-			$data['taskName'] .
-			',' .
-			$data['canBeDeleted'] .
-			',' .
-			$data['taskDeleted'] .
-			')';
+		foreach ($data as $d) {
+			$this->sql =
+				'INSERT INTO tasks (`taskId`, `taskDetails`, `dueDate`, `taskStatus`, `taskName`, `canBeDeleted`, `taskDeleted`) VALUES (' .
+				$d['taskId'] .
+				',' .
+				$d['taskDetails'] .
+				',' .
+				$d['dueDate'] .
+				',' .
+				$d['taskStatus'] .
+				',' .
+				$d['taskName'] .
+				',' .
+				$d['canBeDeleted'] .
+				',' .
+				$d['taskDeleted'] .
+				')';
+			$this->query_results();
+		}
 	}
 }
 
