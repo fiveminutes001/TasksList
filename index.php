@@ -46,7 +46,7 @@ include 'php/connect.php';
 			</div>
 
 			<!-- Create task section -->
-			<form class="new-task-form">
+			<form class="new-task-form" novalidate>
 				<div class="row m-1 p-3">
 					<div class="col mx-auto">
 						<!-- Set task name-->
@@ -56,13 +56,19 @@ include 'php/connect.php';
 							</div>
 							<div class="col-12 col-sm-6 col-md-8 p-0 m-0 mt-2">
 								<div class="form-group">
-									<input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required='required' id="new-task-name" />
+									<input class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Task name" required id="new-task-name" />
+									<div class="valid-feedback">
+      									Looks good!
+    								</div>
+									<div class="invalid-feedback">
+       									Please choose a Task name.
+      								</div>
 								</div>
 							</div>
 							<!-- Set due date -->
 							<div class="col-12 col-sm-6 col-md-4 p-0 m-0 mt-2">
 								<div class="form-group">
-									<input id="new-task-due-date" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required='required' />
+									<input id="new-task-due-date" class="form-control form-control-lg p-1 add-todo-input bg-transparent text-center rounded" type="text" placeholder="Due date" required />
 								</div>
 							</div>
 						</div>
