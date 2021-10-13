@@ -1,13 +1,15 @@
 import * as setup from './js/modules/initialSetup.js';
 import * as task from './js/modules/task.js';
 import * as searchResults from './js/modules/serachResults.js';
-console.log('db connection: ' + <?= json_encode($connection_status) ?>);
+import * as db from './js/modules/db.js';
+
 window.onload = function () {
 	(function () {
 		bootlint.showLintReportForCurrentDocument([], {
 			hasProblems: false,
 			problemFree: false,
 		});
+		db.getAllTasks();
 		setup.setParams();
 		setup.initiateTooltips();
 		task.setNewTask();

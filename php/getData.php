@@ -38,7 +38,8 @@ class query
 		$arr = $this->results_array;
 
 		while ($row = mysqli_fetch_array($this->result)) {
-			array_push($arr, $row['username']);
+			var_dump($row);
+			//array_push($arr, $row['username']);
 		}
 
 		$this->top_five_results_array = $arr;
@@ -98,41 +99,41 @@ $top_five_results_array_local = [];
 $top_five_results_array_overall = [];
 $response = '';
 
-//triple columns functions
-//full_name and mail and username
-$full_name_and_mail_and_username = new query('full_name', $con, $q, $dev, 'mail', 'username');
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_mail_and_username, $top_five_results_array_overall);
+// //triple columns functions
+// //full_name and mail and username
+// $full_name_and_mail_and_username = new query('full_name', $con, $q, $dev, 'mail', 'username');
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_mail_and_username, $top_five_results_array_overall);
 
-//double columns functions
-//full_name and mail
-$full_name_and_mail = new query('full_name', $con, $q, $dev, 'mail');
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_mail, $top_five_results_array_overall);
+// //double columns functions
+// //full_name and mail
+// $full_name_and_mail = new query('full_name', $con, $q, $dev, 'mail');
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_mail, $top_five_results_array_overall);
 
-//full_name and username
-$full_name_and_username = new query('full_name', $con, $q, $dev, 'username');
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_username, $top_five_results_array_overall);
+// //full_name and username
+// $full_name_and_username = new query('full_name', $con, $q, $dev, 'username');
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name_and_username, $top_five_results_array_overall);
 
-//mail and username
-$mail_and_username = new query('mail', $con, $q, $dev, 'username');
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail_and_username, $top_five_results_array_overall);
+// //mail and username
+// $mail_and_username = new query('mail', $con, $q, $dev, 'username');
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail_and_username, $top_five_results_array_overall);
 
 //single columns functions
 //full_name
 $full_name = new query('full_name', $con, $q, $dev);
 $top_five_results_array_overall = return_top_five_results_array_overall($dev, $full_name, $top_five_results_array_overall);
 
-//mail
-$mail = new query('mail', $con, $q, $dev);
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail, $top_five_results_array_overall);
-//username
-$username = new query('username', $con, $q, $dev);
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $username, $top_five_results_array_overall);
-//region
-$region = new query('region', $con, $q, $dev);
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $region, $top_five_results_array_overall);
-//department
-$department = new query('department', $con, $q, $dev);
-$top_five_results_array_overall = return_top_five_results_array_overall($dev, $department, $top_five_results_array_overall);
+// //mail
+// $mail = new query('mail', $con, $q, $dev);
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $mail, $top_five_results_array_overall);
+// //username
+// $username = new query('username', $con, $q, $dev);
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $username, $top_five_results_array_overall);
+// //region
+// $region = new query('region', $con, $q, $dev);
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $region, $top_five_results_array_overall);
+// //department
+// $department = new query('department', $con, $q, $dev);
+// $top_five_results_array_overall = return_top_five_results_array_overall($dev, $department, $top_five_results_array_overall);
 
 if (!$dev) {
 	$response = json_encode($top_five_results_array_overall);
