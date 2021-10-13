@@ -8,7 +8,7 @@ function getAllTasks() {
 			console.log(this.responseTexte);
 		}
 	};
-	let dev = 1;
+	let dev = 0;
 	const q = 'all tasks';
 	xmlhttp.open('GET', 'db.php?q=' + q + '&dev=' + dev, true);
 	xmlhttp.send();
