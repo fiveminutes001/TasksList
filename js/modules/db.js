@@ -38,6 +38,7 @@ function getAllTasks(opts) {
 					return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
 				})
 				.join('&');
+			console.log('params:', params);
 		}
 		xhr.send(params);
 	});
