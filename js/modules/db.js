@@ -79,6 +79,7 @@ function sendAllTasks(opts) {
 				})
 				.join('&');
 		}
+		console.log(params);
 		xhr.send(params);
 	});
 }
