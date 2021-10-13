@@ -20,7 +20,7 @@ $db = $db_details[3];
 
 //CREATING CONNECTION
 $con = mysqli_connect($host, $username, $password, $db);
-
+$connection_status = $con ? 'ok' : 'not ok';
 //SELECTING DATABASE
 mysqli_select_db($con, $db);
 
