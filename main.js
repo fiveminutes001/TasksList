@@ -10,27 +10,9 @@ window.onload = function () {
 			problemFree: false,
 		});
 
-		let opts = {
-			method: 'GET',
-			url: 'db.php',
-			params: { q: 'a', dev: 0 },
-		};
-
-		db.getAllTasks(opts)
-			.then(function (response) {
-				setup.setParams(response);
-				task.sendTasksToContainer(task.getParamsArr());
-			})
-			.then(function () {
-				setup.formSetup();
-				console.log('Tasks loaded.');
-			})
-			.catch(function (err) {
-				console.error('Tasks did not load currectly. ', err.statusText);
-			});
+		db.getTasks();
 
 		setup.initiateTooltips();
-
 		task.setNewTask();
 		searchResults.sortChange();
 		searchResults.filterChange();
