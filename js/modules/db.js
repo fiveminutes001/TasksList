@@ -40,62 +40,16 @@ function getAllTasks(opts) {
 		xhr.send();
 	});
 }
-function sendAllTasks(opts) {
-	return new Promise(function (resolve, reject) {
-		let xhr = new XMLHttpRequest();
-		xhr.open(opts.method, opts.url);
-
-		xhr.onload = function () {
-			if (this.status >= 200 && this.status < 300) {
-				let response = JSON.parse(xhr.responseText);
-				console.log('Initial db data loaded: ', response);
-				resolve(response);
-			} else {
-				console.log('Initial db data not loaded.');
-				reject({
-					status: this.status,
-					statusText: xhr.statusText,
-				});
-			}
-		};
-		xhr.onerror = function () {
-			reject({
-				status: this.status,
-				statusText: xhr.statusText,
-			});
-		};
-
-		if (opts.headers) {
-			Object.keys(opts.headers).forEach(function (key) {
-				xhr.setRequestHeader(key, opts.headers[key]);
-			});
-		}
-
-		let params = opts.params;
-		if (params && typeof params === 'object') {
-			params = Object.keys(params)
-				.map(function (key) {
-					return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-				})
-				.join('&');
-		}
-		console.log(params);
-		xhr.send(params);
-	});
-}
 
 function sendTasks() {
 	//send
 	let opts = {
-		method: 'POST',
+		method: 'GET',
 		url: 'db.php',
-		params: { b: 'a', c: 1 },
-		headers: {
-			'Content-type': 'application/x-www-form-urlencoded',
-		},
+		params: JSON.stringify(obj),
 	};
 
-	sendAllTasks(opts)
+	getAllTasks(opts)
 		.then(function (response) {
 			console.log('Tasks were sent currectly.');
 		})
