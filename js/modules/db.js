@@ -1,5 +1,5 @@
-import * as setup from './js/modules/initialSetup.js';
-import * as task from './js/modules/task.js';
+import * as setup from './initialSetup.js';
+import * as task from './task.js';
 
 function getAllTasks(opts) {
 	return new Promise(function (resolve, reject) {
