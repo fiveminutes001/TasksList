@@ -111,7 +111,7 @@ include 'php/connect.php';
 						<option value="task-status-desc">Status</option>
 					</select>
 					<div class="icon text-center">
-						<i id="ascending" class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="Ascending"></i>
+						<i id="ascending" class="fa fa fa-sort-amount-asc text-info btn mx-0 px-0 pl-1" data-toggle="tooltip" data-placement="bottom" title="descending"></i>
 					</div>
 				</div>
 

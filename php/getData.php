@@ -33,7 +33,7 @@ class sort_query extends query
 	{
 		$this->column = $column;
 		$this->con = $con;
-		$this->sql = 'SELECT * FROM tasks WHERE taskDeleted != 0 ORDER BY ' . $column . ' DESC';
+		$this->sql = 'SELECT * FROM tasks WHERE taskDeleted != 0 ORDER BY ' . $column . ' ASC';
 	}
 }
 
@@ -48,7 +48,7 @@ class update_query extends query
 	{
 		$this->column = $column;
 		$this->con = $con;
-		$this->sql = 'SELECT * FROM tasks WHERE taskDeleted != 0 ORDER BY ' . $column . ' DESC';
+		$this->sql = 'SELECT * FROM tasks WHERE taskDeleted != 0 ORDER BY ' . $column . ' ASC';
 	}
 }
 
