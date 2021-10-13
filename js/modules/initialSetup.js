@@ -80,6 +80,7 @@ function formSetup() {
 }
 
 function formatDate(date) {
+	console.log('date from format date: ', date);
 	return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 }
 
@@ -101,6 +102,7 @@ function datePickerSetup(dateInputId) {
 			.on('changeDate', function (dateChangeEvent) {
 				$(dateInputId).datepicker('hide');
 				$(dateInputId).text(formatDate(dateChangeEvent.date));
+				console.log(dateChangeEvent.date);
 			});
 	});
 }

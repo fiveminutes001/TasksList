@@ -99,8 +99,9 @@ function getTaskFromTemplate(params) {
 	let toDo = temp.content.cloneNode(true);
 
 	let dueDate = toDo.querySelector('#task-0-due-date');
-	dueDate.setAttribute('value', formatDate(params.dueDate));
-	dueDate.setAttribute('min', getTodayDate());
+	//dueDate.setAttribute('value', formatDate(params.dueDate));
+	console.log('params.dueDate: ', params.dueDate);
+	dueDate.setAttribute('value', params.dueDate);
 	dueDate.id = 'task-' + params.taskId + '-due-date';
 
 	toDo.querySelector('#task-0').id = 'task-' + params.taskId;
