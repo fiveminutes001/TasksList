@@ -1,5 +1,5 @@
 import { getParamsArr } from './getParamsArr.js';
-import { formSetupForNewTasks, datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup } from './initialSetup.js';
+import { formSetupForNewTasks, datePickerSetup, saveButtonSetup, deleteButtonSetup, addNewTaskButtonSetup, formSetup } from './initialSetup.js';
 
 function getTodayDate() {
 	let today = new Date();
@@ -35,7 +35,8 @@ function mergeNewTaskData(taskParams, newTaskParams) {
 		taskParams = Object.assign(taskParams, newTaskParams);
 		Window.data.paramsArr.push(taskParams);
 		sendTasksToContainer(getParamsArr());
-		formSetupForNewTasks(taskParams.taskId);
+		formSetup();
+		//formSetupForNewTasks(taskParams.taskId);
 		console.log('Task ' + taskParams.taskId + ' was added.');
 		console.log('New task data: ', taskParams);
 	} catch (error) {
