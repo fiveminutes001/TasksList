@@ -7,10 +7,10 @@ function getAllTasks() {
 			console.log(response);
 			console.log(this.responseTexte);
 		}
-		let dev = 1;
-		const q = 'all tasks';
-		xmlhttp.open('GET', 'db.php?q=' + q + '&dev=' + dev, true);
-		xmlhttp.send();
 	};
+	let dev = 1;
+	const q = 'all tasks';
+	xmlhttp.open('GET', 'db.php?q=' + q + '&dev=' + dev, true);
+	xmlhttp.send();
 }
 export { getAllTasks };
