@@ -91,7 +91,7 @@ include 'php/connect.php';
 						<!-- Submit -->
 						<div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-end">
 							<div class="px-0 mx-0 mr-2">
-								<button id="add-new-task-button" type="submit" class="btn btn-primary">Add</button>
+								<button id="add-new-task-button" type="button" class="btn btn-primary">Add</button>
 							</div>
 						</div>
 					</div>
