@@ -1,4 +1,9 @@
 <?php
+
+//display errors
+error_reporting(E_ALL);
+ini_set("display_errors", "On");
+
 // bootstrap.php
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
